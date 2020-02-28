@@ -1,0 +1,86 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    background: rgb(255,27,0);
+    background: radial-gradient(circle, rgba(255,27,0,1) 0%, rgba(204,22,0,1) 100%);
+}
+
+.half-screen
+{
+    width: 50%;
+    height: 600px;
+
+    
+}
+
+.logo-container
+{
+    height: 200px;
+    width: 350px;
+    background: white;
+    display: block;
+    border-radius: 10px;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+
+.input-text, .btn
+{ 
+    height: 50px;
+    width: 350px;
+    margin-left: 35%;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+.input-text
+{
+
+    padding-left: 10px;
+
+    font-size: xx-large;
+    color: gray;
+
+}
+
+.img-logo
+{
+    padding-left: 30%;
+    padding-top: 7%;
+}
+
+
+.container
+{
+    background: linear-gradient(333deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255,1)1000%);
+    height: 550px;
+
+}
+
+.btn
+{
+    display: block;
+    text-decoration: none;
+    color: rgb(153, 153, 153);
+    font-size: larger;
+    background: linear-gradient(333deg, rgb(31, 31, 31) 0%, rgb(10, 10, 10)90%);
+    text-align: center;
+    transition: background 5s;
+
+}
+
+.btn:hover{
+    background: linear-gradient(333deg, rgb(87, 87, 87) 0%, rgb(10, 10, 10)90%);
+    transition: background 5s;
+    
+}
+
+a{
+    text-decoration: none;
+}
