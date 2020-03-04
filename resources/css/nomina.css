@@ -17,8 +17,8 @@ body
 .user-logo
 {
     margin-top: 2%;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 100px;
     margin-left: 45%;
 }
@@ -115,7 +115,21 @@ th, td
 .btn-continuar
 {
     text-decoration: none;
-    display: block;
+    display: inline-block;
     width: 200px;
-    height: 20px;
+    height: 40px;
+    background-color: #3C3C3B;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 80%;
+    padding-top: 5px;
 }
+
+.btn-salir, .btn-continuar
+{
+    color: white;
+
+}
+
