@@ -8,6 +8,11 @@ body
 {
     background: white;
 }
+section
+{
+    padding-bottom: 10px;
+
+}
 /*
 ===================================================================
     Logo de usuario
@@ -16,7 +21,7 @@ body
 */
 .user-logo
 {
-    margin-top: 2%;
+    margin-top: 1%;
     width: 150px;
     height: 150px;
     border-radius: 100px;
@@ -34,8 +39,7 @@ h2
     display: block; 
     height: 40px;
     text-align: center;
-    margin-top: 20px;
-    padding-top: 15px;
+
 
 
 }
@@ -43,34 +47,18 @@ h2
 
 /*
 ===================================================================
-    Tabla de nomina
+    Numero de empleado
 ===================================================================
 
 */
-table,h2
+h2
 {
 
-    margin-left: 25%;
+    margin-left: 23%;
     width: 700px;
-    background-color: lightgrey;
-    border-radius: 20px;
-    padding-left: 10px;
+    border-radius: 10px;
+    color: #ddd;
 
-}
-
-table
-{
-
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-
-}
-
-th, td
-{
-
-    padding: 20px;
 
 }
 
@@ -109,27 +97,62 @@ th, td
 */
 .bottom-barr
 {
-    background: #3C3C3B;
+    background-color: #3C3C3B;
 }
 
 .btn-continuar
 {
-    text-decoration: none;
-    display: inline-block;
-    width: 200px;
-    height: 40px;
-    background-color: #3C3C3B;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    text-align: center;
-    border-radius: 10px;
-    margin-left: 80%;
-    padding-top: 5px;
+    width: 300px;
+    margin-bottom: 15px;
+    margin-left: 70%;
+    box-shadow: 3px 3px 10px black;
+    border: 3px #ddd;
 }
 
-.btn-salir, .btn-continuar
+
+.btn-salir
 {
-    color: white;
+    
+
+margin-left: 0px;
+border-radius: 0px;
+
 
 }
 
+.btn:hover
+{
+    background:  #454543;
+    transition: background 300ms;
+    
+}
+
+.renglones
+{
+    display: inline-block;
+    background-color: #ECECEC;
+    margin-left: 10%;
+    padding: 10px;
+}
+
+.reng-semana
+{
+
+    width: 40%;
+    margin-left: 20%;
+  
+}
+
+.reng-semana, .reng-nomina
+{
+    height: 20px;
+}
+.reng-nomina
+{
+    width: 100px;
+}
+
+#seccion-renglones
+{
+    margin-bottom: 5%;
+}
