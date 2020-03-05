@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/general.css" rel="stylesheet" type="text/css">
     <link href="../css/nomina.css" rel="stylesheet" type="text/css">
+    <script src="../js/nomina.js"></script>
     <title>Nomina</title>
 </head>
 <body>
@@ -16,46 +17,22 @@
     <!-- Logo de usuario y Nombre -->
     <section>
         <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-        <h2>Juan Lopez Perez</h2>
+        <h2>1208750</h2>
     </section>
 
     
-    <!-- Tabla de nomina-->
-    <section>
-        <table>
-
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Semana</th>
-                    <th>Importe</th>
-                </tr>
-            </thead>
-
-            <tfoot>
-                <tr>
-                    <td>h&r nomina</td>
-                    <td>consulta de nomina</td>
-                </tr>
-            </tfoot>
-
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>1ERA SEMANA DE MARZO</td>
-                    <td>$ 1,500.00 MN</td>
-                </tr>
-            </tbody>
-        </table>  
-    </section>
+    <!-- Seccion para mostrar la nomina-->
+    <div id="seccion-renglones">
+        <script>creaRenglones(3);</script>
+    </div>
 
     <!--Boton continuar-->
-        <a href="../html/menu.html"class="btn-continuar">Continuar</a>
+        <a href="../html/menu.html"class="btn btn-continuar">Continuar</a>
         
     <!-- Barra inferior-->
     <section>
         <div class="bottom-barr">
-            <a href="../index.html"class="btn-salir">Salir</a>
+            <a href="../../index.html"class="btn btn-salir">Salir</a>
         </div>
     </section>
 

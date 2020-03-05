@@ -28,21 +28,21 @@ body
     border-radius: 10px;
     margin-left: 35%;
     margin-top: 5%;
+    padding-left: 10px;
 }
 
-.input-text, .btn
+.input-text, .btn 
 { 
     height: 50px;
     width: 350px;
     margin-left: 35%;
     margin-top: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     padding-left: 10px;
 }
+
 .input-text
 {
-
-    padding-left: 10px;
 
     font-size: xx-large;
     color: gray;
@@ -63,24 +63,30 @@ body
 
 }
 
+
 .btn
 {
-    display: block;
     text-decoration: none;
-    color: rgb(153, 153, 153);
-    font-size: larger;
-    background: linear-gradient(333deg, rgb(31, 31, 31) 0%, rgb(10, 10, 10)90%);
+    color: white;
+    width: 200px;
+    height: 40px;
     text-align: center;
-    transition: background 5s;
-
+    display: block;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #3C3C3B;
+    padding-top: 10px;
+    transition: background 300ms;
 }
 
+
 .btn:hover{
-    background: linear-gradient(333deg, rgb(87, 87, 87) 0%, rgb(10, 10, 10)90%);
-    transition: background 5s;
+    background:  #454543;
+    transition: background 300ms;
     
 }
 
-a{
-    text-decoration: none;
+.btn-ingresar
+{
+    width: 350px;
 }
