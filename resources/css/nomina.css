@@ -135,7 +135,7 @@ border-radius: 0px;
     padding: 10px;
 }
 
-.reng-semana
+.renglon-semana
 {
 
     width: 40%;
@@ -143,11 +143,12 @@ border-radius: 0px;
   
 }
 
-.reng-semana, .reng-nomina
+.renglon-semana, .renglon-nomina
 {
     height: 20px;
+    border-radius: 5px;
 }
-.reng-nomina
+.renglon-nomina
 {
     width: 100px;
 }
@@ -155,4 +156,15 @@ border-radius: 0px;
 #seccion-renglones
 {
     margin-bottom: 5%;
+}
+
+td
+{
+    padding-left: 300px;
+ 
+    
+}
+table
+{
+    margin-left: 15%;
 }
