@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../css/form.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h2>INICIO DE SESION</h2>
+        <form action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <img src="../img/logo.jpg" alt="Avatar" class="logo">
+            </div>
+            <div class="container">
+                <label for="uname"></label>
+                <input type="text" placeholder="Usuario" name="uname" required>
+                <label for="psw"></label>
+                <input type="password" placeholder="Contraseña" name="psw" required>
+                <button type="submit">INGRESAR</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">¿Recordarme?
+                </label>
+            </div>
+
+            <div class="container" style="background-color: rgba(204,22,0,1) ">
+                <span class="psw">Olvidaste <a href="#">la contraseña?</a></span>
+            </div>
+        </form>
+    </body>
+</html>
