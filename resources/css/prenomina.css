@@ -1,0 +1,51 @@
+.labels
+{
+font-size: xx-large;
+}
+
+h2
+{
+    margin-top: 20px;
+    margin-left: 28%;
+}
+
+.img-logo
+{
+    margin-top: 20px;
+    margin-left: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    box-shadow: 0px 0px 0px 10px #ECECEC;
+}
+
+td
+{
+    padding-left: 320px;
+    font-size: 30px;
+    color: #3C3C3B;
+    
+}
+table
+{
+    margin-left: 20%;
+}
+
+.renglon-semana
+{
+    width: 40%;
+    margin-left: 25%;
+
+}
+
+.renglon-nomina
+{
+    width: 20%;
+    margin-left: 5%;
+
+}
+
+.renglon-nomina, .renglon-semana
+{
+    height: 40px;
+}

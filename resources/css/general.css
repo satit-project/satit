@@ -4,66 +4,6 @@
     padding: 0;
 }
 
-
-body
-{
-    background: rgb(255,27,0);
-    background: radial-gradient(circle, rgba(255,27,0,1) 0%, rgba(204,22,0,1) 100%);
-}
-
-.half-screen
-{
-    width: 50%;
-    height: 600px;
-
-    
-}
-
-.logo-container
-{
-    height: 200px;
-    width: 350px;
-    background: white;
-    display: block;
-    border-radius: 10px;
-    margin-left: 35%;
-    margin-top: 5%;
-    padding-left: 10px;
-}
-
-.input-text, .btn 
-{ 
-    height: 50px;
-    width: 350px;
-    margin-left: 35%;
-    margin-top: 10px;
-    border-radius: 10px;
-    padding-left: 10px;
-}
-
-.input-text
-{
-
-    font-size: xx-large;
-    color: gray;
-
-}
-
-.img-logo
-{
-    padding-left: 30%;
-    padding-top: 7%;
-}
-
-
-.container
-{
-    background: linear-gradient(333deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255,1)1000%);
-    height: 550px;
-
-}
-
-
 .btn
 {
     text-decoration: none;
@@ -74,19 +14,16 @@ body
     display: block;
     border-radius: 10px;
     font-size: 20px;
-    background-color: #3C3C3B;
     padding-top: 10px;
-    transition: background 300ms;
+    background:  rgb(32, 32, 32);
+
+    transition: background 1s;
 }
 
 
-.btn:hover{
-    background:  #454543;
-    transition: background 300ms;
-    
-}
-
-.btn-ingresar
+.btn:hover
 {
-    width: 350px;
+    background: rgb(15, 15, 15);
+    transition: background 1s;
+    
 }
