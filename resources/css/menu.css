@@ -1,15 +1,19 @@
-.seccion
-{
+body {
+   padding: 0;
+   margin: 0;
+   background:#000000;
+   background: radial-gradient(circle,rgba(255,27,0,1)0%, rgba(255,27,0,1)100%);
+   
+   font-family: "Lato", sans-serif;
+}
+.seccion{
     margin-top:10% ;
     margin-bottom: 20%;
     
 }
-
-
-.boton-menu
-{
-    width: 200px;
-    height: 100px;
+.boton-menu{
+    width: 250px;
+    height: 150px;
     text-decoration: none;
     background-color: azure;
     color: black;
@@ -22,23 +26,110 @@
     box-shadow: 0px 10px 10px rgb(122, 10, 0);
     
 }
-
-
-.boton-menu:hover
-{
+.boton-menu:hover{
     text-decoration: none;
     background-color:  rgb(32, 32, 32);
     transition: background-color 1s;
     color: beige;
 }
-
-.row-menu
-{
+.row-menu{
     margin-left: 20%;
     margin-top: 5px;
 }
-
-menu
-{
+menu{
     padding-top: 20%;
+}
+.boton_return{
+	width: 20px;
+    height: 20px;
+    text-decoration: none;
+    background-color: azure;
+    color: black;
+    display: inline-block;
+    transition: background-color 1s;
+    padding: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgb(122, 10, 0);
+}
+
+.nomina{
+	background-image:url(../img/menu/nomina.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+
+.vacaciones{
+	background-image:url(../img/menu/viaje.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.lentes{
+	background-image:url(../img/menu/lentes.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.c_trabajo{
+	background-image:url(../img/menu/documento.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.encuesta{
+	background-image:url(../img/menu/checklist.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.mas{
+	background-image:url(../img/menu/mas.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.constancia{
+	background-image:url(../img/menu/folder.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.citas{
+	background-image:url(../img/menu/cita.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.sugerencias{
+	background-image:url(../img/menu/sugerencias.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.regresar{
+	background-image:url(../img/menu/regresar.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.cursos{
+	background-image:url(../img/menu/cursos.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.prenomina{
+	background-image:url(../img/menu/prenomina.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
+}
+.regresar{
+	background-image:url(../img/menu/regresar.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 155px 155px;
 }
