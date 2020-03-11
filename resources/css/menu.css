@@ -7,10 +7,11 @@ body {
    font-family: "Lato", sans-serif;
 }
 .seccion{
-    margin-top:10% ;
+    margin-top:5% ;
     margin-bottom: 20%;
     
 }
+
 .boton-menu{
     width: 250px;
     height: 150px;
@@ -33,11 +34,12 @@ body {
     color: beige;
 }
 .row-menu{
-    margin-left: 20%;
+    margin-left: 15%;
     margin-top: 5px;
 }
-menu{
-    padding-top: 20%;
+menu
+{
+    padding-top: 25%;
 }
 .boton_return{
 	width: 20px;
