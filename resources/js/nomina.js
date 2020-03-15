@@ -1,5 +1,5 @@
 
-function creaRenglones(cantidad, label)
+function creaRenglones(cantidad)
 {
  
     var renglones= document.getElementById("seccion-renglones")

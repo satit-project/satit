@@ -12,6 +12,9 @@ body {
     
 }
 
+/* ------------ BOTONES ----------- */
+
+
 .boton-menu{
     width: 250px;
     height: 150px;
@@ -41,6 +44,8 @@ menu
 {
     padding-top: 25%;
 }
+
+
 .boton_return{
 	width: 20px;
     height: 20px;

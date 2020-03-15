@@ -1,1 +1,1 @@
-console.log("menu.js funcion")
+console.log("menu.js funciona")

@@ -1,0 +1,198 @@
+/* ------------ BARRA SUPERIOR ----------- */
+.top-barr
+{
+    background: rgb(255,27,0);
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+}
+
+
+/* ------------ BOTONO CONTINUAR---------- */
+
+.btn-continuar
+{
+    width: 300px;
+    /*margin-bottom: 15px;*/
+    margin-left: 70%;
+    box-shadow: 3px 3px 10px black;
+    border: 3px #ddd;
+}
+
+/* ------------ BOTON SALIR ---------- */
+
+.btn-salir
+{
+
+margin-left: 0px;
+border-radius: 0px;
+margin-bottom: 20px;
+
+
+}
+
+.btn:hover
+{
+    background:  #454543;
+    transition: background 300ms;
+    
+}
+/* ------------ RENGLONES ---------- */
+
+.renglones
+{
+    display: inline-block;
+    background-color: #ECECEC;
+    margin-left: 10%;
+    padding: 10px;
+}
+
+.renglon-semana
+{
+
+    width: 40%;
+    margin-left: 20%;
+  
+}
+
+.renglon-semana, .renglon-nomina
+{
+    height: 20px;
+    border-radius: 5px;
+}
+.renglon-nomina
+{
+    width: 100px;
+}
+
+#seccion-renglones
+{
+    margin-bottom: 5%;
+}
+
+/* ------------ LABELS ---------- */
+td
+{
+    padding-left: 300px;
+ 
+    
+}
+table
+{
+    margin-left: 15%;
+}
+
+
+/* ------------ Contenido ----------- */
+.contenido
+{
+    min-height: 100%;
+
+    /*  Igual al alto del footer */
+    margin-bottom:-50px; 
+}
+
+/* ------------ footer ----------- */
+.footer
+{
+    height: 50px;
+    background-color: #3C3C3B;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.btn
+{
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-top: 10px;
+    background:  rgb(32, 32, 32);
+
+    transition: background 1s;
+}
+
+
+.btn:hover
+{
+    background: rgb(15, 15, 15);
+    transition: background 1s;
+    
+}
+
+
+/* ------------ LOGO USUARIO ----------- */
+
+.user-logo
+{
+    margin-top: 1%;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-left: 45%;
+}
+/* ------------ NUMERO DE EMPLEADO----------- */
+
+h2
+{
+
+    display: block; 
+    height: 40px;
+    text-align: center;
+    margin-left: 23%;
+    width: 700px;
+    border-radius: 10px;
+    color: #ddd;
+
+
+
+}
+
+
+
+
+/* ------------ RENGLONES ---------- */
+
+.renglones
+{
+    background-color: #ECECEC;
+    padding: 10px;
+}
+
+.renglon-semana
+{
+
+    width: 120%;
+    float: right;
+    margin-top: 30px;
+}
+
+#seccion-renglones
+{
+    margin: 5%px;
+}
+
+/* ------------ LABELS ---------- */
+
+
+label
+{
+    margin-left: 10%;
+    color: dimgrey;
+    font-size: 20px;
+}
+
+.division
+{
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    width: 20%;
+    margin-left:20%;
+}

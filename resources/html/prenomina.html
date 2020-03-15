@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/general.css" rel="stylesheet" type="text/css">
-    <link href="../css/nomina.css" rel="stylesheet" type="text/css">
+    <link href="../css/template.css" rel="stylesheet" type="text/css">
     <link href="../css/prenomina.css" rel="stylesheet" type="text/css">
-    <script src="../js/nomina.js"></script>
+    <script src="../js/creaRenglones.js"></script>
     <title>Prenomina</title>
 </head>
 <body>
+    <div class="contenido">
     <!-- Barra superior-->
     <section>
         <div class="top-barr"></div>
@@ -24,25 +25,17 @@
     
     <!-- Seccion para mostrar la nomina-->
     <div id="seccion-renglones">
-        <table>
-            <thead>
-                <tr>
-                    <td>Pago</td>
-                    <td>Horas trabajadas</td>
-                </tr>
-            </thead>
-        </table>
-        <script>creaRenglones(1);</script>
+        <script>
+        var labels = ["Pago","Horas trabajadas"]
+        creaRenglones(labels)</script>
     </div>
 
     <!--Boton continuar-->
         <a href="../html/menu.html"class="btn btn-continuar">Continuar</a>
-        
-    <!-- Barra inferior-->
-    <section>
-        <div class="bottom-barr">
-            <a href="../../index.html"class="btn btn-salir">Salir</a>
-        </div>
-    </section>
+    </div>
 </body>
+<!-- Barra inferior-->
+<footer class="footer">
+    <a href="../../index.html"class="btn btn-salir">Salir</a>
+</footer>
 </html>
