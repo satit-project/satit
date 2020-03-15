@@ -7,6 +7,32 @@
     margin: 0px;
 }
 
+/* ------------ BOTONES ---------- */
+
+
+.btn
+{
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 20px;
+    padding-top: 10px;
+    background:  rgb(32, 32, 32);
+    transition: background 1s;
+}
+
+
+.btn:hover
+{
+    background: rgb(15, 15, 15);
+    transition: background 1s;
+    
+}
+
 
 /* ------------ BOTONO CONTINUAR---------- */
 
@@ -17,6 +43,25 @@
     margin-left: 70%;
     box-shadow: 3px 3px 10px black;
     border: 3px #ddd;
+}
+
+
+/* ------------ BOTONO CANCELAR---------- */
+
+.btn-cancelar
+{
+    width: 300px;
+    margin-left: 20%;;
+    background-color: white;
+    color: black;
+    box-shadow: 3px 3px 10px rgb(75, 75, 75);
+    border: 3px rgb(24, 24, 24);
+    
+}
+
+.btn-cancelar:hover
+{
+    color: white;
 }
 
 /* ------------ BOTON SALIR ---------- */
@@ -70,20 +115,9 @@ margin-bottom: 20px;
     margin-bottom: 5%;
 }
 
-/* ------------ LABELS ---------- */
-td
-{
-    padding-left: 300px;
- 
-    
-}
-table
-{
-    margin-left: 15%;
-}
 
 
-/* ------------ Contenido ----------- */
+/* ------------ CONTENIDO ----------- */
 .contenido
 {
     min-height: 100%;
@@ -92,7 +126,7 @@ table
     margin-bottom:-50px; 
 }
 
-/* ------------ footer ----------- */
+/* ------------ FOOTER ----------- */
 .footer
 {
     height: 50px;
@@ -102,29 +136,7 @@ table
 }
 
 
-.btn
-{
-    text-decoration: none;
-    color: white;
-    width: 200px;
-    height: 40px;
-    text-align: center;
-    display: block;
-    border-radius: 10px;
-    font-size: 20px;
-    padding-top: 10px;
-    background:  rgb(32, 32, 32);
 
-    transition: background 1s;
-}
-
-
-.btn:hover
-{
-    background: rgb(15, 15, 15);
-    transition: background 1s;
-    
-}
 
 
 /* ------------ LOGO USUARIO ----------- */
@@ -196,3 +208,4 @@ label
     width: 20%;
     margin-left:20%;
 }
+
