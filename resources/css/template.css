@@ -39,10 +39,11 @@
 .btn-continuar
 {
     width: 300px;
-    /*margin-bottom: 15px;*/
-    margin-left: 70%;
+    margin-bottom: 0px;
+    margin-left: 30%;
     box-shadow: 3px 3px 10px black;
     border: 3px #ddd;
+    
 }
 
 
@@ -69,9 +70,8 @@
 .btn-salir
 {
 
-margin-left: 0px;
-border-radius: 0px;
-margin-bottom: 20px;
+    margin-left: 0px;
+    border-radius: 0px;
 
 
 }
@@ -112,7 +112,7 @@ margin-bottom: 20px;
 
 #seccion-renglones
 {
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 
@@ -157,7 +157,7 @@ h2
     display: block; 
     height: 40px;
     text-align: center;
-    margin-left: 23%;
+    margin-left: 8%;
     width: 700px;
     border-radius: 10px;
     color: #ddd;

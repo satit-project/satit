@@ -8,7 +8,7 @@ body {
 }
 .seccion{
     margin-top:5% ;
-    margin-bottom: 20%;
+    margin-bottom: 50%;
     
 }
 
@@ -16,7 +16,7 @@ body {
 
 
 .boton-menu{
-    width: 250px;
+    width: 200px;
     height: 150px;
     text-decoration: none;
     background-color: azure;
@@ -37,8 +37,10 @@ body {
     color: beige;
 }
 .row-menu{
-    margin-left: 15%;
-    margin-top: 5px;
+    margin-left: 20%;
+    margin-top: 10px;
+    margin-right: 10%;
+    padding-top: 10%;
 }
 menu
 {
@@ -65,7 +67,7 @@ menu
 {
   background-repeat:no-repeat;
   background-position:center;
-  background-size: 155px 155px;
+  background-size: 100px 100px;
 }
 .nomina{
 	background-image:url(../img/menu/nomina.png);
@@ -118,5 +120,4 @@ menu
 }
 .regresar{
 	background-image:url(../img/menu/regresar.png);
-  background-size: 155px 155px;
 }
