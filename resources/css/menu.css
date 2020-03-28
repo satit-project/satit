@@ -37,7 +37,7 @@ body {
     color: beige;
 }
 .row-menu{
-    margin-left: 20%;
+    margin-left: 10%;
     margin-top: 10px;
     margin-right: 10%;
     padding-top: 10%;
@@ -78,10 +78,7 @@ menu
 	background-image:url(../img/menu/viaje.png);
 
 }
-.lentes{
-	background-image:url(../img/menu/lentes.png);
 
-}
 .c_trabajo{
 	background-image:url(../img/menu/documento.png);
 
@@ -106,8 +103,8 @@ menu
 	background-image:url(../img/menu/sugerencias.png);
 
 }
-.regresar{
-	background-image:url(../img/menu/regresar.png);
+.repuestos{
+	background-image:url(../img/menu/lentes.png);
 
 }
 .cursos{
