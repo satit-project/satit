@@ -153,11 +153,13 @@
 {
     background-image:url(../img/nomina/profilepic_unisex.gif);
     margin-top: 1%;
-    background-size: 180px 180px;
-    margin-inline-start: 50%;
-    width: 180px;
-    height: 180px;
-    border-radius: 200px;
+    margin-inline-start: 45%;
+    border-radius:  100%;
+    border: 7px solid #ECECEC;
+    width: 13vw;
+    height: 13vw;
+    background-size: 13vw;
+
 
 }
 /* ------------ NUMERO DE EMPLEADO----------- */
@@ -168,7 +170,8 @@ h2
 
     display: block; 
 
-    margin-inline-start:50%;
+    margin-inline-start:45%;
+    padding-left: 2%;
     font-size: 3vw;
     /*width: 700px;
     height: 50 px;*/
@@ -188,22 +191,18 @@ h2
 {
     background-color: #ECECEC;
     padding: 2px;
+    height: 3vw;
 }
 
 .renglon-semana
 {
 
-    width: 120%;
-    float: right;
-    margin-top: 1vw;
-}
-
-#seccion-renglones
-{
-    margin: 5%;
     width: 100%;
+    float: right;
+ 
 
 }
+
 
 .section-wraper
 {
@@ -217,7 +216,7 @@ label
 {
     margin-left: 10%;
     color: dimgrey;
-    font-size: 20px;
+    font-size: 3vw;
 }
 
 .division

@@ -55,14 +55,13 @@ session_start();
         </section>
 
 
-        <section class="section-wraper">    
+        <section id="seccion-renglones">    
             <!-- Seccion para mostrar la nomina-->
-            <div id="seccion-renglones">
                 <script>
                     var labels = ["Semana","Pago"]
                     creaRenglones(labels);
                 </script>
-            </div>
+
         </section>
 
 
