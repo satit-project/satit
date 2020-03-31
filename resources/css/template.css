@@ -135,7 +135,15 @@
     margin: 0px;
 }
 
+/* ------------ CONTAINER, SECTIONS AND WRAPERS ----------- */
 
+
+.user-logo-container, .numero-empleado-container, .section-wraper
+{
+
+    width: 100%;
+
+}
 
 
 
@@ -143,24 +151,29 @@
 
 .user-logo
 {
+    background-image:url(../img/nomina/profilepic_unisex.gif);
     margin-top: 1%;
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
-    margin-left: 45%;
+    background-size: 180px 180px;
+    margin-inline-start: 50%;
+    width: 180px;
+    height: 180px;
+    border-radius: 200px;
+
 }
 /* ------------ NUMERO DE EMPLEADO----------- */
+
 
 h2
 {
 
     display: block; 
-    height: 40px;
-    text-align: center;
-    margin-left: 8%;
-    width: 700px;
-    border-radius: 10px;
-    color: #ddd;
+
+    margin-inline-start:50%;
+    font-size: 3vw;
+    /*width: 700px;
+    height: 50 px;*/
+    border-radius: 5px;
+    color: rgb(138, 138, 138);
 
 
 
@@ -174,7 +187,7 @@ h2
 .renglones
 {
     background-color: #ECECEC;
-    padding: 10px;
+    padding: 2px;
 }
 
 .renglon-semana
@@ -182,12 +195,19 @@ h2
 
     width: 120%;
     float: right;
-    margin-top: 30px;
+    margin-top: 1vw;
 }
 
 #seccion-renglones
 {
-    margin: 5%px;
+    margin: 5%;
+    width: 100%;
+
+}
+
+.section-wraper
+{
+    background-color: aqua;
 }
 
 /* ------------ LABELS ---------- */

@@ -45,17 +45,22 @@ session_start();
     </section>
         <!-- Logo de usuario y Nombre-->
         <section>
-            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-            <h2>1208750</h2>
+            <div class="user-logo-container">
+                <img class="user-logo"></img>
+            </div>
+    
+            <div class="numero-empleado-container">
+                <h2>1208750</h2>
+            </div>
         </section>
 
 
-        <section>    
+        <section class="section-wraper">    
             <!-- Seccion para mostrar la nomina-->
             <div id="seccion-renglones">
                 <script>
                     var labels = ["Semana","Pago"]
-                    creaRenglones(labels)
+                    creaRenglones(labels);
                 </script>
             </div>
         </section>

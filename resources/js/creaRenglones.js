@@ -5,7 +5,7 @@ function creaRenglones(labels)
 
     for(i =0 ; i < labels.length; i++)
     {
-        console.log("JS funciona")
+        console.log("Se crearon"+ i+ "renglones")
         var division = document.createElement("div")
         var label = document.createElement("label")
         var divSemana = document.createElement("div")
