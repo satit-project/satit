@@ -14,7 +14,7 @@
 {
     text-decoration: none;
     color: white;
-    width: 200px;
+    width: 20vw;
     height: 40px;
     text-align: center;
     display: inline-block;
@@ -38,11 +38,12 @@
 
 .btn-continuar
 {
-    width: 300px;
+    width: 20vw;
     margin-bottom: 0px;
-    margin-left: 30%;
+    margin-inline-start: 59%;
     box-shadow: 3px 3px 10px black;
     border: 3px #ddd;
+    border-radius: 0px;
     
 }
 

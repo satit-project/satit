@@ -71,13 +71,16 @@ session_start();
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
         </div>
 
+	 <div >
+             <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+        </div>
+
 
     </div>
 </body>
     <!-- Barra inferior-->
     <footer class="footer">
-        <a href="../php/logout.php"class="btn btn-salir">Salir</a>
-             <!--Boton continuar-->
+
     </footer>  
 
 </html>
