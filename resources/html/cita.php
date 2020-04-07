@@ -11,6 +11,8 @@ session_start();
     <link href="../css/template.css" rel="stylesheet" type="text/css">
     <link href="../css/cita.css" rel="stylesheet" type="text/css">
     <script src="../js/creaRenglones.js"></script>
+
+
 	<!-- formato de los botones de la pantalla cuando no se ha iniciado sesion-->
 	<link href="../css/sinAcceso.css" rel="stylesheet" type="text/css">
     <title>Cita</title>
@@ -63,7 +65,8 @@ session_start();
                 <div>
                     <input type="radio" id="finanzas" 
                            name="departamento"
-                           value="finanzas">
+                           value="finanzas"
+                           >
                     <label for="finanzas">Finanzas</label>
                 </div>
 
@@ -75,17 +78,25 @@ session_start();
                 </div>
             </div>
 
-            <div class="fecha">
-            <label for="fecha">Selecciona una fecha:</label></br>
-            <input type="date" id="cita"
-                   name="fecha"
-                   value="cita">
+            <div class="date-picker">
+                <div class="selected-date"> 30 / 07 / 2019 </div>
+
+                <div class="dates">
+                    <div class="month">
+                        <div class="arrows prev-mth">&lt;</div>
+                        <div class="mth"></div>
+                        <div class="arrows next-mth">&gt;</div>
+                    </div>
+                    <div class="days"></div>
+                </div>
             </div>
+
         </div>
         <!--Boton continuar-->
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
     </div>    
 </body>
+<script src="../js/cita.js"></script>
 <!-- Barra inferior-->
 <footer class="footer">
         <a href="../../index.html"class="btn btn-salir">Salir</a>
