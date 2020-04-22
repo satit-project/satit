@@ -9,7 +9,6 @@
 
 /* ------------ BOTONES ---------- */
 
-
 .btn
 {
     text-decoration: none;
@@ -49,13 +48,12 @@
 
 /* ------------ BOTONO CANCELAR---------- */
 
-.btn-cancelar
+.btn-cancelard
 {
     width: 300px;
     margin-left: 20%;;
     background-color: white;
     color: black;
-    box-shadow: 3px 3px 10px rgb(75, 75, 75);
     border: 3px rgb(24, 24, 24);
     
 }
@@ -65,7 +63,14 @@
     color: white;
 }
 
-/* ------------ BOTON SALIR ---------- */
+/* ------------ BOTON SALIR Y CONTINUAR ---------- */
+
+.btn-continuar, .btn-salir {
+    margin-top: 5%;
+    width: 25vw;
+}
+
+
 
 .btn-salir
 {
@@ -96,7 +101,7 @@
 {
 
     width: 40%;
-    margin-left: 20%;
+    margin-left: 10%;
   
 }
 
@@ -114,7 +119,6 @@
 {
     margin-bottom: 1%;
 }
-
 
 
 /* ------------ CONTENIDO ----------- */
