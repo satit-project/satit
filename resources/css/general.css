@@ -39,6 +39,10 @@ html, body
     {
       width: 100%;
     }
+
+    img{
+      width: 50%;
+    }
   }
 
   @media screen and (max-width:600px)

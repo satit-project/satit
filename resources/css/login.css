@@ -41,7 +41,6 @@ body
     width: 350px;
     margin-left: 35%;
     margin-top: 10px;
-    border-radius: 10px;
     padding-left: 10px;
     box-shadow: 5px 5px 10px rgb(122, 10, 0);
 }
@@ -56,8 +55,9 @@ body
 
 .img-logo
 {
-    height: 80%;
-    width: 40%;
+    background-image: url("../img/logo.jpg");
+    height: 10vw;
+    width: 1.2vw;
     padding-left: 30%;
     padding-top: 7%;
 }
@@ -75,12 +75,11 @@ body
 
 .btn-ingresar
 {
-    width: 350px;
-    height: 60px;
+    width: 30vw;
+    height: 4vw;
     box-shadow: 5px 5px 10px rgb(122, 10, 0);
     text-align: center;
-    font-size: 25px;
-
+    font-size: 2vw;
     transition: background 1s;
 
 
