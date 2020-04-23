@@ -22,16 +22,23 @@
         <div class="login"> 
             <div class="logo-container">    
                 <img src="resources/img/logo.jpg" class="img-logo">
-            </div>  
+            </div>
+			
+			<form action="resources/php/check-login.php" method="post">
+			
             <div >
-                <input tpe="text" class="input-text" placeholder="Numero de empleado">
+                <input type="text" class="input-text" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
             </div>
             <div >
-                <input type="password" class="input-text" placeholder="Contraseña">
+                <!--<input type="password" class="input-text" name="password" placeholder="password" required>-->
+				<input type="password" class="input-text form-control input-lg" name="password" placeholder="Contrasena" required>  
             </div>
             <div>
-                <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a>
+                <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
+				<button type="submit" class="btn btn-ingresar btn-success btn-block">INGRESAR</button>
             </div>
+			
+			</form>
         </div>
         </div>
 

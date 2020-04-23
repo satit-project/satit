@@ -13,7 +13,7 @@
 {
     text-decoration: none;
     color: white;
-    width: 200px;
+    width: 20vw;
     height: 40px;
     text-align: center;
     display: inline-block;
@@ -37,11 +37,12 @@
 
 .btn-continuar
 {
-    width: 300px;
+    width: 20vw;
     margin-bottom: 0px;
-    margin-left: 30%;
+    margin-inline-start: 59%;
     box-shadow: 3px 3px 10px black;
     border: 3px #ddd;
+    border-radius: 0px;
     
 }
 
@@ -139,7 +140,15 @@
     margin: 0px;
 }
 
+/* ------------ CONTAINER, SECTIONS AND WRAPERS ----------- */
 
+
+.user-logo-container, .numero-empleado-container, .section-wraper
+{
+
+    width: 100%;
+
+}
 
 
 
@@ -147,24 +156,32 @@
 
 .user-logo
 {
+    background-image:url(../img/nomina/profilepic_unisex.gif);
     margin-top: 1%;
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
-    margin-left: 45%;
+    margin-inline-start: 45%;
+    border-radius:  100%;
+    border: 7px solid #ECECEC;
+    width: 13vw;
+    height: 13vw;
+    background-size: 13vw;
+
+
 }
 /* ------------ NUMERO DE EMPLEADO----------- */
+
 
 h2
 {
 
     display: block; 
-    height: 40px;
-    text-align: center;
-    margin-left: 8%;
-    width: 700px;
-    border-radius: 10px;
-    color: #ddd;
+
+    margin-inline-start:45%;
+    padding-left: 2%;
+    font-size: 3vw;
+    /*width: 700px;
+    height: 50 px;*/
+    border-radius: 5px;
+    color: rgb(138, 138, 138);
 
 
 
@@ -178,20 +195,23 @@ h2
 .renglones
 {
     background-color: #ECECEC;
-    padding: 10px;
+    padding: 2px;
+    height: 3vw;
 }
 
 .renglon-semana
 {
 
-    width: 120%;
+    width: 100%;
     float: right;
-    margin-top: 30px;
+ 
+
 }
 
-#seccion-renglones
+
+.section-wraper
 {
-    margin: 5%px;
+    background-color: aqua;
 }
 
 /* ------------ LABELS ---------- */
@@ -201,7 +221,7 @@ label
 {
     margin-left: 10%;
     color: dimgrey;
-    font-size: 20px;
+    font-size: 3vw;
 }
 
 .division

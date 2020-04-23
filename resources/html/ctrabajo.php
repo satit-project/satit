@@ -9,10 +9,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/general.css" rel="stylesheet" type="text/css">
     <link href="../css/template.css" rel="stylesheet" type="text/css">
+    <link href="../css/ctrabajo.css" rel="stylesheet" type="text/css">
     <script src="../js/creaRenglones.js"></script>
 	<!-- formato de los botones de la pantalla cuando no se ha iniciado sesion-->
 	<link href="../css/sinAcceso.css" rel="stylesheet" type="text/css">
-    <title>Nomina</title>
+    <title>Carta de trabajo</title>
 </head>
 <body>
 	<!--verifica que realmente tengas sesion iniciada-->
@@ -39,47 +40,37 @@ session_start();
 	
 	
     <div class="contenido">
-    <!-- Barra superior-->
-        <div class="top-barr"></div>
-    </section>
-        <!-- Logo de usuario y Nombre-->
+        <!-- Barra superior-->
         <section>
-            <div class="user-logo-container">
-                <img class="user-logo"></img>
-            </div>
-    
-            <div class="numero-empleado-container">
-                <h2>1208750</h2>
-            </div>
+            <div class="top-barr"></div>
         </section>
 
-
-        <section id="seccion-renglones">    
-            <!-- Seccion para mostrar la nomina-->
-                <script>
-                    var labels = ["Semana","Pago"]
-                    creaRenglones(labels);
-                </script>
-
+        <!-- Logo de usuario y Nombre -->
+        <section>
+            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
+            <h2>1208750</h2>
         </section>
 
-
+        
+        <!-- Seccion para mostrar datos de la carta de trabajo-->
+        <div id="seccion-renglones">
+            <script>
+                // Nombres de labels que seran asignados
+                var labels = ["Nombre","Fecha de Ingreso","Puesto"]
+            creaRenglones(labels);
+            </script>
+        </div>
 
         <!--Boton continuar-->
         <div >
+            <a href="menu.php"class="btn btn-cancelar">Cancelar</a>
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
         </div>
 
-	 <div >
-             <a href="../php/logout.php"class="btn btn-salir">Salir</a>
-        </div>
-
-
-    </div>
+    </div>    
 </body>
-    <!-- Barra inferior-->
-    <footer class="footer">
-
-    </footer>  
-
+<!-- Barra inferior-->
+<footer class="footer">
+    <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+</footer>
 </html>
