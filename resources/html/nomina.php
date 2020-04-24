@@ -73,7 +73,7 @@ session_start();
         </section>
 
 
-    </div>
+    </div>  
 </body>
     <!-- Barra inferior-->
     <footer class="footer">

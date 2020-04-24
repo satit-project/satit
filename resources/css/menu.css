@@ -2,7 +2,7 @@ body {
    padding: 0;
    margin: 0;
    background:#000000;
-   background: radial-gradient(circle,rgba(255,27,0,1)0%, rgba(255,27,0,1)100%);
+   background: radial-gradient(circle,rgb(241, 35, 12)0%, rgb(187, 19, 0)100%);
    
    font-family: "Lato", sans-serif;
 }
@@ -42,11 +42,12 @@ body {
     margin-right: 10%;
     padding-top: 10%;
 }
-menu
+
+.menu
 {
-    padding-top: 25%;
-    width: 80%;
-    align-content: center;
+    padding-top: 10%;
+    width: 100%;
+
 }
 
 
@@ -120,3 +121,19 @@ menu
 .regresar{
 	background-image:url(../img/menu/regresar.png);
 }
+
+
+@media screen and ( max-width: 600px)
+{
+    body{
+        background: rgb(190, 14, 14);
+    }
+
+    .boton-menu
+    {
+        width: 100%;
+        margin: 2%;
+    }
+}
+
+
