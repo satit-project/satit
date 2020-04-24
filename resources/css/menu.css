@@ -37,7 +37,7 @@ body {
     color: beige;
 }
 .row-menu{
-    margin-left: 20%;
+    margin-left: 18vw;
     margin-top: 10px;
     margin-right: 10%;
     padding-top: 10%;
@@ -45,6 +45,8 @@ body {
 menu
 {
     padding-top: 25%;
+    width: 80%;
+    align-content: center;
 }
 
 

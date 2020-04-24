@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="../css/general.css" rel="stylesheet" type="text/css">
     <link href="../css/template.css" rel="stylesheet" type="text/css">
     <script src="../js/creaRenglones.js"></script>
@@ -66,13 +66,11 @@ session_start();
 
 
         <!--Boton continuar-->
-        <div >
+        <section>
+            <a href="../php/logout.php"class="btn btn-salir">Salir</a>
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
-        </div>
 
-	 <div >
-             <a href="../php/logout.php"class="btn btn-salir">Salir</a>
-        </div>
+        </section>
 
 
     </div>
