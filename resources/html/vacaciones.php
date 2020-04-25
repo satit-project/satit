@@ -45,27 +45,34 @@ session_start();
             <div class="top-barr"></div>
         </section>
 
-        <!-- Logo de usuario y Nombre -->
+        <!-- Logo de usuario y Nombre-->
         <section>
-            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-            <h2>1208750</h2>
+            <div class="user-logo-container">
+                <img class="user-logo"></img>
+            </div>
+    
+            <div class="numero-empleado-container">
+                <h2>1208750</h2>
+            </div>
         </section>
-
         
         <!-- Seccion para mostrar vacaciones-->
-        <div id="seccion-renglones">
+        <section id="seccion-renglones">
             <script>
-            var labeles =["Periodo","Dias"]
-            creaRenglones(labeles)
+                  var labeles =["Periodo","Dias"]
+                 creaRenglones(labeles);
             </script>
-        </div>
+        </section>
 
         <!--Boton continuar-->
+        <section>
+            <a href="../html/menu.php"class="btn btn-salir">Menu</a>
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
+        </section>
     </div>
 </body>
 <!-- Barra inferior-->
 <footer class="footer">
-        <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+
 </footer>
 </html>

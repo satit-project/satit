@@ -65,7 +65,7 @@ session_start();
 
 
 
-        <!--Boton continuar-->
+        <!--Boton continuar -->
         <section>
             <a href="../php/logout.php"class="btn btn-salir">Salir</a>
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
