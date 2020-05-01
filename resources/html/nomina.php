@@ -49,7 +49,12 @@ session_start();
             </div>
     
             <div class="numero-empleado-container">
-                <h2>1208750</h2>
+            <h2>
+				<?php
+				//muestra nombre y numero de empleado
+				echo $_SESSION['name'].' '.$_SESSION['numero_empleado'];
+				?>
+			</h2>
             </div>
         </section>
 

@@ -48,7 +48,12 @@ session_start();
         <!-- Logo de usuario y Nombre-->
         <section>
             <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-            <h2>1208750</h2>
+            <h2>
+				<?php
+				//muestra nombre y numero de empleado
+				echo $_SESSION['name'].' '.$_SESSION['numero_empleado'];
+				?>
+			</h2>
         </section>
 
         <!-- Seccion para mostrar la nomin-->
