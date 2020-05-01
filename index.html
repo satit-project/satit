@@ -9,6 +9,7 @@
         <link href="resources/css/template.css" rel="stylesheet" type="text/css">
         <link href="resources/css/login.css" rel="stylesheet" type="text/css">
         <link href="resources/css/menuTransition.css" rel="stylesheet" type="text/css">
+		<script src="resources/js/index.js"></script>
         <title> H&R | Inicio de Sesion</title>
     </head>
     <body>
@@ -37,8 +38,26 @@
                 <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
 				<button type="submit" class="btn btn-ingresar btn-success btn-block">INGRESAR</button>
             </div>
-			
 			</form>
+
+			<div>
+				<button class="btn-pass btn-dark" href="#showForm" onclick="btnRecuperar()">Olvidaste tu contrasena?</button>
+			</div>
+            
+			<div id="menuRecuperar" style="display:none">
+                <div class="collapse" id="showForm">
+					<div class='well'>
+						<form action="resources/php/password-recovery.php" method="post">
+							<div class="form-group">										
+								<input type="email" class="form-control input-email" name="email" placeholder="Por favor ingrese su correo electronico asociado con la cuenta." required>
+							</div>
+							<button type="submit" class="btn btn-dark">Recuperar Contrasena</button>
+						</form>								
+					</div>
+				</div>
+            </div>
+			
+			
         </div>
         </div>
 

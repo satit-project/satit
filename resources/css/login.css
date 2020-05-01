@@ -82,6 +82,31 @@ body
     font-size: 25px;
 
     transition: background 1s;
+}
 
-
+.btn-pass{
+    width: 250px;
+    height: 40px;
+    box-shadow: 5px 5px 10px rgb(122, 10, 0);
+    text-align: center;
+    font-size: 15px;
+	margin-left: 39%;
+    transition: background 1s;
+	
+	margin-top: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.input-email{
+	width: 350px;
+    height: 45px;
+    box-shadow: 5px 5px 10px rgb(122, 10, 0);
+    text-align: center;
+    font-size: 12px;
+	margin-left: 35%;
+    transition: background 1s;
+	
+	margin-top: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
 }

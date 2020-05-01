@@ -25,10 +25,10 @@
 	}
 	
 	// Query to check if the email already exist
-	$checkEmail = "SELECT * FROM login_satit WHERE numero_empleado = '$_POST[numero_empleado]' ";
+	$nEmpleado = "SELECT * FROM login_satit WHERE numero_empleado = '$_POST[numero_empleado]' ";
 
 	// Variable $result hold the connection data and the query
-	$result = $conn-> query($checkEmail);
+	$result = $conn-> query($nEmpleado);
 
 	// Variable $count hold the result of the query
 	$count = mysqli_num_rows($result);
@@ -36,31 +36,41 @@
 	// If count == 1 that means the email is already on the database
 	if ($count == 1) {
 	echo "<div class='alert alert-warning mt-4' role='alert'>
-					<p>That employed number is already in our database.</p>
-					<p><a href='../../index.html'>Please login here</a></p>
+					<p>Este numero de empleado ya existe en la base de datos.</p>
+					<p><a href='../../index.html'>Por favor inicie sesion aqui.</a></p>
 				</div>";
 	} else {	
 	
-	/*
-	If the email don't exist, the data from the form is sended to the
-	database and the account is created
-	*/
-	$name = $_POST['name'];
-	$numero_empleado = $_POST['numero_empleado'];
-	$pass = $_POST['password'];
-	
-	// The password_hash() function convert the password in a hash before send it to the database
-	$passHash = password_hash($pass, PASSWORD_DEFAULT);
-	
-	// Query to send Name, Email and Password hash to the database
-	$query = "INSERT INTO login_satit (nombre, numero_empleado, password) VALUES ('$name', '$numero_empleado', '$passHash')";
+		/*
+		If the email don't exist, the data from the form is sended to the
+		database and the account is created
+		*/
+		$name = $_POST['name'];
+		$numero_empleado = $_POST['numero_empleado'];
+		
+		//verifica que realmente se ingreso el mismo correo 
+		if($_POST['correo_electronico']==$_POST['correo_electronico_verifica']){
+			$correo = $_POST['correo_electronico'];
+			$pass = $_POST['password'];
+		
+			// The password_hash() function convert the password in a hash before send it to the database
+			$passHash = password_hash($pass, PASSWORD_DEFAULT);
+			
+			// Query to send Name, Email and Password hash to the database
+			$query = "INSERT INTO login_satit (nombre, numero_empleado, correo_electronico, password) VALUES ('$name', '$numero_empleado','$correo', '$passHash')";
 
-	if (mysqli_query($conn, $query)) {
-		echo "<div class='alert alert-success mt-4' role='alert'><h3>Your account has been created.</h3>
-		<a class='btn btn-outline-primary' href='../../index.html' role='button'>Login</a></div>";		
-		} else {
-			echo "Error: " . $query . "<br>" . mysqli_error($conn);
-		}	
+			if (mysqli_query($conn, $query)) {
+				echo "<div class='alert alert-success mt-4' role='alert'><h3>Cuenta creada.</h3>
+				<a class='btn btn-outline-primary' href='../../index.html' role='button'>Login</a></div>";		
+			}else {
+				echo "Error: " . $query . "<br>" . mysqli_error($conn);
+			}
+		}else{
+			echo "<script>
+					alert('Correos electronicos ingresados no son iguales.');
+					window.location= '../../crear_cuenta.html'
+				</script>";
+		}
 	}	
 	mysqli_close($conn);
 	?>
