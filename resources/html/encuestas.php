@@ -9,8 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/general.css" rel="stylesheet" type="text/css">
     <link href="../css/template.css" rel="stylesheet" type="text/css">
-    <link href="../css/ctrabajo.css" rel="stylesheet" type="text/css">
-    <script src="../js/encuestas.js"></script>
+    <link href="../css/encuesta.css" rel="stylesheet" type="text/css">
+
 	<!-- formato de los botones de la pantalla cuando no se ha iniciado sesion-->
 	<link href="../css/sinAcceso.css" rel="stylesheet" type="text/css">
     <title>Carta de trabajo</title>
@@ -45,48 +45,41 @@ session_start();
             <div class="top-barr"></div>
         </section>
 
-        <!-- Logo de usuario y Nombre-->
-        <section>
-            <div class="user-logo-container">
-                <img class="user-logo"></img>
-            </div>
-    
-            <div class="numero-empleado-container">
-            <h2>
-				<?php
-				//muestra nombre y numero de empleado
-				echo $_SESSION['name'].' '.$_SESSION['numero_empleado'];
-				?>
-			</h2>
-            </div>
+        <div>
+        <h2>¿Como te atendimos hoy?</h2>
+        </div>
+           
+        <!-- Emojis para encuesta de satisfaccion -->
+        <section class="seccion-botones satisfaccion">  
+                <div class="botones-child">
+                    <a href=""id="excelent" class="icon excelent" data-value="5" onclick="myFunction();" ></a>
+                </div>
+                <div class="botones-child" >
+                <a href="" id="good"class="icon good" data-value="4" onclick="myFunction();" ></a>
+                </div>
+                <div class="botones-child">
+                <a href="" id="fine"class="icon fine" data-value="3" onclick="myFunction();"></a>
+                </div>
+                <div class="botones-child">
+                <a href="" id="well" class="icon well" data-value="2" onclick="myFunction();"></a>
+                </div>
+                <div class="botones-child">
+                <a href="" id="bad" class="icon bad" data-value="1" onclick="myFunction();"></a>
+                </div>   
+
         </section>
 
-        
-        <!-- Seccion para mostrar datos de la carta de trabajo-->
-        <div id="seccion-renglones">
-            <script>
-                // Nombres de labels que seran asignados
-                var labels = 
-                ["¿Que tramite realizo?",
-                "Seleccione una opcion",
-                "volveria usar el sistema",
-                "le gustaria dejar sugerencias?",
-                "Recomendaria el sistema"];
-            crearEncuesta(labels);
-            </script>
-        </div>
+        <script>
 
-         
-        <!--Boton continuar y salir-->
- 
-        <section class="seccion-botones">
-             <div class=".botones-child">
-                 <a href="../php/logout.php"class="btn btn-salir">Salir</a>
-            </div>
-            <div class=".botones-child">
-             <a href="menu.php"class="btn btn-continuar">Continuar</a>
-             </div>
-	   </section>
+            var input;
+
+   
+            function myFunction()
+            {
+             var json 
+            }
+       
+        </script>
     </div>    
 </body>
 <!-- Barra inferior-->

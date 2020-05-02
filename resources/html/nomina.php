@@ -75,7 +75,7 @@ session_start();
         <!--Boton continuar y salir-->
  
 	   <section class="seccion-botones">
-             <div class=".botones-child">
+             <div class="botones-child">
                  <a href="../php/logout.php"class="btn btn-salir">Salir</a>
             </div>
             <div class=".botones-child">
