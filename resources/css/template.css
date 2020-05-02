@@ -8,6 +8,16 @@
 }
 
 /* ------------ BOTONES ---------- */
+.seccion-botones{
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+}
+.botones-child
+{
+    padding: .2rem;
+
+}
 
 .btn
 {
@@ -39,20 +49,21 @@
 {
     width: 20vw;
     margin-bottom: 0px;
-    margin-inline-start: 59%;
     box-shadow: 3px 3px 10px black;
     border: 3px #ddd;
     border-radius: 0px;
+
+
     
 }
 
 
 /* ------------ BOTONO CANCELAR---------- */
 
-.btn-cancelard
+.btn-cancelar
 {
     width: 300px;
-    margin-left: 20%;;
+    inset-inline-start:20%;
     background-color: white;
     color: black;
     border: 3px rgb(24, 24, 24);
@@ -68,7 +79,6 @@
 
 .btn-continuar, .btn-salir {
     margin-top: 5%;
-    width: 25vw;
 }
 
 
