@@ -72,14 +72,35 @@ session_start();
         </section>
 
         <script>
-            function myFunction(voto)
+             var myWorker = new Worker("worker.js");
+             var i;
+             i=0;
+
+
+            function myFunction(votoDOM)
             {
-                var voto = voto
-                console.log(voto)
+
+                var voto = votoDOM;
+                // obtiene el valor del voto
                 var valorVoto = document.getElementById(voto).getAttribute("data-value");
-                console.log(valorVoto)
+                // guardar el valor del voto en local storage
+                saveVote(valorVoto);
+
+                myWorker.onmessage = function(oEvent)
+                {
+                    console.log("wotker said:" + oEvent.data)
+                }
+                // guarda el voto en el local storage
+                myWorker.postMessage(valorVoto)
 
                }
+
+               function saveVote(voto)
+                {
+                localStorage.setItem('voto'+i,voto)
+                i++;
+              }
+
         </script>
 
 
