@@ -70,7 +70,7 @@ session_start();
 
 
 
-        <!--Boton continuar-->
+        <!--Boton continuar y salir-->
  
 	   <section class="seccion-botones">
              <div class=".botones-child">

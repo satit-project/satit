@@ -71,15 +71,21 @@ session_start();
             </script>
         </div>
 
-        <!--Boton continuar-->
-        <div >
-            <a href="menu.php"class="btn btn-continuar">Continuar</a>
-        </div>
-
+         
+        <!--Boton continuar y salir-->
+ 
+        <section class="seccion-botones">
+             <div class=".botones-child">
+                 <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+            </div>
+            <div class=".botones-child">
+             <a href="menu.php"class="btn btn-continuar">Continuar</a>
+             </div>
+	   </section>
     </div>    
 </body>
 <!-- Barra inferior-->
 <footer class="footer">
-    <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+
 </footer>
 </html>

@@ -96,14 +96,20 @@ session_start();
                 </div>
             </div>
 
-        </div>
-        <!--Boton continuar-->
-            <a href="menu.php"class="btn btn-continuar">Continuar</a>
-    </div>    
+            
+        <!--Boton continuar y salir-->
+ 
+	   <section class="seccion-botones">
+             <div class=".botones-child">
+                 <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+            </div>
+            <div class=".botones-child">
+             <a href="menu.php"class="btn btn-continuar">Continuar</a>
+             </div>
+	   </section>   
 </body>
 <script src="../js/cita.js"></script>
 <!-- Barra inferior-->
 <footer class="footer">
-        <a href="../../index.html"class="btn btn-salir">Salir</a>
 </footer>
 </html>
