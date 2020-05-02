@@ -47,16 +47,22 @@ session_start();
     </section>
         <!-- Logo de usuario y Nombre-->
         <section>
-            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-           <h2>
+            <div class="user-logo-container">
+                <img class="user-logo"></img>
+            </div>
+    
+            <div class="numero-empleado-container">
+            <h2>
 				<?php
 				//muestra nombre y numero de empleado
 				echo $_SESSION['name'].' '.$_SESSION['numero_empleado'];
 				?>
 			</h2>
+            </div>
         </section>
 
-        <!-- Seccion para mostrar la nomin-->
+
+        <!-- Seccion para mostrar calendario-->
         <div id="seccion-cita">
             <div class="departamentos">
                 <h3>Selecciona un departamento: </h3>

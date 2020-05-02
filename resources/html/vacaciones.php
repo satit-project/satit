@@ -45,15 +45,20 @@ session_start();
             <div class="top-barr"></div>
         </section>
 
-        <!-- Logo de usuario y Nombre -->
+        <!-- Logo de usuario y Nombre-->
         <section>
-            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
+            <div class="user-logo-container">
+                <img class="user-logo"></img>
+            </div>
+    
+            <div class="numero-empleado-container">
             <h2>
 				<?php
 				//muestra nombre y numero de empleado
 				echo $_SESSION['name'].' '.$_SESSION['numero_empleado'];
 				?>
 			</h2>
+            </div>
         </section>
 
         

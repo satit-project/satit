@@ -42,6 +42,8 @@ session_start();
     <!-- Barra superior-->
         <div class="top-barr"></div>
     </section>
+
+    
         <!-- Logo de usuario y Nombre-->
         <section>
             <div class="user-logo-container">
