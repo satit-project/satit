@@ -118,3 +118,87 @@ menu
 .regresar{
 	background-image:url(../img/menu/regresar.png);
 }
+
+/*--cabecera----------------------------------------*/
+.main-header {
+	background: #333;
+	color: white;
+	height: 80px;
+}	
+.main-header a {
+	color: white;
+}
+/*fijar como cabecera*/ 
+.main-header {
+	background: #333;
+	color: white;
+	height: 80px;
+	
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+/*Logo*/
+.logo-header {
+	float: left;
+	padding: 15px 0 0 20px;
+	text-decoration: none;
+}
+.logo-header:hover {
+	color: #0b76a6;
+}
+	
+.logo-header .site-name {
+	display: block;
+	font-weight: 700;
+	font-size: 1.2em;
+}
+	
+.logo-header .site-desc {
+	display: block;
+	font-weight: 300;
+	font-size: 0.8em;
+	color: #999;
+}
+
+/*Navegación*/
+nav {
+	float: right;
+}
+nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-right: 20px;
+}
+	
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+}
+			
+nav ul li a {
+	display: block;
+	padding: 0 10px;
+	text-decoration: none;
+}
+			
+nav ul li a:hover {
+	background: #0b76a6;
+}
+/*pie de pagina*/
+.main-footer {
+	background: #333;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	margin-top: 40px;
+}
+.main-footer p {
+	margin: 0;
+}
+	
+.main-footer a {
+	color: white;
+}

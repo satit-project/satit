@@ -41,6 +41,31 @@ session_start();
         }
     ?>
 	<!------------------------------------------------------------------>
+	<!--cabecera-->
+	<header class="main-header" id="main-header">
+		
+		<a class="logo-header" id="logo-header" href="#">
+			<span class="site-name">Satit</span>
+			<span class="site-desc">Empresa</span>
+		</a> <!-- / #logo-header -->
+
+		<nav>
+			<ul>
+				<li>
+					<?php
+					//muestra nombre y numero de empleado
+					echo 'Usuario: '.$_SESSION['name'].' ';
+					?>
+				</li>
+				<li><a href="#">sin definir</a></li>
+				<li><a href="#">sin definir</a></li>
+				<li><a href="../php/logout.php">SALIR</a></li>
+			</ul>
+		</nav><!-- / nav -->
+
+	</header><!-- / #main-header -->
+
+	<!----------------------------------------------------------------------------------------------->
         <div class="container">
 
             <!-- Menu Principal-->
@@ -69,12 +94,16 @@ session_start();
                         <a href="#seccion1" class=" botones boton-menu regresar">Regresar</a>
                     </div>
                     
-					<div class="row-menu" >
-						<a href="../php/logout.php" class="boton_return regresar">Salir</a>
-					</div>
+					<!--<div class="row-menu" ><a href="../php/logout.php" class="boton_return regresar">Salir</a></div>-->
 				
                 </div>
             </section>
+	</div>
+	
+		<footer class="main-footer" id="main-footer">
+			<p>2020 <a href="#">Satit</a></p>
+		</footer> <!-- / #main-footer -->
+	
 			
     </body>
 </html>

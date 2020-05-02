@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>Create an account or Login</title>
+    <title>Crear cuenta</title>
     
 	<!-- Required meta tags -->
     <meta charset="utf-8">
@@ -17,35 +17,42 @@
   <div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>PHP MySQL login</h1>
-				<p>A login App with SESSIONS, Password Hash, and Password recovery made with PHP 7, MySQL, phpMyAdmin, and Bootstrap.</p>		
+				<h1>Crear Cuenta Satit</h1>
+				<p>Creador de cuentas.</p>		
 			</div>
 	</div>
 	
 	<div class="row">	
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
-		<h3>Create an account</h3><hr />
+		<h3>Crear una Cuenta</h3><hr />
 		
 		<form method="post" action="resources/php/create-account.php" method="POST">
 			<div class="form-group">				
-				<input type="text" class="form-control" name="name" placeholder="Enter your name" required>			
+				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
 		  </div>
 		  
 		  <div class="form-group">				
-				<input type="text" class="form-control" name="numero_empleado" placeholder="Enter employed number" required>
+				<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese Numero de Empleado" required>
+			</div>
+			
+			<div class="form-group">				
+				<input type="text" class="form-control" name="correo_electronico" placeholder="Ingrese Correo Electronico" required>
+			</div>
+			<div class="form-group">				
+				<input type="text" class="form-control" name="correo_electronico_verifica" placeholder="Ingrese Correo Electronico Nuevamente" required>
 			</div>
 		  
 		  <div class="form-group">				
-				<input type="password" class="form-control" name="password" placeholder="Create Password" required>
+				<input type="password" class="form-control" name="password" placeholder="Ingrese Clave" required>
 			</div>
 		  
-		  <button type="submit" class="btn btn-success btn-block">Create my account</button>
+		  <button type="submit" class="btn btn-success btn-block">Crear</button>
 		</form>		
 		</div>		
 		<div class="col-sm-12 col-md-6 col-lg-6">
 			<h3>Login</h3><hr />
-			<p>Already have an account? <a href="login.html" title="Login Here">Login here!</a></p>
+			<p>Ya tienes una cuenta? <a href="index.html" title="Login Here">Inicia sesion aqui!</a></p>
 		</div>
 	</div>
 </div>
