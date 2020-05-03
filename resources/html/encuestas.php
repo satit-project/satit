@@ -88,7 +88,7 @@ session_start();
 
                 myWorker.onmessage = function(oEvent)
                 {
-                    console.log("wotker said:" + oEvent.data)
+                    console.log("worker said:" + oEvent.data)
                 }
                 // guarda el voto en el local storage
                 myWorker.postMessage(valorVoto)
