@@ -1,0 +1,47 @@
+/* ------------ FECHA ---------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.fecha
+{
+    margin-left: 50%;
+}
+
+
+h1 {
+    margin: 30px;
+    color: #313131;
+    font-size: 42px;
+    font-weight: 900;
+    text-align: center;
+
+}
+
+h1 span {
+    font-weight: 300;
+}
+
+.date-picker {
+
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+    background-color: #ffffff;
+    margin: 30px auto;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+    cursor: pointer;
+    user-select: none;
+
+}
+/*https://www.youtube.com/watch?v=wY2dao1hJms*/
+.date-picker selected
+
+.date-picker .dates
+{
+
+    display: none;
+}

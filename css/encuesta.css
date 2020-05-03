@@ -1,0 +1,54 @@
+.satisfaccion
+{
+    width: 100%;
+    height: auto;
+
+}
+
+.icon
+{
+  text-align: center;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 117px;
+  width: 8vw;
+  height: 8vw;
+
+
+}
+
+a{
+    width: 10vw;
+    display: block;
+    border: none;
+    
+}
+
+
+button
+{
+    text-decoration: none;
+}
+.icon:hover {
+    background-size: 127px;
+    border-radius: 1px;
+}
+
+.excelent{
+    background-image:url(../img/satisfaccion/excelent.png);
+}
+.good{
+    background-image:url(../img/satisfaccion/good.png);
+}
+.fine{
+    background-image:url(../img/satisfaccion/fine.png);
+}
+.well{
+    background-image:url(../img/satisfaccion/well.png);
+}
+.bad{
+    background-image:url(../img/satisfaccion/bad.png);
+}
+
+
+
