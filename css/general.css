@@ -29,7 +29,7 @@ html, body
       flex-flow: wrap;
   }
 
-  /* -------- add responsive media quaries*/
+  /* -------- add responsive media quaries-----------------*/
 
   
 
@@ -47,5 +47,33 @@ html, body
     {
       width: 80%;
     }
+  }
+
+
+
+  .contenedor
+  {
+    width: 98%;
+    padding-inline-start: 1%;
+    background-color: aqua;
+    margin: 5px;
+  }
+  .contenido_derecha{
+
+    
+  }
+
+  .contenido_derecha, .contenido_izquierda{
+    width: 50%;
+    float: left;
+    height: 900px;
+    background-color: rgb(175, 175, 175);
+    
+
+
+  }
+  
+  .contenido_izquierda{
+    color: rgb(189, 189, 189);
   }
 

@@ -56,7 +56,7 @@ session_start();
 				
 				//redirecciona al menu principal
 				header("Status: 301 Moved Permanently");
-				header("Location: ../html/menu.php");
+				header("Location: ../html/principal.php");
 				exit;
 				
 			} else {

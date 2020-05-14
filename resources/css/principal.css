@@ -1,0 +1,84 @@
+/*------------------Logo----------------*/
+.logo-container{
+    background-image: url(../img/logo.jpg);
+    background-repeat:no-repeat;
+    background-size: 13vw;
+    width: 13vw;
+    height: 16vw;
+    display: block;
+    margin-inline-start: 20%;
+
+  }
+
+/*------------------Menu Items template----------------*/
+.division,.user-info
+{
+  margin-top: 5%;
+  font-size: x-large;
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(155, 155, 155);
+  box-sizing: border-box;
+}
+
+.renglon, #user-name
+{
+  background-color: rgb(241, 241, 241);
+
+}
+
+.renglon{
+  width: 90%;
+  height: 60px;
+  margin-top: 2%;
+ 
+}
+
+/*------------------containers----------------*/
+.contenedor
+{
+  width: 98%;
+  padding-inline-start: 1%;
+  margin: 5px;
+}
+
+
+.contenido_derecha, .contenido-izquierda{
+  width: 50%;
+  float: left;
+  height: 800px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.contenido-izquierda{
+  margin-top: 7%;
+  float: right;
+
+
+}
+
+
+/*------------------user info----------------*/
+
+#user-name{
+  color: black;
+  text-align: center;
+  padding: 2%;
+  width: 85%;
+
+}
+
+#user-code{
+  font-size: x-large;
+  padding: 0%;
+}
+
+#user-job{
+  font-size: large;
+  margin-bottom: 5%;
+}
+
+#user-code, #user-job{
+  margin: 2%;
+
+}
