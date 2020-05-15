@@ -7,7 +7,9 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/principal.css" rel="stylesheet" type="text/css">
-    <script src="../js/creaRenglones.js"></script>
+	<script src="../js/Section.js"></script>
+	<script src="../js/createSections.js"></script>
+
     <title>Principal</title>
 </head>
 <body>
@@ -36,7 +38,7 @@ session_start();
 
         <!-----------------Contenedor principal----------------->
         <div class="contenedor">
-            <div class="contenido_derecha">
+            <div class="contenido-derecha">
 			    <!-----------------Logo----------------->
 				<div class="logo-container"></div>
 
@@ -50,8 +52,13 @@ session_start();
 					<!-----------------Renglones izquierda----------------->
 					<section id="seccion-izquierda">    
 						<script>
-							var labels = ["Nomnia","Prenomina","Vacaciones"]
-							crearSecciones(labels,"seccion-izquierda");
+							// Section.js class scope
+							nomina= new section("Nomina","","","","","seccion-izquierda");
+							prenomina= new section("Prenomina","","","","","seccion-izquierda");
+							vaciones= new section("Vacaciones","","","","","seccion-izquierda");
+							nomina.createSection();
+							prenomina.createSection();
+							vaciones.createSection();
 						</script>
 					</section>
 
@@ -63,12 +70,17 @@ session_start();
 			
 				<div id="seccion-derecha">    
 						<script>
-							var labels = ["Solicitar constancia",
-										  "Solicitar una atencion",
-										  "Solicitar respuestos",
-										  "Cursos",
-										  "Sugerencias"]
-							crearSecciones(labels,"seccion-derecha");
+							// Section.js class scope
+							constancia= new section("Solicitar constancia","","Aparecerán los datos de esta pantalla",true,"Solicitar","seccion-derecha");
+							atencion= new section("Solicitar atencion","","","","","seccion-derecha");
+							repuestos= new section("Solicitar repuestos","","","","","seccion-derecha");
+							curso= new section("Curso","","",true,"Registrar","seccion-derecha");
+							sugerencia= new section("Sugerencia","","",true,"Enviar","seccion-derecha");
+							constancia.createSection();
+							atencion.createSection();
+							repuestos.createSection();
+							curso.createSection();
+							sugerencia.createSection();
 						</script>
 					</div>
 
