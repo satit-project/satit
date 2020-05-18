@@ -1,13 +1,13 @@
 var success = false;
 class section {
 
-    constructor( title, subtitle, hint, button, buttonTitle,seccionDOM)
+    constructor( title, subtitle, hint, totalButtons, buttonsTitle,seccionDOM)
     {
         this.title = title;
         this.subtitle = subtitle;
         this.hint = hint;
-        this.button = button;
-        this.buttonTitle = buttonTitle;
+        this.totalButtons = totalButtons;
+        this.buttonsTitle = buttonsTitle;
         this.seccionDOM = seccionDOM
     }
 
@@ -30,14 +30,22 @@ class section {
             division.setAttribute("class","division")
             divMenu.setAttribute("class","renglon renglon-menu")
             // create a button if the DOM sends true
-            if( this.button == true)
+            if( this.totalButtons >= 1)
             {
-                var button = document.createElement("button");
-                button.setAttribute("id","button"+this.buttonTitle);
-                button.setAttribute("class","main-button");
-                button.setAttribute("onclick","this.imprime()")
-                button.innerHTML = this.buttonTitle;
-                divMenu.appendChild(button);
+
+                for( var i=0; i < this.totalButtons; i++)
+                {
+                    var button = document.createElement("button");
+                    button.setAttribute("id","button"+this.buttonsTitle[i]);
+                    button.setAttribute("class","main-button");
+                    button.setAttribute("onclick","imprime()")
+                    button.innerHTML = this.buttonsTitle[i
+                    
+                    ];
+                    divMenu.appendChild(button);
+                    this.addButtons(divMenu);
+                }
+  
             }
 
             label.setAttribute("for","renglones")
@@ -61,10 +69,14 @@ class section {
     addButtons()
     {
         
-        if( this.button != undefined && this.buttonTitle != "" && this.button == true )
+        if( this.buttonsTitle.length == 0 && this.totalButtons != 0 )
         {
          
     
+        }
+        else
+        {
+            console.log("no se agregaron botones")
         }
     }
 

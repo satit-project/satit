@@ -71,11 +71,11 @@ session_start();
 				<div id="seccion-derecha">    
 						<script>
 							// Section.js class scope
-							constancia= new section("Solicitar constancia","","Aparecerán los datos de esta pantalla",true,"Solicitar","seccion-derecha");
-							atencion= new section("Solicitar atencion","","","","","seccion-derecha");
+							constancia= new section("Solicitar constancia","","Aparecerán los datos de esta pantalla",1,["Solicitar"],"seccion-derecha");
+							atencion= new section("Solicitar atencion","","",3,["RH","Capacitacion","Finanzas"],"seccion-derecha");
 							repuestos= new section("Solicitar repuestos","","","","","seccion-derecha");
-							curso= new section("Curso","","",true,"Registrar","seccion-derecha");
-							sugerencia= new section("Sugerencia","","",true,"Enviar","seccion-derecha");
+							curso= new section("Curso","","",1,["Registrar"],"seccion-derecha");
+							sugerencia= new section("Sugerencia","","",1,["Enviar"],"seccion-derecha");
 							constancia.createSection();
 							atencion.createSection();
 							repuestos.createSection();
