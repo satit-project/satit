@@ -1,5 +1,4 @@
-drop database if exists satit_db;
-create database if not exists satit_db;
+use satit;
 
 create table cursos(
 	id int primary key auto_increment not null,
@@ -11,13 +10,13 @@ create table cursos(
 
 
 create table puestos (
-	id int primary key auto_increment not null,
+	id int primary key AUTO_INCREMENT NOT NULL,
 	puesto varchar(45) not null
 );
 
 /* posiblemente ocupe una tabla temporal*/
 create table encuesta_de_satisfaccion(
-	id int primary key auto_increment not null,
+	id int primary key AUTO_INCREMENT  NOT NULL,
     fecha date,
     excelente int,
     bien int,
@@ -28,7 +27,7 @@ create table encuesta_de_satisfaccion(
 
 /*verificar si faltan cambios*/
 create table nomina(
-	id int primary key auto_increment not null,
+	id int primary key AUTO_INCREMENT  NOT NULL,
     horas int not null,
     pago int not null,
     bono int,
@@ -91,11 +90,10 @@ create table empleados(
     nombre_secundario varchar(45),
     apellido_paterno varchar(45),
     apellido_materno varchar(45),
-    id_empleado int not null,
-    contrasena varchar(45) not null
+    numero_empleado varchar(64) not null,
+    contrasena varchar(128) not null
     
 );
-
 
 
 
