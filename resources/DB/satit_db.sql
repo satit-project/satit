@@ -1,4 +1,3 @@
-use satit;
 
 create table cursos(
 	id int primary key auto_increment not null,
@@ -14,6 +13,7 @@ create table puestos (
 	puesto varchar(45) not null
 );
 
+
 /* posiblemente ocupe una tabla temporal*/
 create table encuesta_de_satisfaccion(
 	id int primary key AUTO_INCREMENT  NOT NULL,
@@ -22,7 +22,11 @@ create table encuesta_de_satisfaccion(
     bien int,
     bueno int,
     regular int,
-    malo int
+    malo int,
+    id_empleado int not null,/* Llave foranea*/
+    INDEX(id_empleado),
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id)
+    
 );
 
 /*verificar si faltan cambios*/
@@ -34,12 +38,29 @@ create table nomina(
 	id_empleado int 
 );
 
-create table repuestros(
+
+DROP  table repuestros;
+create table repuestos(
 	id int primary key auto_increment not null,
     repuesto varchar(45)
 
 );
 
+
+use satit;
+create table solicitud_repuestos(
+    id int primary key auto_increment not null,
+    id_empleado int not null,/* Llave foranea*/
+    id_repuesto int not null,
+    fecha date,
+    estatus int,
+    INDEX(id_empleado),
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id),
+    INDEX(id_repuesto),
+    FOREIGN KEY (id_repuesto) REFERENCES repuestos(id)
+  
+
+);
 
 create table carta_de_trabajo(
 	id int primary key auto_increment not null,
@@ -70,12 +91,16 @@ create table sugerencias(
 
 );
 
+
+
 create table prenomina(
 	id int primary key auto_increment not null,
     horas int not null,
     pago int not null,
-	id_empleado int not null,/* Llave foranea*/
-	fecha date
+	fecha date,
+    id_empleado int not null,/* Llave foranea*/
+    INDEX(id_empleado),
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id)
 );
 
 create table vacaciones(
@@ -83,6 +108,8 @@ create table vacaciones(
 	periodo varchar(45)
 );
 
+
+drop table empleados;
 
 create table empleados(
 	id int primary key auto_increment not null,
@@ -92,7 +119,7 @@ create table empleados(
     apellido_materno varchar(45),
     numero_empleado varchar(64) not null,
     contrasena varchar(128) not null
-    
+
 );
 
 
