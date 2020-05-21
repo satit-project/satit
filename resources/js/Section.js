@@ -37,11 +37,9 @@ class section {
                 {
                     var button = document.createElement("button");
                     button.setAttribute("id","button"+this.buttonsTitle[i]);
-                    button.setAttribute("class","main-button");
+                    button.setAttribute("class","main-button btn btn-success");
                     button.setAttribute("onclick","imprime()")
-                    button.innerHTML = this.buttonsTitle[i
-                    
-                    ];
+                    button.innerHTML = this.buttonsTitle[i];
                     divMenu.appendChild(button);
                     this.addButtons(divMenu);
                 }
@@ -55,11 +53,11 @@ class section {
             division.appendChild(divMenu);
             seccion.appendChild(division);
             success= true;
-        
+            console.log("create buttons success:" + success)
 
         }
         else{
-            console.log("Error al crear secciones");
+            console.log("Error creating sections" + success);
             success= false;
         }
     

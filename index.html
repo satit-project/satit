@@ -5,10 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="titulo" content="Inicio de sesion SATIT">
         <meta name="descripcion" content="Sistema Agil de Tramites Internos para los Trabajadores">
-        <link href="resources/css/general.css" rel="stylesheet" type="text/css">
-        <link href="resources/css/template.css" rel="stylesheet" type="text/css">
-        <link href="resources/css/login.css" rel="stylesheet" type="text/css">
         <link href="resources/css/menuTransition.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
 		<script src="resources/js/index.js"></script>
         <title> H&R | Inicio de Sesion</title>
     </head>
@@ -28,20 +26,20 @@
 			<form action="resources/php/check-login.php" method="post">
 			
             <div >
-                <input type="text" class="input-text" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
+                <input type="text" class="input-text form-control col-3" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
             </div>
             <div >
                 <!--<input type="password" class="input-text" name="password" placeholder="password" required>-->
-				<input type="password" class="input-text form-control input-lg" name="password" placeholder="Contrasena" required>  
+				<input type="password" class="input-text form-control col-3 input-lg" name="password" placeholder="Contrasena" required>  
             </div>
             <div>
                 <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
-				<button type="submit" class="btn btn-ingresar btn-success btn-block">INGRESAR</button>
+				<button type="submit" class="btn btn-ingresar col-3 btn-info btn-block">INGRESAR</button>
             </div>
 			</form>
 
 			<div>
-				<button class="btn-pass btn-dark" href="#showForm" onclick="btnRecuperar()">Olvidaste tu contrasena?</button>
+				<button class="btn col-2 btn-outline-info" href="#showForm" onclick="btnRecuperar()">Olvidaste tu contrasena?</button>
 			</div>
             
 			<div id="menuRecuperar" style="display:none">

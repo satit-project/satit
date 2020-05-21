@@ -7,8 +7,10 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/principal.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="../js/Section.js"></script>
-	<script src="../js/createSections.js"></script>
+
+</head>
 
     <title>Principal</title>
 </head>
@@ -85,6 +87,13 @@ session_start();
 					</div>
 
 		</aside>
-        </div>
+		</div>
+		<br>
+		<div>
+
+		<button type="button" class="btn btn-secondary col-2">Salir</button>
+
+		</div>
+
 </body>
 </html>
