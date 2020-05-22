@@ -15,6 +15,9 @@ create table puestos (
 
 
 /* posiblemente ocupe una tabla temporal*/
+
+use satit;
+DROP TABLE  encuesta_de_satisfaccion;
 create table encuesta_de_satisfaccion(
 	id int primary key AUTO_INCREMENT  NOT NULL,
     fecha date,
@@ -25,7 +28,8 @@ create table encuesta_de_satisfaccion(
     malo int,
     id_empleado int not null,/* Llave foranea*/
     INDEX(id_empleado),
-    FOREIGN KEY (id_empleado) REFERENCES empleados(id)
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id) 
+    ON DELETE(CASCADE)
     
 );
 
@@ -46,8 +50,8 @@ create table repuestos(
 
 );
 
-
 use satit;
+drop table solicitud_repuestos;
 create table solicitud_repuestos(
     id int primary key auto_increment not null,
     id_empleado int not null,/* Llave foranea*/
@@ -55,9 +59,11 @@ create table solicitud_repuestos(
     fecha date,
     estatus int,
     INDEX(id_empleado),
-    FOREIGN KEY (id_empleado) REFERENCES empleados(id),
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id)
+     ON DELETE(CASCADE),
     INDEX(id_repuesto),
     FOREIGN KEY (id_repuesto) REFERENCES repuestos(id)
+     ON DELETE(CASCADE)
   
 
 );
@@ -91,6 +97,8 @@ create table sugerencias(
 
 );
 
+use satit;
+drop table prenomina;
 
 
 create table prenomina(
@@ -100,7 +108,7 @@ create table prenomina(
 	fecha date,
     id_empleado int not null,/* Llave foranea*/
     INDEX(id_empleado),
-    FOREIGN KEY (id_empleado) REFERENCES empleados(id)
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id) ON DELETE(CASCADE)
 );
 
 create table vacaciones(
@@ -110,17 +118,17 @@ create table vacaciones(
 
 
 drop table empleados;
+use satit;
 
 create table empleados(
 	id int primary key auto_increment not null,
 	nombre varchar(45) not null,
-    nombre_secundario varchar(45),
-    apellido_paterno varchar(45),
-    apellido_materno varchar(45),
+    apellidos varchar(45),
     numero_empleado varchar(64) not null,
-    contrasena varchar(128) not null
-
+    password varchar(128) not null
+    
 );
 
-
+use satit;
+SELECT * FROM empleados;
 

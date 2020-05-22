@@ -50,7 +50,9 @@ session_start();
 				
 				$_SESSION['loggedin'] = true;
 				$_SESSION['name'] = $row['nombre'];
+				$_SESSION['apellidos'] = $row['apellidos'];
 				$_SESSION['numero_empleado'] = $row['numero_empleado'];
+				$_SESSION['puesto'] = $row['puesto'];
 				$_SESSION['start'] = time();
 				$_SESSION['expire'] = $_SESSION['start'] + (15 * 60) ;// despues de 10 min la sesion de cierra sola					
 				

@@ -46,9 +46,9 @@ session_start();
 
 					<!-----------------Informacion de empleado----------------->
 					<div class="user-info">
-						<h2 id="user-name">Emmanuel Nuño Estrella</h2>
-						<h2 id="user-code">1208750</h2>
-						<h2 id="user-job">operador</h2>
+						<h3 id="user-name"><?php  echo$_SESSION['name']." ".$_SESSION['apellidos']?></h3>
+						<h4 id="user-code"><?php  echo$_SESSION['numero_empleado']?></h4>
+						<h4 id="user-job">operador</h4>
 					</div>
 
 					<!-----------------Renglones izquierda----------------->
@@ -91,7 +91,7 @@ session_start();
 		<br>
 		<div>
 
-		<button type="button" class="btn btn-secondary col-2">Salir</button>
+		<button type="button" class="btn btn-secondary main-button col-2" >Salir</button>
 
 		</div>
 

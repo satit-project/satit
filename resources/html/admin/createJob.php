@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>Crear cuenta</title>
+    <title>Crear Puesto</title>
     
 	<!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,48 +18,22 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h1>Crear Puesto</h1>
-				<p>Creador de cuentas.</p>		
+				<p>De de alta un nuevo puesto para los usuarios</p>		
 			</div>
 	</div>
 	
 	<div class="row">	
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
-		<h3>Crear una Cuenta</h3><hr />
+		<h3>Crea un puesto nuevo</h3><hr />
 		
-		<form method="post" action="resources/php/create-account.php" method="POST">
+		<form method="post" action="../../php/create-job.php" method="POST">
 			<div class="form-group">				
-				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
+				<input type="text" class="form-control" name="puesto" placeholder="Ingrese el nombre del puesto" required>			
 		  </div>
-			<div class="form-group">				
-				<input type="text" class="form-control" name="apellidos" placeholder="Ingrese sus Apellidos" required>			
-		  </div>
-		  
-		  <div class="form-group">				
-				<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese Numero de Empleado" required>
-			</div>
 
-			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				 Puesto
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				  <a class="dropdown-item" href="#">1</a>
-				  <a class="dropdown-item" href="#">2</a>
-				  <a class="dropdown-item" href="#">3</a>
-				</div>
-			  </div>
 
-			
-			<div class="form-group">				
-				<input type="password" class="form-control" name="password" placeholder="Ingrese Contraseña" required>
-			</div>
-
-			<div class="form-group">				
-				<input type="password" class="form-control" name="password_verifica" placeholder="Ingrese contraseña Nuevamente" required>
-			</div>
-		  
-		  <button type="submit" class="btn btn-success btn-block">Crear cuenta</button>
+		  <button type="submit" class="btn btn-success btn-block">Crear nuevo puesto</button>
 		</form>		
 		</div>		
 		<div class="col-sm-12 col-md-6 col-lg-6">

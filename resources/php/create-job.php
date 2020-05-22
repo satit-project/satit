@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Create account on database</title>
+    <title>Crear new nuevo puesto en la base de datos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,14 +24,12 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 	
-	// Query to check if the email already exist
-	//$nEmpleado = "SELECT * FROM login_satit WHERE numero_empleado = '$_POST[numero_empleado]' ";
 	
-	// *****-> proto
-	$nEmpleado = "SELECT * FROM empleados WHERE numero_empleado = '$_POST[numero_empleado]' ";
+	// search for job in 
+	$puesto = "SELECT * FROM puestos WHERE puesto = '$_POST[puesto]' ";
 	
 	// Variable $result hold the connection data and the query
-	$result = $conn-> query($nEmpleado);
+	$result = $conn-> query($puesto);
 
 	// Variable $count hold the result of the query
 	$count = mysqli_num_rows($result);
@@ -39,46 +37,28 @@
 	// If count == 1 that means the email is already on the database
 	if ($count == 1) {
 	echo "<div class='alert alert-warning mt-4' role='alert'>
-					<p>Este numero de empleado ya existe en la base de datos.</p>
-					<p><a href='../../index.html'>Por favor inicie sesion aqui.</a></p>
+					<p>Este puesto ya existe en la base de datos.</p>
 				</div>";
 	} else {	
 	
 		/*
 		If the email don't exist, the data from the form is sended to the
 		database and the account is created
-		*/
-		$name = $_POST['name'];
-		$apellidos = $_POST['apellidos'];
-		$numero_empleado = $_POST['numero_empleado'];
+        */
+        
 		$puesto = $_POST['puesto'];
 
-		    // check if the passwords match
-			if($_POST['password']==$_POST['password_verifica']){	
-			// **********
-			$pass = $_POST['password'];
-		
-			// The password_hash() function convert the password in a hash before send it to the database
-			$passHash = password_hash($pass, PASSWORD_DEFAULT);
-			
-			// Query to send Name, Email and Password hash to the database
-			//$query = "INSERT INTO login_satit (nombre, numero_empleado, correo_electronico, password) VALUES ('$name', '$numero_empleado','$correo', '$passHash')";
-			
-			// ********-->> prototype emplados table
-			$query = "INSERT INTO empleados (nombre, apellidos, numero_empleado, password, puesto) VALUES ('$name', '$apellidos', '$numero_empleado', '$passHash','$puesto')";
+	
+			// insert new job into the database
+			$query = "INSERT INTO puestos (puesto) VALUES ('$puesto')";
 
 			if (mysqli_query($conn, $query)) {
-				echo "<div class='alert alert-success mt-4' role='alert'><h3>Cuenta creada.</h3>
+				echo "<div class='alert alert-success mt-4' role='alert'><h3>Puesto creado.</h3>
 				<a class='btn btn-outline-primary' href='../../index.html' role='button'>Login</a></div>";		
 			}else {
 				echo "Error: " . $query . "<br>" . mysqli_error($conn);
 			}
-		}else{
-			echo "<script>
-					alert('Correos electronicos ingresados no son iguales.');
-					window.location= '../../crear_cuenta.html'
-				</script>";
-		}
+
 	}	
 	mysqli_close($conn);
 	?>
