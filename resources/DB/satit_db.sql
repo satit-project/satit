@@ -8,6 +8,9 @@ create table cursos(
 );
 
 
+DROP TABLE  puestos;
+use satit;
+
 create table puestos (
 	id int primary key AUTO_INCREMENT NOT NULL,
 	puesto varchar(45) not null
@@ -125,9 +128,13 @@ create table empleados(
 	nombre varchar(45) not null,
     apellidos varchar(45),
     numero_empleado varchar(64) not null,
-    password varchar(128) not null
-    
+    password varchar(128) not null,
+    id_puesto int not null,/* Llave foranea*/
+    INDEX(id_puesto),
+    FOREIGN KEY (id_puesto) REFERENCES puestos(id) ON DELETE CASCADE 
 );
+
+
 
 use satit;
 SELECT * FROM empleados;

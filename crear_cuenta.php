@@ -39,14 +39,34 @@
 				<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
-			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				 Puesto
+			<div class="dropdown ">
+				<button class="btn btn-secondary dropdown-toggle col-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				 Puestos
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				  <a class="dropdown-item" href="#">1</a>
-				  <a class="dropdown-item" href="#">2</a>
-				  <a class="dropdown-item" href="#">3</a>
+				<?php 
+					include 'resources/php/conn.php';
+						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+						// Check connection
+						if (!$conn) {
+							die("Connection failed: " . mysqli_connect_error());
+						}
+					else{
+						$query = "SELECT * FROM puestos";
+						if( $result = $conn->query($query)){
+						
+							while( $row = $result->fetch_assoc())
+							{
+								$puesto = $row["puesto"];
+								echo '<a class="dropdown-item" href="" data-value=".$row["id"]." >';
+								echo $puesto;
+								echo '</a>';
+							}
+						}
+					}
+				 
+				 ?>
+	
 				</div>
 			  </div>
 

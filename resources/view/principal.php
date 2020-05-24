@@ -48,7 +48,7 @@ session_start();
 					<div class="user-info">
 						<h3 id="user-name"><?php  echo$_SESSION['name']." ".$_SESSION['apellidos']?></h3>
 						<h4 id="user-code"><?php  echo$_SESSION['numero_empleado']?></h4>
-						<h4 id="user-job">operador</h4>
+						<h4 id="user-job"><?php  echo$_SESSION['puesto']?></h4>
 					</div>
 
 					<!-----------------Renglones izquierda----------------->
@@ -86,7 +86,7 @@ session_start();
 						</script>
 					</div>
 
-		</aside>
+			</aside>
 		</div>
 		<br>
 		<div>

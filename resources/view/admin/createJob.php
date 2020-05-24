@@ -27,11 +27,43 @@
 		
 		<h3>Crea un puesto nuevo</h3><hr />
 		
-		<form method="post" action="../../php/create-job.php" method="POST">
-			<div class="form-group">				
+		<form method="post" action="../../php/job.php" method="POST">
+		<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle col-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				 Puestos
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<?php 
+					include '../../php/conn.php';
+						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+						// Check connection
+						if (!$conn) {
+							die("Connection failed: " . mysqli_connect_error());
+						}
+					else{
+						$query = "SELECT puesto FROM puestos";
+						if( $result = $conn->query($query)){
+						
+							while( $row = $result->fetch_assoc())
+							{
+								$puesto = $row["puesto"];
+								echo '<a class="dropdown-item" href="">';
+								echo $puesto;
+								echo '</a>';
+							}
+						}
+					}
+				 
+				 ?>
+	
+				</div>
+			  </div>	
+		
+		
+		
+		<div class="form-group">				
 				<input type="text" class="form-control" name="puesto" placeholder="Ingrese el nombre del puesto" required>			
 		  </div>
-
 
 		  <button type="submit" class="btn btn-success btn-block">Crear nuevo puesto</button>
 		</form>		
@@ -49,4 +81,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
  
 	</body>
+
+
+
+
 </html>
