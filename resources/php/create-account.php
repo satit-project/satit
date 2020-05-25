@@ -65,7 +65,7 @@
 			//$query = "INSERT INTO login_satit (nombre, numero_empleado, correo_electronico, password) VALUES ('$name', '$numero_empleado','$correo', '$passHash')";
 			
 			// ********-->> prototype emplados table
-			$query = "INSERT INTO empleados (nombre, apellidos, numero_empleado, password, puesto) VALUES ('$name', '$apellidos', '$numero_empleado', '$passHash','$puesto')";
+			$query = "INSERT INTO empleados (nombre, apellidos, numero_empleado, password, id_puesto) VALUES ('$name', '$apellidos', '$numero_empleado', '$passHash','$puesto')";
 
 			if (mysqli_query($conn, $query)) {
 				echo "<div class='alert alert-success mt-4' role='alert'><h3>Cuenta creada.</h3>
@@ -75,7 +75,7 @@
 			}
 		}else{
 			echo "<script>
-					alert('Correos electronicos ingresados no son iguales.');
+					alert('Las contraseñas ingresadas no son iguales.');
 					window.location= '../../crear_cuenta.html'
 				</script>";
 		}
