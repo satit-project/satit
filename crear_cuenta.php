@@ -43,10 +43,10 @@
 			  
 			  <div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<label class="input-group-text" for="inputGroupSelect01">Options</label>
+					<label class="input-group-text" for="puesto">Puesto</label>
 				</div>
-				<select class="custom-select" id="inputGroupSelect01">
-					<option selected>Choose...</option>
+				<select class="custom-select" id="puesto" name="puesto">
+					<option selected>Selecciona...</option>
 					<?php 
 									include 'resources/php/conn.php';
 										$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -62,7 +62,7 @@
 											{
 												$puesto = $row["puesto"];
 												
-												echo '<option value=".$row["id"]">';
+												echo '<option value='.$row['id'].'>';
 												echo  $puesto;
 												echo '</option>';
 											}
@@ -70,10 +70,6 @@
 									}
 								
 				 ?>
-	
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
   </select>
 </div>
 
