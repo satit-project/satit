@@ -17,7 +17,7 @@
   <div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Crear Puesto</h1>
+				<h1>Crear Cuenta</h1>
 				<p>Creador de cuentas.</p>		
 			</div>
 	</div>
@@ -39,36 +39,43 @@
 				<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
-			<div class="dropdown ">
-				<button class="btn btn-secondary dropdown-toggle col-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				 Puestos
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<?php 
-					include 'resources/php/conn.php';
-						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-						// Check connection
-						if (!$conn) {
-							die("Connection failed: " . mysqli_connect_error());
-						}
-					else{
-						$query = "SELECT * FROM puestos";
-						if( $result = $conn->query($query)){
-						
-							while( $row = $result->fetch_assoc())
-							{
-								$puesto = $row["puesto"];
-								echo '<a class="dropdown-item" href="" data-value=".$row["id"]." >';
-								echo $puesto;
-								echo '</a>';
-							}
-						}
-					}
-				 
+
+			  
+			  <div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="inputGroupSelect01">Options</label>
+				</div>
+				<select class="custom-select" id="inputGroupSelect01">
+					<option selected>Choose...</option>
+					<?php 
+									include 'resources/php/conn.php';
+										$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+										// Check connection
+										if (!$conn) {
+											die("Connection failed: " . mysqli_connect_error());
+										}
+									else{
+										$query = "SELECT * FROM puestos";
+										if( $result = $conn->query($query)){
+										
+											while( $row = $result->fetch_assoc())
+											{
+												$puesto = $row["puesto"];
+												
+												echo '<option value=".$row["id"]">';
+												echo  $puesto;
+												echo '</option>';
+											}
+										}
+									}
+								
 				 ?>
 	
-				</div>
-			  </div>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
 
 			
 			<div class="form-group">				
