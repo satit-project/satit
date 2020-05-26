@@ -137,5 +137,5 @@ create table empleados(
 
 
 use satit;
-SELECT * FROM empleados;
+SELECT  * FROM empleados INNER JOIN puestos ON empleados.id_puesto  = puestos.id  ;
 

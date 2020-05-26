@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="container-fluid" width="800px">
+  <div class="container-fluid" >
         <div class="row">
 
           <table class="table">
@@ -19,7 +19,7 @@
                   <th scope="col">Numero de empleado</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Apellidos</th>
-                  <th scope="col">Puesto</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,7 +44,13 @@
                                           echo '<th scope="row">'.$i.'</th>';
                                           echo '<td>'.$numero_empleado.'</td>';
                                           echo '<td>'.$nombre.'</td>';
-                                          echo '<td>',$apellidos.'</td>';
+                                          echo '<td>' .$apellidos.'</td>';
+                                          echo '<td>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editar-modal">Ver</button>
+                                                    <button type="button" class="btn btn-danger">Baja</button>
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregar-modal">
+                                                    agregar</button>
+                                                </td>';
                                           echo "</tr>";
                         }   
                       }
@@ -52,8 +58,33 @@
               ?>
               </tbody>
             </table>
-
         </div>
     </div>
+ 
+      <div id="agregar-modal"class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Deseas agregar?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Matematicas Avanzadas<br>
+            Clave: 1105 <br>
+            Horario: 10:00AM - 12:00PM<br>
+            </p>          
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="agregar()">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>
+
+

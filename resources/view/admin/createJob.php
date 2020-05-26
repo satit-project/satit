@@ -28,12 +28,30 @@
 		<h3>Crea un puesto nuevo</h3><hr />
 		
 		<form method="post" action="../../php/job.php" method="POST">
-		<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle col-12" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				 Puestos
-				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<?php 
+				
+		<div class="form-group">				
+				<input type="text" class="form-control" name="puesto" placeholder="Nombre del puesto" required>			
+		  </div>
+
+		  <button type="submit" class="btn btn-success btn-block">Crear nuevo puesto</button>
+		</form>		
+		</div>		
+		<div class="col-sm-12 col-md-6 col-lg-6">
+		<div class="container-fluid" >
+        <div class="row">
+
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Puesto</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+            
+
+			  <?php 
 					include '../../php/conn.php';
 						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 						// Check connection
@@ -43,37 +61,39 @@
 					else{
 						$query = "SELECT puesto FROM puestos";
 						if( $result = $conn->query($query)){
-						
+							$i=0;
 							while( $row = $result->fetch_assoc())
 							{
 								$puesto = $row["puesto"];
-								echo '<a class="dropdown-item" href="">';
+								echo "<tr>";
+								echo '<td>'. $i. '</td>';
+								echo '<td>' ;
 								echo $puesto;
-								echo '</a>';
+								echo '</td>';
+								echo '<td>
+								<button type="button" class="btn btn-danger">Baja</button>
+									  </td>';
+								echo "</tr>";
+
+								$i++;
 							}
 						}
 					}
 				 
 				 ?>
 	
-				</div>
-			  </div>	
-		
-		
-		
-		<div class="form-group">				
-				<input type="text" class="form-control" name="puesto" placeholder="Ingrese el nombre del puesto" required>			
-		  </div>
-
-		  <button type="submit" class="btn btn-success btn-block">Crear nuevo puesto</button>
-		</form>		
-		</div>		
-		<div class="col-sm-12 col-md-6 col-lg-6">
-			<h3>Login</h3><hr />
-			<p>Ya tienes una cuenta? <a href="index.html" title="Login Here">Inicia sesion aqui!</a></p>
+              </tbody>
+            </table>
+        </div>
+    </div>
 		</div>
 	</div>
-</div>
+
+
+
+
+
+ </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

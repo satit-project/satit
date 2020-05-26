@@ -33,7 +33,7 @@ session_start();
 			$password = $_POST['password'];
 			
 			// Query sent to database
-		    $result = mysqli_query($conn, "SELECT numero_empleado, password, nombre, apellidos FROM empleados WHERE numero_empleado = '$numero_empleado'");
+			$result = mysqli_query($conn, "SELECT  * FROM empleados INNER JOIN puestos ON empleados.id_puesto  = puestos.id");
 			
 			// Variable $row hold the result of the query
 			$row = mysqli_fetch_assoc($result);

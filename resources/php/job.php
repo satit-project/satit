@@ -39,6 +39,7 @@
 	if ($count == 1) {
 	echo "<div class='alert alert-warning mt-4' role='alert'>
 					<p>Este puesto ya existe en la base de datos.</p>
+					<a class='btn btn-outline-primary' href='../view/admin/createJob.php' role='button'>Regresar</a></div>
 				</div>";
 	} else {	
 	
@@ -55,7 +56,7 @@
 
 			if (mysqli_query($conn, $query)) {
 				echo "<div class='alert alert-success mt-4' role='alert'><h3>Puesto creado.</h3>
-				<a class='btn btn-outline-primary' href='../../index.html' role='button'>Login</a></div>";		
+				<a class='btn btn-outline-primary' href='../view/admin/createJob.php' role='button'>Regresar</a></div>";		
 			}else {
 				echo "Error: " . $query . "<br>" . mysqli_error($conn);
 			}
