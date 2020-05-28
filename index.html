@@ -8,7 +8,8 @@
         <link href="resources/css/menuTransition.css" rel="stylesheet" type="text/css">
         <link href="resources/css/index.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
-		<script src="resources/js/index.js"></script>
+        <script src="resources/js/index.js"></script>
+        <script src="resources/js/keyboard.js"></script>
         <title> H&R | Inicio de Sesion</title>
     </head>
     <body>
@@ -27,11 +28,11 @@
 			<form action="resources/php/check-login.php" method="post">
 			
             <div >
-                <input type="text" class="input-text form-control col-3" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
+                <input type="text" class="input-text form-control col-3 use-keyboard-input" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
             </div>
             <div >
                 <!--<input type="password" class="input-text" name="password" placeholder="password" required>-->
-				<input type="password" class="input-text form-control col-3 input-lg" name="password" placeholder="Contrasena" required>  
+				<input type="password" class="input-text form-control col-3 input-lg use-keyboard-input" name="password" placeholder="Contrasena" required>  
             </div>
             <div>
                 <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
