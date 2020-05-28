@@ -6,6 +6,7 @@
         <meta name="titulo" content="Inicio de sesion SATIT">
         <meta name="descripcion" content="Sistema Agil de Tramites Internos para los Trabajadores">
         <link href="resources/css/menuTransition.css" rel="stylesheet" type="text/css">
+        <link href="resources/css/index.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
 		<script src="resources/js/index.js"></script>
         <title> H&R | Inicio de Sesion</title>
@@ -36,23 +37,19 @@
                 <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
 				<button type="submit" class="btn btn-ingresar col-3 btn-info btn-block">INGRESAR</button>
             </div>
-			</form>
-
-			<div>
-				<button class="btn col-2 btn-outline-info" href="#showForm" onclick="btnRecuperar()">Olvidaste tu contrasena?</button>
-			</div>
+            </form>
             
-			<div id="menuRecuperar" style="display:none">
-                <div class="collapse" id="showForm">
-					<div class='well'>
-						<form action="resources/php/password-recovery.php" method="post">
-							<div class="form-group">										
-								<input type="email" class="form-control input-email" name="email" placeholder="Por favor ingrese su correo electronico asociado con la cuenta." required>
-							</div>
-							<button type="submit" class="btn btn-dark">Recuperar Contrasena</button>
-						</form>								
-					</div>
-				</div>
+            <div class="btn col-2 btn-outline-info">
+                <div class="menu">
+                    <a>Olvidaste tu contrasena?</a>
+                        <div>
+                            <form action="resources/php/password-recovery.php" method="post">
+                                <input type="text" class="input-text form-control" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
+                                <button class="recuperar">Recuperar</button>
+                            </form>
+                        </div>
+                    
+                </div>
             </div>
 			
 			

@@ -1,0 +1,30 @@
+.recuperar{
+    margin: 10px 2px;
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 5px;
+
+    text-align: center;
+    margin: 0 auto;
+
+    display: block;
+}
+
+.menu div{
+    height: 0;
+    overflow: hidden;
+    transition: all 2s linear;
+}
+.menu:hover div{
+    animation-name: crecerMenu;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+}
+@keyframes crecerMenu{
+    from{
+        height: 0px;
+    }
+    to{
+        height: 110px;
+    }
+}

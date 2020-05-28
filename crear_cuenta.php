@@ -46,6 +46,7 @@
 					<label class="input-group-text" for="puesto">Puesto</label>
 				</div>
 				<select class="custom-select" id="puesto" name="puesto">
+					
 					<option selected>Selecciona...</option>
 					<?php 
 									include 'resources/php/conn.php';
@@ -70,10 +71,9 @@
 									}
 								
 				 ?>
-  </select>
-</div>
+  				</select>
+			</div>
 
-			
 			<div class="form-group">				
 				<input type="password" class="form-control" name="password" placeholder="Ingrese Contraseña" required>
 			</div>
@@ -81,10 +81,41 @@
 			<div class="form-group">				
 				<input type="password" class="form-control" name="password_verifica" placeholder="Ingrese contraseña Nuevamente" required>
 			</div>
+			<div>
+				<h4>Preguntas de Seguridad</h4>
+				<select name="Seg_pregunta_1">
+					<option value="0">Seleccione una pregunta de seguridad 1</option>
+					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
+					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
+					<option value="Cual era tu apodo de la infancia?">Cual era tu apodo de la infancia?</option>
+					<option value="Cual es el nombre de la cuidad en la que se conocieron tus padres?">Cual es el nombre de la cuidad en la que se conocieron tus padres?</option> 
+					<option value="Cual es el nombre de tu primer auto?">Cual es el nombre de tu primer auto?</option> 
+					<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
+				</select>
+				<div class="form-group">				
+					<input type="text" class="form-control" name="R_pregunta_1" placeholder="Respuesta pregunta 1" required>			
+		  		</div>
+			</div>
+			<div>
+				<select name="Seg_pregunta_2">
+					<option value="0">Seleccione una pregunta de seguridad 2</option>
+					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
+					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
+					<option value="Cual era tu apodo de la infancia?">Cual era tu apodo de la infancia?</option>
+					<option value="Cual es el nombre de la cuidad en la que se conocieron tus padres?">Cual es el nombre de la cuidad en la que se conocieron tus padres?</option> 
+					<option value="Cual es el nombre de tu primer auto?">Cual es el nombre de tu primer auto?</option> 
+					<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
+				</select>
+				<div class="form-group">				
+					<input type="text" class="form-control" name="R_pregunta_2" placeholder="Respuesta pregunta 2" required>			
+		  		</div>
+			</div>
+			
 		  
 		  <button type="submit" class="btn btn-success btn-block">Crear cuenta</button>
-		</form>		
-		</div>		
+		</form>
+		</div>
+
 		<div class="col-sm-12 col-md-6 col-lg-6">
 			<h3>Login</h3><hr />
 			<p>Ya tienes una cuenta? <a href="index.html" title="Login Here">Inicia sesion aqui!</a></p>
