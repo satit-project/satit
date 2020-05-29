@@ -1,3 +1,4 @@
+DROP DATABASE satit;
 CREATE  DATABASE IF NOT EXISTS satit;
 use satit;
 

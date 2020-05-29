@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="resources/css/keyboard.css">
         <link rel="stylesheet" type="text/css" href="resources/css/principal.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="resources/css/menuTransition.css" rel="stylesheet" type="text/css">
         <link href="resources/css/index.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    </head>
         <script src="resources/js/index.js"></script>
@@ -22,7 +21,8 @@
 
                 <!-- LOGIN -->
             <div class="container-fluid contenido">
-                    <div class="login"> 
+      
+                    <div class="login card-login"> 
                         <div class="logo-container">    
                             <img class="img-logo">
                         </div>
@@ -31,7 +31,7 @@
                     
                         <div >
                             <input type="text"
-                                   class="input-text form-control col-5 use-keyboard-input" 
+                                   class="input-text form-control col-10 use-keyboard-input" 
                                    name="numero_empleado" 
                                    placeholder="Numero de empleado" 
                                    maxlength="16" 
@@ -40,29 +40,27 @@
                         <div >
                             <!--<input type="password" class="input-text" name="password" placeholder="password" required>-->
                             <input type="password" 
-                                   class="input-text form-control col-5 input-lg use-keyboard-input" 
+                                   class="input-text form-control col-10 input-lg use-keyboard-input" 
                                    name="password" 
                                    placeholder="Contraseña"
-                
                                    required>  
                         </div>
                         <div>
                             <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
                             <button type="submit" 
-                                    class="btn btn-ingresar col-5 btn-info btn-block">INGRESAR</button>
+                                    class="btn btn-ingresar col-10 btn-info btn-block">INGRESAR</button>
                         </div>
                         </form>
 
-            <div class="btn col-5 btn-outline-info">
-                <div class="menu">
-                    <a>Olvidaste tu contrasena?</a>
-                        <div>
-                            <form action="resources/php/password-recovery.php" method="post">
-                                <input type="text" class="input-text form-control" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
-                                <button class="recuperar">Recuperar</button>
-                            </form>
-                        </div>
-
+                            <div class="btn col-10 btn-outline-info">
+                                <div class="menu">
+                                    <a>Olvidaste tu contrasena?</a>
+                                        <div>
+                                            <form action="resources/php/password-recovery.php" method="post">
+                                                <input type="text" class="input-text form-control use-keyboard-input" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
+                                                <button class="recuperar">Recuperar</button>
+                                            </form>
+                                        </div>
                     
                 </div>
             </div>

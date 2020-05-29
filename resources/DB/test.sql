@@ -5,5 +5,5 @@ puestos
 ON empleados.id_puesto  = puestos.id  ;
 
 use satit;
-SELECT * FROM  cursos;
+SELECT * FROM  empleados;
 
