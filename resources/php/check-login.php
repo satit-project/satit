@@ -54,7 +54,7 @@ session_start();
 				$_SESSION['numero_empleado'] = $row['numero_empleado'];
 				$_SESSION['puesto'] = $row['puesto'];
 				$_SESSION['start'] = time();
-				$_SESSION['expire'] = $_SESSION['start'] + (15 * 60) ;// despues de 10 min la sesion de cierra sola					
+				$_SESSION['expire'] = $_SESSION['start'] + (15 * 60) ;// despues de 15 min la sesion de cierra sola					
 				
 				//redirecciona al menu principal
 				header("Status: 301 Moved Permanently");

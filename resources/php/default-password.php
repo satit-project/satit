@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>		
-    	<title>Password Recovery</title>
+    	<title>Password a Default</title>
     	<!-- Required meta tags -->
     	<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -60,7 +60,14 @@
                         $query = "UPDATE empleados SET password='$passHash' WHERE numero_empleado='$num'";
                         if (mysqli_query($conn, $query)) {
 
-                            echo "<p>Para numero de empleado: ".$_POST['numero_empleado']."<p>Su nueva clase generica es:</p><h4>12345</h4>";
+							echo "<p>Para numero de empleado: ".$_POST['numero_empleado']."<p>Su nueva clase generica es:</p><h4>12345</h4><br>
+
+							<div class='alert alert-success alert-dismissible mt-4' role='alert'>
+							<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+							<span aria-hidden='true'>&times;</span></button>
+			
+							<p>Presione para iniciar sesion.</p>
+							<p><a class='alert-link' href=../../index.html>Ir a Login</a></p></div>";
                         }
 				
                     }
@@ -93,23 +100,18 @@
 				<span aria-hidden='true'>&times;</span></button>
 
                 <p>Lo sentimos, su numero de empleado no coincide.</p>
-                <p><a href='javascript:history.back()'> Volver Atrás</a></p></div>";
+                <p><a href='javascript:history.back()'> Volver a Pagina Anteriror</a></p></div>";
             }
             
 			?>
             <!------------------------------------------------------------------------------>
-            <div class='alert alert-success alert-dismissible mt-4' role='alert'>
-				<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-				<span aria-hidden='true'>&times;</span></button>
-
-                <p>Presione login para iniciar sesion.</p>
-                <p><a class='alert-link' href=../../index.html>Login</a></p></div>
+            
 
 		</div>
 		<div class="col-sm-12 col-md-6 col-lg-6">
 			<h3>Indicaciones</h3><hr />
-            <p>1. - Inicie sesion con su nueva clave</p>
-            <p>2. - Una vez iniciada su sesion la puede cambiar por una que sea facil de recordar</p>
+            <p>1. - Inicie sesion con su nueva clave generica.</p>
+            <p>2. - Una vez iniciada su sesion la puede cambiar por una que sea facil de recordar.</p>
 		</div>
 	</div>
 </div>

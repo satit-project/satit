@@ -91,7 +91,8 @@ session_start();
 		<br>
 		<div>
 
-		<button type="button" class="btn btn-secondary main-button col-2" >Salir</button>
+		<button type="button" class="btn btn-secondary main-button col-2" onclick="location.href='../php/logout.php'">Salir</button>
+		<button type="button" class="btn btn-secondary main-button col-2" onclick="location.href='../php/page-change-password.php'">Cambiar Contrase&ntilde;a</button>
 
 		</div>
 
