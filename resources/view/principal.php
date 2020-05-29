@@ -1,6 +1,8 @@
 <?php
 session_start();
-include (NOMINACONTROLLER);
+include "../../init.php";
+include NOMINACONTROLLER;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -169,8 +171,9 @@ include (NOMINACONTROLLER);
 						</div>
 					</div><!---Inscribirme al acurso--->
 
+					<button type="button" class="btn btn-secondary main-button col-3" onclick="location.href='../php/logout.php'">Salir</button>
+					<button type="button" class="btn btn-secondary main-button col-6" onclick="location.href='../php/page-change-password.php'">Cambiar Contrase&ntilde;a</button>
 
-					
 
 				</div>
 			</div><!---right container--->
@@ -182,9 +185,6 @@ include (NOMINACONTROLLER);
 			$('[data-toggle="tooltip"]').tooltip()
 			})
 		</script>
-		<button type="button" class="btn btn-secondary main-button col-2" onclick="location.href='../php/logout.php'">Salir</button>
-		<button type="button" class="btn btn-secondary main-button col-2" onclick="location.href='../php/page-change-password.php'">Cambiar Contrase&ntilde;a</button>
-
-
+		
 </body>
 </html>
