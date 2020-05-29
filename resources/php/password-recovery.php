@@ -12,12 +12,14 @@
 <body>
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12 col-md-12 col-lg-12">
+		
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<h3>Recuperar Password</h3><hr />
 			
 			<?php
 			include 'conn.php';
 			
-			$email = $_POST['email'];				
+			$numero_empleado = $_POST['numero_empleado'];				
 			$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 			// Check connection
@@ -25,34 +27,57 @@
 				die("Connection failed: " . mysqli_connect_error());
 			}
 				
-			$sql = "SELECT correo_electronico, password FROM login_satit WHERE correo_electronico='$email'";				
+			$sql = "SELECT id, numero_empleado FROM empleados WHERE numero_empleado='$numero_empleado'";				
 			$result = mysqli_query($conn, $sql);
+			
 				
 			if (mysqli_num_rows($result) > 0) {
 				$row = mysqli_fetch_assoc($result);
-				
-				//ini_set('display_errors',1);
-				//error_reporting(E_ALL);
-				
-				//se necesita configurar xampp para que se envien los correos desde tu propio correo de gmail
-				//aqui se explica como
-				//http://albertotain.blogspot.com/2018/02/como-configurar-xampp-para-enviar.html
-				
-				$subject = "Tu contrasena para iniciar sesion en la pagina de Satit";
-				$body = "Tu contrasena es: " . $row['password'];
-				$headers = 'From: SATIT';
-				mail($email, $subject, $body, $headers);				
-				
-				echo "<div class='alert alert-success alert-dismissible mt-4' role='alert'>
-				<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-				<span aria-hidden='true'>&times;</span></button>
+				$id=$row['id'];
+				//trae las preguntas de seguridad
+				//id pregunta_1,respuesta_1,pregunta_2,respuesta_2,id_empleado
 
-				<p>Correo enviado! Por favor revisa tu correo Electronico.</p>
-				<p><a class='alert-link' href=../../index.html>Login</a></p></div>";
+					// Query sent to database
+					$result = mysqli_query($conn, "SELECT pregunta_1,respuesta_1,pregunta_2,respuesta_2 FROM preguntas_seguridad WHERE id_empleado = '$id'");
+					// Variable $row hold the result of the query
+					$row = mysqli_fetch_assoc($result);
+					$p1=$row['pregunta_1'];
+					$p2=$row['pregunta_2'];
+
+				//echo "<p>Numero de empleado encontrado: ".$_POST['numero_empleado']."</p><p>Porfavor Responda las Preguntas de Seguridad!</p>";
+				
 			} else {
-				echo "Lo sentimos, su correo no se encuentra registrado.";
+				echo "Lo sentimos, su numero de empleado no se encontro.";
 			}
 			?>
+			<!------------------------------------------------------------------------------>
+
+			<h5>Preguntas de seguridad</h5>
+			
+			<form action="cambiar-password.php" method="post">
+				<div class="form-group">				
+						<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese su numero de empleado nuevamente" required value="">			
+				</div>
+				<a><?php if (mysqli_num_rows($result) > 0) {echo $p1;} ?></a>
+				<div class="form-group">				
+						<input type="text" class="form-control" name="respuesta_1" placeholder="Respuesta" required >			
+				</div>
+				<a><?php if (mysqli_num_rows($result) > 0) {echo $p2;} ?></a>
+				<div class="form-group">				
+						<input type="text" class="form-control" name="respuesta_2" placeholder="Respuesta" required>			
+				</div>
+				<button type="submit" class="btn btn-success btn-block">Verificar respuestas</button>
+			</form>
+			<!------------------------------------------------------------------------------>
+			
+
+		</div>
+		<div class="col-sm-12 col-md-6 col-lg-6">
+			<h3>Ayuda</h3><hr />
+			<p>1. - Ingresa nuevamente tu numero de empleado en el primer campo.</p>
+			<p>2. - Ingresa la respuesta de la primera pregunta en el segundo campo.</p>
+			<p>3. - Ingresa la respuesta de la segunda pregunta en el tercer campo.</p>
+			<p>4. - Preciona el boton para validar.</p>
 		</div>
 	</div>
 </div>

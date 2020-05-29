@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS prenomina;
 DROP TABLE IF EXISTS vacaciones;
 DROP TABLE IF EXISTS empleados;
 DROP TABLE IF EXISTS puestos;
+DROP TABLE IF EXISTS preguntas_seguridad;
 
 
 create table puestos (
@@ -218,6 +219,17 @@ create table vacaciones(
 
     /*todo one to many empleado - vacaciones */
 
+);
+/*nueva*/
+create table preguntas_seguridad(
+	id int primary key auto_increment NOT NULL,
+	pregunta_1 varchar(50) not null,
+	respuesta_1 varchar(45) not null,
+	pregunta_2 varchar(50) not null,
+	respuesta_2 varchar(45) not null,
+	id_empleado int not null,/* Llave foranea*/
+    INDEX(id_empleado),
+    FOREIGN KEY (id_empleado) REFERENCES empleados(id)
 );
 
 

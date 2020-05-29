@@ -38,10 +38,10 @@
 
 	// If count == 1 that means the email is already on the database
 	if ($count == 1) {
-	echo "<div class='alert alert-warning mt-4' role='alert'>
-					<p>Este numero de empleado ya existe en la base de datos.</p>
-					<p><a href='../../index.html'>Por favor inicie sesion aqui.</a></p>
-				</div>";
+		echo "<div class='alert alert-warning mt-4' role='alert'>
+						<p>Este numero de empleado ya existe en la base de datos.</p>
+						<p><a href='../../index.html'>Por favor inicie sesion aqui.</a></p>
+					</div>";
 	} else {	
 	
 		/*
@@ -53,32 +53,55 @@
 		$numero_empleado = $_POST['numero_empleado'];
 		$puesto = $_POST['puesto'];
 
+		//traer preguntas y respuestas de suguridad
+		$Seg_pregunta_1 = $_POST['Seg_pregunta_1'];
+		$Seg_pregunta_2 = $_POST['Seg_pregunta_2'];
+		$R_pregunta_1 = $_POST['R_pregunta_1'];
+		$R_pregunta_2 = $_POST['R_pregunta_2'];
+
 		    // check if the passwords match
 			if($_POST['password']==$_POST['password_verifica']){	
-			// **********
-			$pass = $_POST['password'];
-		
-			// The password_hash() function convert the password in a hash before send it to the database
-			$passHash = password_hash($pass, PASSWORD_DEFAULT);
+				// **********
+				$pass = $_POST['password'];
 			
-			// Query to send Name, Email and Password hash to the database
-			//$query = "INSERT INTO login_satit (nombre, numero_empleado, correo_electronico, password) VALUES ('$name', '$numero_empleado','$correo', '$passHash')";
-			
-			// ********-->> prototype emplados table
-			$query = "INSERT INTO empleados (nombre, apellidos, numero_empleado, password, id_puesto) VALUES ('$name', '$apellidos', '$numero_empleado', '$passHash','$puesto')";
+				// The password_hash() function convert the password in a hash before send it to the database
+				$passHash = password_hash($pass, PASSWORD_DEFAULT);
+				
+				// Query to send Name, Email and Password hash to the database
+				//$query = "INSERT INTO login_satit (nombre, numero_empleado, correo_electronico, password) VALUES ('$name', '$numero_empleado','$correo', '$passHash')";
+				
+				// ********-->> prototype emplados table
+				$query = "INSERT INTO empleados (nombre, apellidos, numero_empleado, password, id_puesto) VALUES ('$name', '$apellidos', '$numero_empleado', '$passHash','$puesto')";
+				
+				if (mysqli_query($conn, $query)) {
+					//guarda las preguntas de seguridad
+					// Query sent to database
+					$result = mysqli_query($conn, "SELECT id FROM empleados WHERE numero_empleado = '$numero_empleado'");
+					// Variable $row hold the result of the query
+					$row = mysqli_fetch_assoc($result);
+					$id=$row['id'];
+					//$R1_seguridad_Hash = password_hash($R_pregunta_1, PASSWORD_DEFAULT);
+					//$R2_seguridad_Hash = password_hash($R_pregunta_2, PASSWORD_DEFAULT);
+					//id	pregunta_1	respuesta_1	pregunta_2	respuesta_2	id_empleado		
+					$queryPreguntas ="INSERT INTO preguntas_seguridad (pregunta_1, respuesta_1, pregunta_2, respuesta_2, id_empleado) VALUES ('$Seg_pregunta_1', '$R_pregunta_1', '$Seg_pregunta_2', '$R_pregunta_2','$id')";
+					
+					if (mysqli_query($conn, $queryPreguntas)) {
+						echo "<div class='alert alert-success mt-4' role='alert'><h3>Cuenta creada.</h3>
+							<a class='btn btn-outline-primary' href='../../index.html' role='button'>Login</a></div>";
+					}
+					//---------------------------------------------
 
-			if (mysqli_query($conn, $query)) {
-				echo "<div class='alert alert-success mt-4' role='alert'><h3>Cuenta creada.</h3>
-				<a class='btn btn-outline-primary' href='../../index.html' role='button'>Login</a></div>";		
-			}else {
-				echo "Error: " . $query . "<br>" . mysqli_error($conn);
+					
+
+				}else {
+					echo "Error: " . $query . "<br>" . mysqli_error($conn);
+				}
+			}else{
+				echo "<script>
+						alert('Las contraseñas ingresadas no son iguales.');
+						window.location= '../../crear_cuenta.php'
+					</script>";
 			}
-		}else{
-			echo "<script>
-					alert('Las contraseñas ingresadas no son iguales.');
-					window.location= '../../crear_cuenta.html'
-				</script>";
-		}
 	}	
 	mysqli_close($conn);
 	?>
