@@ -1,52 +1,66 @@
 <?php
-include ("../../resources/php/Conect.php");
+include ("../../resources/php/Connection.php");
 include ("../Model/Course.php");
 
 
 // conect to dabatase
-$conect = new Connect($dbhost,$dbuser,$dbpass,$dbname);
-$conect->chekConection();
-
-if($conect) {
+$connection = new Connection();
+if( !$connection) {
     
-    $option = $_POST['option'];
-
-    switch($option)
-    {
-        case '1' :
-            $title = $_POST['titulo'];
-            $description = $_POST['descripcion'];
-            $date = $_POST['descripcion'];
-            $hour = $_POST['descripcion'];
-            $curso = new Course($title, $description, $date, $hour);
-            if($curso)
-            {
-                $curso->printObject();
-                $curso->save();
-                echo '\n se creo correctamente el curso\n';
-
-            }
-            else{
-                echo '\nerror al crear el curso\n
-                      Intentalo de nuevo';
-            }
-        break;
-        
-        case '2':
-            echo '\n Opcion 2 seleccionada';
-        break;
-        
-        default:
-            echo '\n Opcion desconocida \n';
-        break;
-            
-    }
+    echo 'Error en conexion';
+    die("Connection failed: " . mysqli_connect_error());
 
 }
 else
 {
-    echo 'Error en conexion';
-    $conect->closeConnection();
+
+    function menu ()
+    {
+
+   
+    $option = $_POST['option'];
+
+    switch($option)
+    {
+        case 'alta' :
+            $title = $_POST['title'];
+            $description = $_POST['description'];
+            $date = $_POST['date'];
+            $hour = $_POST['hour'];
+            $curso = new Course($title, $description, $date, $hour);
+            $query = $curso->save();
+            $conn = mysqli_connect($connection->__get('dbhost'),
+                                   $connection->__get('dbuser'),
+                                   $connection->__get('dbpass'),
+                                   $connection->__get('dbname'),
+                                );
+
+            if(mysqli_query($conn, $query))
+            {
+                return;
+
+              
+            }   
+            else{
+          
+                      echo '<br> Error al crear el curso <br>
+                      Intentalo de nuevo <br>';
+                      die("<br>Connection failed: ". mysqli_connect_error());
+            }
+        
+        break;
+        
+        case 'baja':
+            echo '<br> Opcion 2 seleccionada';
+        break;
+        
+        default:
+            echo '<br>Opcion desconocida \n';
+        break;
+            
+    }
+}
+
 }
 
 ?>

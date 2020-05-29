@@ -27,7 +27,7 @@ class section {
             var divMenu = document.createElement("div")      // crear div para el contenido
             
             division.setAttribute("id","division"+i)
-            division.setAttribute("class","division")
+            division.setAttribute("class","division card")
             divMenu.setAttribute("class","renglon renglon-menu")
             // create a button if the DOM sends true
             if( this.totalButtons >= 1)

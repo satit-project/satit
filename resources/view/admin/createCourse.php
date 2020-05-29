@@ -23,31 +23,16 @@ include ("../../php/conn.php");
 				<h1>Crear Curso</h1>
 				<p>De de alta un nuevo curso para los usuarios</p>		
 			</div>
-	</div>
+		</div>
 	
 	<div class="row">	
 		<div class="col-sm-12 col-md-6 col-lg-6">
+		<h3>Crea un curso nuevo</h3><hr/>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+		Crear Curso
+		</button>
 		
-		<h3>Crea un curso nuevo</h3><hr />
-		
-		<form method="post" action="../../Controller/Courses.php" method="POST">
-				
-		<div class="form-group">				
-				<input type="text" class="form-control" name="titulo" placeholder="Titulo del curso" required>			
-		  </div>
-		<div class="form-group">				
-				<input type="text" class="form-control" name="descripcion" placeholder="Descripcion curso" required>			
-		  </div>
-		<div class="form-group">				
-				<input type="date" class="form-control" name="fecha" placeholder="Fecha del curso" required>			
-		  </div>
-		<div class="form-group">				
-				<input type="text" class="form-control" name="horario" placeholder="Horario del curso. Ej: 8 - 10 AM" required>			
-		  </div>
-
-
-		  <button type="submit" class="btn btn-success btn-block" name="option" value="1">Crear nuevo curso</button>
-		</form>		
 		</div>		
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		<div class="container-fluid" >
@@ -68,7 +53,7 @@ include ("../../php/conn.php");
             
 
 			  <?php 
-					include '../../php/conn.php';
+					include CONN;
 						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 						// Check connection
 						if (!$conn) {
@@ -80,7 +65,10 @@ include ("../../php/conn.php");
 							$i=0;
 							while( $row = $result->fetch_assoc())
 							{
-								$puesto = $row["titulo"];
+								$titulo = $row["titulo"];
+								$descripcion = $row["descripcion"];
+								$fecha = $row["fecha"];
+								$horario = $row["horario"];
 								echo "<tr>";
 								echo '<td>'. $i. '</td>';
 								
@@ -101,7 +89,9 @@ include ("../../php/conn.php");
 								echo '</td>';
 								
 								echo '<td>
-								<button type="button" class="btn btn-danger">Baja</button>
+								<form action="../../Controller/Courses.php" method="post">
+								<input type="submit" class="btn btn-danger" name="option" value="baja"></button>
+								<form>
 									  </td>';
 								echo "</tr>";
 
@@ -120,6 +110,27 @@ include ("../../php/conn.php");
 	</div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear curso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <?php include NEWCOURSE ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
 
 
 

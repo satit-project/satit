@@ -13,11 +13,12 @@
 /*------------------Menu Items template----------------*/
 .division,.user-info
 {
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: x-large;
   font-family:Arial, Helvetica, sans-serif;
   color: rgb(117, 117, 117);
   box-sizing: border-box;
+  padding: 5%;
 
 }
 
@@ -42,13 +43,17 @@
   padding-inline-start: 1%;
   margin: 5px;
   height: 70vw;
-  border: 1px solid rgb(201, 201, 201);
-  box-shadow: 1px 2px 2px 1px gray;
-  border-radius: 3px;
   padding: 2%;
 }
 
-
+.logo-container
+{
+  margin-left:10%;
+}
+.login {
+  padding-top:8%;
+  margin-left:37%;
+}
 
 .contenido-derecha, .contenido-izquierda{
   width: 50%;
