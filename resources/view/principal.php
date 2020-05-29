@@ -39,8 +39,8 @@ session_start();
     
 
         <!-----------------Contenedor principal----------------->
-        <div class="contenedor">
-            <div class="contenido-derecha">
+        <div class="contenedor ">
+            <div class="contenido-derecha ">
 			    <!-----------------Logo----------------->
 				<div class="logo-container"></div>
 
@@ -66,9 +66,12 @@ session_start();
 
 
 			</div>
+			
+
+
 
             <!-----------------Renglones derecha----------------->
-            <aside class="contenido-izquierda">
+            <aside class="contenido-izquierda ">
 			
 				<div id="seccion-derecha">    
 						<script>
