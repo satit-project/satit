@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>		
-    	<title>Password Recovery</title>
+    	<title>Preguntas de seguridad</title>
     	<!-- Required meta tags -->
     	<meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,29 +45,27 @@
 					$p2=$row['pregunta_2'];
 
 				//echo "<p>Numero de empleado encontrado: ".$_POST['numero_empleado']."</p><p>Porfavor Responda las Preguntas de Seguridad!</p>";
+				echo "<h5>Preguntas de seguridad</h5>
+				
+					<form action='default-password.php' method='post'>
+						<div class='form-group'>				
+								<input type='text' class='form-control' name='numero_empleado' placeholder='Ingrese su numero de empleado nuevamente' required value=''>			
+						</div>
+						<a>".$p1."</a>
+						<div class='form-group'>				
+								<input type='text' class='form-control' name='respuesta_1' placeholder='Respuesta' required >			
+						</div>
+						<a>".$p2."</a>
+						<div class='form-group'>				
+								<input type='text' class='form-control' name='respuesta_2' placeholder='Respuesta' required>			
+						</div>
+						<button type='submit' class='btn btn-success btn-block'>Verificar respuestas</button>
+					</form>";
 				
 			} else {
 				echo "Lo sentimos, su numero de empleado no se encontro.";
 			}
 			?>
-			<!------------------------------------------------------------------------------>
-
-			<h5>Preguntas de seguridad</h5>
-			
-			<form action="cambiar-password.php" method="post">
-				<div class="form-group">				
-						<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese su numero de empleado nuevamente" required value="">			
-				</div>
-				<a><?php if (mysqli_num_rows($result) > 0) {echo $p1;} ?></a>
-				<div class="form-group">				
-						<input type="text" class="form-control" name="respuesta_1" placeholder="Respuesta" required >			
-				</div>
-				<a><?php if (mysqli_num_rows($result) > 0) {echo $p2;} ?></a>
-				<div class="form-group">				
-						<input type="text" class="form-control" name="respuesta_2" placeholder="Respuesta" required>			
-				</div>
-				<button type="submit" class="btn btn-success btn-block">Verificar respuestas</button>
-			</form>
 			<!------------------------------------------------------------------------------>
 			
 
@@ -86,5 +84,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	</body>
+</body>
 </html>
