@@ -33,33 +33,49 @@ session_start();
 			$password = $_POST['password'];
 			
 			// Query sent to database
-			$result = mysqli_query($conn, "SELECT  * FROM empleados INNER JOIN puestos ON empleados.id_puesto  = puestos.id");
-			
+			//$result = mysqli_query($conn, "SELECT  * FROM empleados INNER JOIN puestos ON empleados.id_puesto  = puestos.id");
+			//consulta la tabla de para obtener el password guardado
+			$result = mysqli_query($conn, "SELECT  * FROM empleados where numero_empleado='$numero_empleado'");
 			// Variable $row hold the result of the query
 			$row = mysqli_fetch_assoc($result);
 			
 			// Variable $hash hold the password hash on database
 			$hash = $row['password'];
+			$id= $row['id'];
+			$nombre= $row['nombre'];
+			$apellidos = $row['apellidos'];
+			$numero_em = $row['numero_empleado'];
+			$id_puesto=$row['id_puesto'];
 			
 			/* 
 			password_Verify() function verify if the password entered by the user
 			match the password hash on the database. If everything is OK the session
 			is created for one minute. Change 1 on $_SESSION[start] to 5 for a 5 minutes session.
 			*/
-			if (password_verify($_POST['password'], $hash)) {	
+			if (password_verify($password, $hash)) {	
+				//consultar nombre del puestos
+				$result = mysqli_query($conn, "SELECT puesto FROM puestos where id='$id_puesto'");
 				
-				$_SESSION['loggedin'] = true;
-				$_SESSION['name'] = $row['nombre'];
-				$_SESSION['apellidos'] = $row['apellidos'];
-				$_SESSION['numero_empleado'] = $row['numero_empleado'];
-				$_SESSION['puesto'] = $row['puesto'];
-				$_SESSION['start'] = time();
-				$_SESSION['expire'] = $_SESSION['start'] + (15 * 60) ;// despues de 15 min la sesion de cierra sola					
+				if(mysqli_num_rows($result) > 0){
+					$row = mysqli_fetch_assoc($result);
+					$nombre_puesto=$row['puesto'];
 				
-				//redirecciona al menu principal
-				header("Status: 301 Moved Permanently");
-				header("Location: ../view/principal.php");
-				exit;
+					$_SESSION['loggedin'] = true;
+					$_SESSION['name'] = $nombre;
+					$_SESSION['apellidos'] = $apellidos;
+					$_SESSION['numero_empleado'] = $numero_em;
+					$_SESSION['puesto'] = $nombre_puesto;
+					$_SESSION['start'] = time();
+					$_SESSION['expire'] = $_SESSION['start'] + (15 * 60) ;// despues de 15 min la sesion de cierra sola					
+					
+					//redirecciona al menu principal
+					header("Status: 301 Moved Permanently");
+					header("Location: ../view/principal.php");
+					exit;
+				}else{
+					echo "<div class='alert alert-danger mt-4' role='alert'>error al consultar tabla puesto
+					<p><a href='../../index.html'><strong>Falla!</strong></a></p></div>";
+				}
 				
 			} else {
 				echo "<div class='alert alert-danger mt-4' role='alert'>Numero de empleado o Contrasena incorrectos!!
