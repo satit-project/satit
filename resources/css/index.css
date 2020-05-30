@@ -25,6 +25,20 @@
         height: 0px;
     }
     to{
-        height: 110px;
+        height: 80px;
     }
+}
+
+.video{
+    width: 100%;
+    height: 480px;
+    display: flex;        
+    justify-content: center;
+}
+
+.video video{
+    border: solid 1px black;
+    justify-content: center;
+    width: 30%;
+    height: 250px; 
 }
