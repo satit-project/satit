@@ -7,6 +7,7 @@ class Connection extends PDO {
     private $dbname = "satit";
     private $dbuser = "root";
     private $dbpass = "";
+    private $status = "";
     
     public function __construct () {
         try{
@@ -23,6 +24,12 @@ class Connection extends PDO {
         }
     }
 
+
+    public function connect()
+    {
+        $this->status = mysqli_connect($this->dbhost,$this->dbuser,$this->dbpass,$this->dbname);
+        return $this->status;
+    }
 
 
     public function closeConnection()

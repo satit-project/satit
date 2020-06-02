@@ -85,13 +85,15 @@ create table encuesta_de_satisfaccion(
     
 );
 
+
 create table nomina(
 	id int primary key AUTO_INCREMENT  NOT NULL,
     horas int not null,
     pago int not null,
-    bono int,
+    bono int DEFAULT 0,
 	id_empleado INT NOT NULL,
     INDEX(id_empleado),
+    fecha date not null,
     
     FOREIGN KEY (id_empleado) 
     REFERENCES empleados(id)

@@ -1,3 +1,5 @@
+<?php include_once "../../../init.php"?>
+
 <!doctype html>
 
 <html lang="en">
@@ -52,7 +54,7 @@
             
 
 			  <?php 
-					include '../../php/conn.php';
+					include_once '../../php/conn.php';
 						$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 						// Check connection
 						if (!$conn) {

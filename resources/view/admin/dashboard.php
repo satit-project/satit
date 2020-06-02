@@ -47,7 +47,8 @@
           <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Inicio</a>
           <a class="list-group-item list-group-item-action" id="list-course-list" data-toggle="list" href="#list-course" role="tab" aria-controls="course">Crear Curso</a>
           <a class="list-group-item list-group-item-action" id="list-job-list" data-toggle="list" href="#list-job" role="tab" aria-controls="profile">Crear Puesto</a>
-          <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Encuesta de satisfaccion</a>
+          <a class="list-group-item list-group-item-action" id="list-user-list" data-toggle="list" href="#list-user" role="tab" aria-controls="user">Usuario</a>
+          <a class="list-group-item list-group-item-action" id="list-nomina-list" data-toggle="list" href="#list-nomina" role="tab" aria-controls="user">Subir nomina</a>
           <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
         </div>
       </div>
@@ -55,9 +56,10 @@
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">Home</div>
           <div class="tab-pane fade" id="list-course" role="tabpanel" aria-labelledby="list-course-list"><?php include_once ("optionCourse.php");?></div>
-          <div class="tab-pane fade" id="list-job" role="tabpanel" aria-labelledby="list-job-list">PUESTO</div>
-          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+          <div class="tab-pane fade" id="list-job" role="tabpanel" aria-labelledby="list-job-list"></div>
+          <div class="tab-pane fade" id="list-user" role="tabpanel" aria-labelledby="list-user-list"></div>
+          <div class="tab-pane fade" id="list-nomina" role="tabpanel" aria-labelledby="list-nomina-list"></div>
+          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list"></div>
         </div>
       </div>
     </div>
@@ -71,8 +73,9 @@
   $('#list-job').load('createJob.php');
   $('#list-course').load('createCourse.php');
 });*/
-$("#list-course-list").click("#list-course").load("optionCourse.php");
 $("#list-job-list").click("#list-job").load("optionJob.php");
+$("#list-course-list").click("#list-course").load("optionCourse.php");
+$("#list-user-list").click("#list-user").load("optionUser.php");
 </script>
 </html>
 

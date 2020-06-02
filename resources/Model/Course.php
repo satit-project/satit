@@ -1,13 +1,13 @@
 <?php 
+include_once "../../../factory.php";
 
-
-class Course{
+class Course implements ModelClass  {
     private $title ="";
     private $description="";
     private $date="";
     private $hour="";
 
-    function Course($title,$description,$date,$hour)
+    function Course($title, $description, $date, $hour)
     {
         $this->title=$title;
         $this->description=$description;
@@ -24,14 +24,15 @@ class Course{
     }
 
     function save(){
-        
+        $connection = new Connection();
+        $conn = $connection->connect();
         $query = "INSERT INTO cursos(titulo, descripcion, fecha, horario) 
                   VALUES (  '$this->title', 
                             '$this->description',
                             '$this->date',
                             '$this->hour'
                            )";
-
+        mysqli_query($conn,$query);
         return $query;
     }
 
@@ -53,6 +54,7 @@ class Course{
     }
 
 }
+
 
 
 
