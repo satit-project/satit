@@ -1,7 +1,7 @@
 <?php 
-include_once "../../../factory.php";
 
-class Course implements ModelClass  {
+
+class Course implements Model {
     private $title ="";
     private $description="";
     private $date="";

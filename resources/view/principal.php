@@ -1,7 +1,6 @@
 <?php
 session_start();
-include "../../init.php";
-include NOMINACONTROLLER;
+include_once ("../../factory.php");
 
 ?>
 <!DOCTYPE html>
@@ -45,6 +44,9 @@ include NOMINACONTROLLER;
 		?>
 		<!------------------------------------------------------------------>
     
+
+
+
 
         <!---principal container--->
         <div class="container-fluid row">
@@ -114,7 +116,9 @@ include NOMINACONTROLLER;
 						<div class="card-body">
 							<h5 class="card-title">Solicitar carta de trabajo</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Apareceran los datos de esta pantalla</h6>
-							<button class="btn btn-success col-3">Solicitar</button>
+							<form action=<?php echo MENUCONTROLLER.'?'.'option=cartaDeTrabajo&puesto=2&numero_empleado='.$_SESSION['numero_empleado'].''?> method="post" name="cartaDeTrabajo">
+								<input type="submit" class="btn btn-success col-3" value="Solicitar"></input>
+							</form>
 						</div>
 					</div><!---Solicitar carta--->
 
@@ -124,14 +128,22 @@ include NOMINACONTROLLER;
 						<div class="card-body">
 							<h5 class="card-title">Solicitar atencion</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic departamento donde te atenderemos</h6>
-							<button class="btn btn-success col-3" data-toggle="tooltip" data-placement="top" 
-									title="Atencion en Recursos Humanos">Recusos Hum.</button>
-							<button class="btn btn-success col-3"
-									data-toggle="tooltip" data-placement="top" 
-									title="Atencion en Capacitación y Desarrollo">Cap. y Desar.</button>
-							<button class="btn btn-success col-3"
-									data-toggle="tooltip" data-placement="top" 
-									title="Atencion en Finanzas">Finanzas</button>
+							<a class="btn btn-success col-3" 
+							   data-toggle="tooltip" data-placement="top" 
+								title="Atencion en Recursos Humanos"
+								href= '<?php echo MENUCONTROLLER.'?'.'option=atencion&puesto=2&departamento=rh'?>'
+								>Recusos Hum.</a>
+							<a class="btn btn-success col-3"
+								data-toggle="tooltip" 
+								data-placement="top" 
+								title="Atencion en Capacitación y Desarrollo"
+								href= '<?php echo MENUCONTROLLER.'?'.'option=atencion&puesto=2&departamento=cyd'?>'
+								>Cap. y Desar.</a>
+							<a class="btn btn-success col-3"
+								data-toggle="tooltip" 
+								data-placement="top" 
+								href= '<?php echo MENUCONTROLLER.'?'.'option=atencion&puesto=2&departamento=finanzas'?>'
+								title="Atencion en Finanzas">Finanzas</a>
 						</div>
 
 					</div><!---Solicitar atencion--->
@@ -141,9 +153,12 @@ include NOMINACONTROLLER;
 						<div class="card-body">
 							<h5 class="card-title">Solicitar repuestos</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic en el repuesto que solicitarás</h6>
-							<button class="btn btn-success col-3">Lentes</button>
-							<button class="btn btn-success col-3">Guantes</button>
-							<button class="btn btn-success col-3">Cubre bocas</button>
+							<a class="btn btn-success col-3" 
+								href= '<?php echo MENUCONTROLLER.'?'.'option=material&puesto=2&material=lentes'?>'>Lentes</a>
+							<a  class="btn btn-success col-3" 
+							    href= '<?php echo MENUCONTROLLER.'?'.'option=material&puesto=2&material=guantes'?>'>Guantes</a>
+							<a  class="btn btn-success col-3" 
+								href= '<?php echo MENUCONTROLLER.'?'.'option=material&puesto=2&material=cbocas'?>'>Cubre bocas</a>
 						</div>
 					</div><!---Solicitar repuestos--->
 
@@ -151,9 +166,10 @@ include NOMINACONTROLLER;
 				   <div class="card col-12">
 					   <div class="card-body">
 						   <h5 class="card-title">Sugerencias</h5>
-						   <h6 class="card-subtitle mb-2 text-muted">Envianos tus sugerencias</h6>
-						   <form>
-							   <input type="text" class="col-6  input-tex  use-keyboard-input" maxlength="255">
+						   <h6 class="card-subtitle mb-2 text-muted"
+						  		 >Envianos tus sugerencias</h6>
+						   <form method="post" action='<?php echo MENUCONTROLLER.'?'.'option=sugerencias'?>' >
+							   <input type="text" class="col-6  input-tex  use-keyboard-input" maxlength="255" name="sugerencia" id="sugerencia">
 							   <input type="submit" class="btn btn-success col-3" value="Enviar" >
 						   </form>
 	   
@@ -166,7 +182,9 @@ include NOMINACONTROLLER;
 						<div class="card-body">
 							<h5 class="card-title">Curso</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic para inscribirte</h6>
-							<button class="btn btn-success col-3">Inscribirme</button>
+							<a class="btn btn-success col-3"
+							href= '<?php echo MENUCONTROLLER.'?'.'option=curso&puesto=2'?>'
+							>Inscribirme</a>
 		
 						</div>
 					</div><!---Inscribirme al acurso--->

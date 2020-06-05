@@ -7,12 +7,21 @@ define('JOB', ROOT_DIR."/resources/view/admin/optionJob.php");
 define('USER', ROOT_DIR."/resources/view/admin/optionUser.php");
 define('CONN',ROOT_DIR."/resources/php/conn.php");
 define('CONNECTION',ROOT_DIR."/resources/php/Connection.php");
+define('CREATEACCOUNT',ROOT_DIR."/resources/php/create-account.php");
 
 // Models
 define('NOMINAMODEL',ROOT_DIR."/resources/Model/NominaModel.php");
-define('COURSEMODEL', ROOT_DIR."/resources/Model/Course.php");
+define('COURSEMODEL', ROOT_DIR."/resources/Model/CourseModel.php");
+define('CARTATRABAJOMODEL', ROOT_DIR."/resources/Model/CartaTrabajoModel.php");
+define('ACCOUNTMODEL', ROOT_DIR."/resources/Model/AccountModel.php");
 // Controllers
 define('NOMINACONTROLLER',ROOT_DIR."/resources/Controller/NominaController.php");
+define('COURSECONTROLLER',ROOT_DIR."/resources/Controller/CourseController.php");
+define('MENUCONTROLLER',ROOT_URL."/resources/Controller/MenuController.php");
+define('ACCOUNTCONTROLLER',ROOT_URL."/resources/Controller/AccountController.php");
+
+//interface
+define('MODELINTERFACE',ROOT_DIR."/resources/Model/Model.php");
 
 
 ?>

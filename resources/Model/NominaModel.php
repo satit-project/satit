@@ -1,7 +1,6 @@
 <?php 
-include_once "../../../factory.php";
 
-class NominaModel implements ModelClass{
+class NominaModel implements Model{
     private $employee="";
     private $payroll="";
     private $hours="";

@@ -1,6 +1,6 @@
 <?php 
 
-interface ModelClass {
+interface Model {
 
      public function save();
 }

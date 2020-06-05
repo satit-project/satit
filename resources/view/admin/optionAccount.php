@@ -1,3 +1,4 @@
+<?include_once ("../factory.php")?>
 <!doctype html>
 
 <html lang="en">
@@ -10,7 +11,6 @@
 
     <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/custom.css">
   </head>
   <body>
   
@@ -27,7 +27,7 @@
 		
 		<h3>Crear una Cuenta</h3><hr />
 		
-		<form method="post" action="resources/php/create-account.php" method="POST">
+		<form method="post" action="<?php echo ACCOUNTCONTROLLER?>" method="POST">
 			<div class="form-group">				
 				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
 		  </div>
@@ -49,7 +49,7 @@
 					
 					<option selected>Selecciona...</option>
 					<?php 
-									include 'resources/php/conn.php';
+									include '../php/conn.php';
 										$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 										// Check connection
 										if (!$conn) {

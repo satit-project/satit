@@ -133,9 +133,7 @@ create table solicitud_repuestos(
 
 create table carta_de_trabajo(
 	id int primary key auto_increment not null,
-    fecha date,
-    motivo varchar(45),
-    
+    fecha date DEFAULT NOW(),
     id_empleado int not null,/* Llave foranea*/
     INDEX(id_empleado),
     FOREIGN KEY (id_empleado) 
@@ -218,7 +216,7 @@ create table vacaciones(
     FOREIGN KEY (id_empleado)
     REFERENCES
     empleados(id)
-    ON DELETE CASCADE
+
 
     /*todo one to many empleado - vacaciones */
 
