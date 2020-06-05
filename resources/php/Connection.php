@@ -32,7 +32,7 @@ class Connection extends PDO {
     }
 
 
-    public function closeConnection()
+    public function close()
     {
         mysqli_close($this->conn);
     }

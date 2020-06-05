@@ -1,4 +1,3 @@
-<?include_once ("../factory.php")?>
 <!doctype html>
 
 <html lang="en">
@@ -27,16 +26,16 @@
 		
 		<h3>Crear una Cuenta</h3><hr />
 		
-		<form method="post" action="<?php echo ACCOUNTCONTROLLER?>" method="POST">
+		<form action= "../../Controller/AccountController.php?option=up" method="POST">
 			<div class="form-group">				
 				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
 		  </div>
 			<div class="form-group">				
-				<input type="text" class="form-control" name="apellidos" placeholder="Ingrese sus Apellidos" required>			
+				<input type="text" class="form-control" name="sourname" placeholder="Ingrese sus Apellidos" required>			
 		  </div>
 		  
 		  <div class="form-group">				
-				<input type="text" class="form-control" name="numero_empleado" placeholder="Ingrese Numero de Empleado" required>
+				<input type="text" class="form-control" name="employeeCode" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
 
@@ -45,11 +44,11 @@
 				<div class="input-group-prepend">
 					<label class="input-group-text" for="puesto">Puesto</label>
 				</div>
-				<select class="custom-select" id="puesto" name="puesto">
+				<select class="custom-select" id="puesto" name="job">
 					
 					<option selected>Selecciona...</option>
-					<?php 
-									include '../php/conn.php';
+					<?php 			/// todo: clear this section
+									include '../../php/conn.php';
 										$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 										// Check connection
 										if (!$conn) {

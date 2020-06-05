@@ -34,6 +34,8 @@ class AccountModel implements Model {
 
     public function save() {
         $conn = new Connection();
+        
+        // save to DB employee data
         $queryEmployees = "INSERT INTO emplados(
                             nombre, apellidos, 
                             numero_emplado, password,
@@ -46,23 +48,47 @@ class AccountModel implements Model {
                             $this->jobCode)
                             ";
         $resultEmployees = mysqli_query($conn,$queryEmployees);
-        
-        $queryQuestions = "INSERT INTO preguntas_seguridad(
-                            pregunta_1, respuesta_1, 
-                            pregunta_2,respuesta_2,
-                            id_empleado)
-                            
-                            VALUES( $this->question1,
-                            $this->answer1,
-                            $this->question2,
-                            $this->answer2,
-                            $this->employeeCode
-                            ";
-
-        $resultQuestions = mysqli_query($conn,$queryQuestions);
+        // close connection;
+        $conn->close();
+        // save securityQuestions
+        $resultQuestions = saveSecurityQuestions();
         
         return [$resultEmployees, $resultQuestions];
     }
+    
+    public function saveSecurityQuestions() {
+        $conn = new Connection();
+         
+         // save to DB security questions
+        $queryQuestions = "INSERT INTO preguntas_seguridad(
+            pregunta_1, respuesta_1, 
+            pregunta_2,respuesta_2,
+            id_empleado)
+            
+            VALUES( $this->question1,
+            $this->answer1,
+            $this->question2,
+            $this->answer2,
+            $this->employeeCode
+            ";
+
+        $resultQuestions = mysqli_query($conn,$queryQuestions);
+        // close connection;
+        $conn->close();
+        
+        return  $resultQuestions;
+    }
+                   
+    function printObject ()
+    {
+      echo "Course: Funcion print Objetc <br>";
+      echo " name : $this->name <br>";
+      echo " sourname : $this->sourname <br>";
+      echo " employee code : $this->employeeCode <br>";
+      echo " password : $this->password <br>";
+      echo " jobCode : $this->jobCode <br>";
+    }
+
 
 }
 
