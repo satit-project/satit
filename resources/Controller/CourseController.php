@@ -32,7 +32,7 @@ else
             $conn = mysqli_connect($connection->__get('dbhost'),
                                    $connection->__get('dbuser'),
                                    $connection->__get('dbpass'),
-                                   $connection->__get('dbname'),
+                                   $connection->__get('dbname')
                                 );
 
             if(mysqli_query($conn, $query))

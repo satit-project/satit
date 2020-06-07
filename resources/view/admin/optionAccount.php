@@ -35,7 +35,7 @@
 		  </div>
 		  
 		  <div class="form-group">				
-				<input type="text" class="form-control" name="employeeCode" placeholder="Ingrese Numero de Empleado" required>
+				<input type="text" class="form-control" name="employeeID" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
 
@@ -44,7 +44,7 @@
 				<div class="input-group-prepend">
 					<label class="input-group-text" for="puesto">Puesto</label>
 				</div>
-				<select class="custom-select" id="puesto" name="job">
+				<select class="custom-select" id="puesto" name="jobID">
 					
 					<option selected>Selecciona...</option>
 					<?php 			/// todo: clear this section

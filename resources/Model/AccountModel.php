@@ -2,95 +2,90 @@
 
 class AccountModel implements Model {
 
-    private $name="";
-    private $sourname="";
-    private $employeeCode="";
-    private $jobCode="";
-    private $password="";
-    private $question1="";
-    private $question2="";
-    private $answer1="";
-    private $answer2="";
+    public $employeeID="";
+    public $name="";
+    public $sourname="";
+    public $password="";
+    public $jobID="";
+    
+    function AccountModel($employeeID, 
+                          $name, 
+                          $sourname, 
+                          $password,
+                          $jobID) {
 
-
-    function AccountModel($name, $sourname, $employeeCode, $jobCode,$password,
-                       $question1,
-                        $question2,
-                        $answer1,
-                        $answer2) {
-
+                $this->employeeID = $employeeID;
                 $this->name = $name;
                 $this->sourname = $sourname;
-                $this->employeeCode = $employeeCode;
-                $this->jobCode = $jobCode;
-                $this->password = password_hash($password);
-                $this->question1 = $question1;
-                $this->question2 = $question2;
-                $this->$answer1 = $answer1;
-                $this->$answer2 = $answer2;
+                $this->password = $password;
+                $this->jobID= $jobID;
 
-    }
-
-
-    public function save() {
-        $conn = new Connection();
-        
-        // save to DB employee data
-        $queryEmployees = "INSERT INTO emplados(
-                            nombre, apellidos, 
-                            numero_emplado, password,
-                            id_puesto)
-                            
-                            VALUES($this->name,
-                            $this->sourname,
-                            $this->employeeCode,
-                            $this->password,
-                            $this->jobCode)
-                            ";
-        $resultEmployees = mysqli_query($conn,$queryEmployees);
-        // close connection;
-        $conn->close();
-        // save securityQuestions
-        $resultQuestions = saveSecurityQuestions();
-        
-        return [$resultEmployees, $resultQuestions];
     }
     
-    public function saveSecurityQuestions() {
-        $conn = new Connection();
-         
-         // save to DB security questions
-        $queryQuestions = "INSERT INTO preguntas_seguridad(
-            pregunta_1, respuesta_1, 
-            pregunta_2,respuesta_2,
-            id_empleado)
-            
-            VALUES( $this->question1,
-            $this->answer1,
-            $this->question2,
-            $this->answer2,
-            $this->employeeCode
-            ";
-
-        $resultQuestions = mysqli_query($conn,$queryQuestions);
-        // close connection;
-        $conn->close();
+    
+    private function checkIfExists($conn){
+        // query to check if the user id already saved in database
+        $employeeCheckDB = "SELECT * FROM empleados WHERE id = 'this->employeeID' ";
+        $result = mysqli_query($conn,$employeeCheckDB);
+        // count for query result
+        $count = mysqli_num_rows($result);
         
-        return  $resultQuestions;
+        if($count >= 1)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
-                   
-    function printObject ()
-    {
-      echo "Course: Funcion print Objetc <br>";
-      echo " name : $this->name <br>";
-      echo " sourname : $this->sourname <br>";
-      echo " employee code : $this->employeeCode <br>";
-      echo " password : $this->password <br>";
-      echo " jobCode : $this->jobCode <br>";
+    
+    
+    public function save() {
+        $connection = new Connection();
+        $connection->connect();
+        $conn = $connection->__get('status');             
+         // query save to DB employee data
+        $query = "INSERT INTO empleados(id,nombre,apellidos,password,puesto_id) 
+                         VALUES('$this->employeeID','$this->name','$this->sourname',
+                                '$this->password','$this->jobID')";
+                         
+                         
+        if(!$this->checkIfExists($conn)) {     
+            // save to database new employee  
+            $resultEmployees = mysqli_query($conn,$query);
+            // check result of this query
+            $this->checkResult($conn,$resultEmployees);
+            // close connection;
+            $conn->close();
+        }else{
+            echo "<br>Account : save error<br>";
+        }
+   
+
+    
     }
+    
+    
+    
+    function checkResult($conn,$resultEmployees) {
+        
+        $statusEmployee="";
+        if(mysqli_error($conn))
+        {
+            echo "Error: " . $resultEmployees . "<br>" . mysqli_error($conn);
+            $statusEmployee=false;
+        }else{
+            echo "<br>Account is saved in database succesfuly";
+            $statusEmployee=true;
+        }
+        return $statusEmployee;
+    }
+    
+    
 
 
+
+    
 }
-
 
 ?>

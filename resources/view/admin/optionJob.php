@@ -27,16 +27,17 @@
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
 		<h3>Crea un puesto nuevo</h3><hr />
-		
-		<form method="post" action="../../php/job.php" method="POST">
-				
-		<div class="form-group">				
-				<input type="text" class="form-control" name="puesto" placeholder="Nombre del puesto" required>			
-		  </div>
+			
+			<form method="post" action="../../Controller/JobController.php?option=up" method="POST">
+					
+			<div class="form-group">				
+					<input type="text" class="form-control" name="job" placeholder="Nombre del puesto" required>			
+			</div>
 
-		  <button type="submit" class="btn btn-success btn-block">Crear nuevo puesto</button>
+			<button type="submit" class="btn btn-success btn-block">Crear nuevo puesto</button>
 		</form>		
-		</div>		
+	</div>	
+			
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		<div class="container-fluid" >
         <div class="row">

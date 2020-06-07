@@ -8,8 +8,6 @@ ON empleados.id_puesto  = puestos.id  ;
 
 
 use satit;
-SELECT * FROM empleados;
-use satit;
 SELECT * FROM nomina;
 use satit;
 INSERT INTO  nomina (id_empleado, horas, pago,fecha ) VALUES (2,40,2800,"2020-05-01")
@@ -24,5 +22,10 @@ SELECT * from carta_de_trabajo;
 use satit;
 SHOW TABLES;
 
-USE SATIT;
+USE satit;
 SELECT * FROM carta_de_trabajo;
+USE satit;
+SELECT * FROM satit.preguntas_seguridad;
+
+use satit;
+SELECT * FROM empleados;

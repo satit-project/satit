@@ -1,29 +1,37 @@
 <?php
 include_once("../../factory.php");
-$option = $_REQUEST["option"];
-echo "<br> option:".$option."<br>";
-// todo check-login credentials
+// get option selected from user
+    $option = $_REQUEST["option"];
+    // todo check-login credentials
+    // todo Validate : verify empty fields
+
+// available options
 switch($option)
 {
     case "up":
-        echo "create account";
+        echo "create account option was selected<br>";
         include_once ACCOUNTMODEL;
-        $name = $_REQUEST['name'];
-        $sourname = $_REQUEST['sourname'];
-        $employeeCode = $_REQUEST['employeeCode'];
-        $job = $_REQUEST['job'];
-        $password = $_REQUEST['password'];
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        $question1 = $_REQUEST['Seg_pregunta_1'];
-        $question2 = $_REQUEST['Seg_pregunta_2'];
-        $answer1 = $_REQUEST['R_pregunta_1'];
-        $answer2 = $_REQUEST['R_pregunta_2'];
-        $account = new AccountModel( $name, $sourname, $passwordHash,
-                                    $employeeCode, $job, $question1,
-                                    $question2, $answer1, $answer2);
-        $account::printObject();
-        $account->save();
+        include_once SECURITYQUESTIONMODEL;
 
+        // create new account object
+        $account = new AccountModel( 
+                                     $_REQUEST['employeeID'],
+                                     $_REQUEST['name'], 
+                                     $_REQUEST['sourname'],  
+                                     password_hash($_REQUEST['password'], PASSWORD_DEFAULT),
+                                     $job = $_REQUEST['jobID']);
+        
+       
+        // create new security questions object
+        $securityQuestion = new SecurityQuestionModel($_REQUEST['Seg_pregunta_1'],
+                                                      password_hash($_REQUEST['R_pregunta_1'], PASSWORD_DEFAULT), 
+                                                      $_REQUEST['Seg_pregunta_2'], 
+                                                      password_hash($_REQUEST['R_pregunta_2'], PASSWORD_DEFAULT),
+                                                      $_REQUEST['employeeID']);
+        
+       // save to database
+       $account->save();
+       $securityQuestion->save();
     break;
     case "update":
         echo "update account";
@@ -32,7 +40,7 @@ switch($option)
         echo "down account";
     break;
     default:
-    echo "opcionInvalida";
+    echo "Invalid option";    
     break;
 }
 

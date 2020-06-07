@@ -32,20 +32,19 @@ session_start();
 			$numero_empleado = $_POST['numero_empleado']; 
 			$password = $_POST['password'];
 			
+			echo $numero_empleado;
+			
 			// Query sent to database
-			//$result = mysqli_query($conn, "SELECT  * FROM empleados INNER JOIN puestos ON empleados.id_puesto  = puestos.id");
-			//consulta la tabla de para obtener el password guardado
-			$result = mysqli_query($conn, "SELECT  * FROM empleados where numero_empleado='$numero_empleado'");
+			$queryLogin = "SELECT * FROM empleados where id ='$numero_empleado'";
+			$result = mysqli_query($conn, $queryLogin);
 			// Variable $row hold the result of the query
 			$row = mysqli_fetch_assoc($result);
-			
 			// Variable $hash hold the password hash on database
-			$hash = $row['password'];
 			$id= $row['id'];
 			$nombre= $row['nombre'];
 			$apellidos = $row['apellidos'];
-			$numero_em = $row['numero_empleado'];
-			$id_puesto=$row['id_puesto'];
+			$hash = $row['password'];
+			$puesto_id=$row['puesto_id'];
 			
 			/* 
 			password_Verify() function verify if the password entered by the user
@@ -54,24 +53,31 @@ session_start();
 			*/
 			if (password_verify($password, $hash)) {	
 				//consultar nombre del puestos
-				$result = mysqli_query($conn, "SELECT puesto FROM puestos where id='$id_puesto'");
-				
+				$result = mysqli_query($conn, "SELECT puesto FROM puestos where id='$puesto_id'");
+				$row = mysqli_fetch_assoc($result);
+				$puesto=$row['puesto'];
+
 				if(mysqli_num_rows($result) > 0){
 					$row = mysqli_fetch_assoc($result);
-					$nombre_puesto=$row['puesto'];
-				
-					$_SESSION['loggedin'] = true;
-					$_SESSION['name'] = $nombre;
-					$_SESSION['apellidos'] = $apellidos;
-					$_SESSION['numero_empleado'] = $numero_em;
-					$_SESSION['puesto'] = $nombre_puesto;
+					$_SESSION['id'] = $id;
+					$_SESSION['puesto'] = $puesto;
+					$_SESSION['puesto_id'] = $puesto_id;
 					$_SESSION['start'] = time();
 					$_SESSION['expire'] = $_SESSION['start'] + (15 * 60) ;// despues de 15 min la sesion de cierra sola					
 					
 					//redirecciona al menu principal
-					header("Status: 301 Moved Permanently");
-					header("Location: ../view/principal.php");
-					exit;
+					//header("Status: 301 Moved Permanently");
+
+					if( $puesto_id = 1 ){
+						//header("Location: ../view/admin/dashboard.php");
+						echo $puesto;
+						echo $puesto_id;
+						exit;
+					}
+
+					else{
+						echo "<br> Login error<br>";
+					}
 				}else{
 					echo "<div class='alert alert-danger mt-4' role='alert'>error al consultar tabla puesto
 					<p><a href='../../index.html'><strong>Falla!</strong></a></p></div>";
