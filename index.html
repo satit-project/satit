@@ -17,93 +17,48 @@
     </head>
     <body>
         <header>
-
         </header>
-        <style>
-            .video{
-                width: 100%;
-                height: 480px;
-                display: flex;        
-                justify-content: center;
-            }
-
-            .video video{
-                border: solid 1px black;
-                justify-content: center;
-                width: 35%;
-                height: 250px; 
-            }
-        </style>
-
-                <!-- LOGIN -->
+            <!-- LOGIN -->
             <div class="container-fluid contenido">
-      
-                    <div class="login card-login"> 
-                        <div class="logo-container">    
-                            <img class="img-logo">
-                        </div>
-                        
-                        <form action="resources/php/check-login.php" method="post">
-                    
-                        <div >
-                            <input type="text"
-                                   class="input-text form-control col-10 use-keyboard-input" 
-                                   name="numero_empleado" 
-                                   placeholder="Numero de empleado" 
-                                   maxlength="16" 
-                                   required>
-                        </div>
-                        <div >
-                            <!--<input type="password" class="input-text" name="password" placeholder="password" required>-->
-                            <input type="password" 
-                                   class="input-text form-control col-10 input-lg use-keyboard-input" 
-                                   name="password" 
-                                   placeholder="Contraseña"
-                                   required>  
-                        </div>
-                        <div>
-                            <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
-                            <button type="submit" 
-                                    class="btn btn-ingresar col-10 btn-info btn-block">INGRESAR</button>
-                        </div>
-                        </form>
-
-                        <div class="btn col-10 btn-outline-info">
-                            <div class="menu">
-                                <a>Olvidaste tu contrasena?</a>
-                                    <div>
-                                        <form action="resources/php/password-recovery.php" method="post">
-                                            <input type="text" class="input-text form-control" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
-                                            <button class="recuperar">Recuperar</button>
-                                        </form>
-                                    </div>
-
-                                
+                <div class="login card-login"> 
+                    <div class="logo-container">    
+                        <img class="img-logo">
+                    </div>
+                    <form action="resources/php/check-login.php" method="post">
+                    <div >
+                        <input type="text"
+                                class="input-text form-control col-10 use-keyboard-input" 
+                                name="numero_empleado" 
+                                placeholder="Numero de empleado" 
+                                maxlength="16" 
+                                required>
+                    </div>
+                    <div >
+                        <!--<input type="password" class="input-text" name="password" placeholder="password" required>-->
+                        <input type="password" 
+                                class="input-text form-control col-10 input-lg use-keyboard-input" 
+                                name="password" 
+                                placeholder="Contraseña"
+                                required>  
+                    </div>
+                    <div>
+                        <!-- <a href="resources/html/menu.html" class="btn btn-ingresar">INGRESAR</a> -->
+                        <button type="submit" 
+                                class="btn btn-ingresar col-10 btn-info btn-block">INGRESAR</button>
+                    </div>
+                    </form>
+                    <div class="btn col-10 btn-outline-info">
+                        <div class="menu">
+                            <a>Olvidaste tu contrasena?</a>
+                            <div>
+                                <form action="resources/php/password-recovery.php" method="post">
+                                    <input type="text" class="input-text form-control" name="numero_empleado" placeholder="Numero de empleado" maxlength="16" required>
+                                    <button class="recuperar">Recuperar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
-            
-            
-            
-            <div class="video">
-                    
-                <video id="video" controls onmouseover="this.play()" onmouseout="" muted src="resources/video/video01.mp4" type="video/mp4" width="330" height="240" onclick="playVideo()"></video>
-                    
-            </div>
-
-            <script>
-                let video = document.getElementById("video");
-               
-               function playVideo(){
-                   //video.pause();
-                   video.muted=false;
-                   video.style.width='720px';
-                   video.style.height='480px';
-                   //video.style.margin.left='10%';
-                   //video.style.filter='grayscale(100%)';
-               }
-            </script>
-
     </body>
 </html>
