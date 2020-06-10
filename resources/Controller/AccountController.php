@@ -32,6 +32,7 @@ switch($option)
        // save to database
        $account->save();
        $securityQuestion->save();
+       return header(DASHBOARD,true);
     break;
     case "update":
         echo "update account";
