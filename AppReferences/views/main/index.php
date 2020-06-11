@@ -6,12 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once 'views/header.php'; ?>
     
     <div id="main">
-        <h1 class="center">H&R</h1>
-        <h2 class="center">Bienvenido SATIT</h2>
-        <h3 class="center">Sistema Agil de Tramites Internos para los Trabajadores</h3>
+        <h1 class="center">Bienvenido al sito</h1>
     </div>
     
+    <?php require_once 'views/footer.php'; ?>
 </body>
 </html>

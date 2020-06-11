@@ -1,3 +1,3 @@
-<div class="footer">  
+<div id="footer">  
     @ Emmanuel 2020
 </div>
