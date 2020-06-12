@@ -24,11 +24,18 @@
                     <div class="logo-container">    
                         <img class="img-logo">
                     </div>
-                    <form action="resources/php/check-login.php" method="post">
+                    <form action="" method="post">
+                    <?php 
+                    
+                    if(isset($errorLogin)){
+                        echo $errorLogin;
+                    }
+                    
+                    ?>
                     <div >
                         <input type="text"
                                 class="input-text form-control col-10 use-keyboard-input" 
-                                name="numero_empleado" 
+                                name="userID" 
                                 placeholder="Numero de empleado" 
                                 maxlength="16" 
                                 required>

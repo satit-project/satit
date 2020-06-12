@@ -1,13 +1,13 @@
 <?php
 
-class userSession extends Controller{
+class UserSession extends Controller{
     
     function __construct(){
         parent::__construct();
         session_start();
     }
     
-    public function setCurrerntUser($userID) {
+    public function setCurrentUser($userID) {
         $_SESSION['user']= $userID;
     }
     

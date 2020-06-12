@@ -11,10 +11,10 @@ class user extends Model{
          $this->password="";
     }
     
-    public function userExist($userID, $pass ){
-        $md5pass = md4($pass);
+    public function userExists($userID, $pass ){
+        $md5pass = md5($pass);
         
-        $query = $this->db->conect()->prepare('SELECT * FROM empleados WHERE id = :userID and password = :pass');
+        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :userID and password = :pass');
         $query->execute(['userID'=> $userID, 'pass'=> $md5pass]);
         
         if($query->rowCount()){

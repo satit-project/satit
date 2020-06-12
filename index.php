@@ -20,11 +20,28 @@ $user = new User();
 
 if(isset($_SESSION['userID'])){
     echo "hay session";
+    $user->setUser($userSession->getCurrentUser());
+    include_once('views/home/principal.php');
+
 }elseif (isset($_POST['userID']) && isset($_POST['password'])){
-    echo "Validacion de login";
-    
+   // echo "Validacion de login";
+     $userForm = $_POST['userID'];
+     $passForm = $_POST['password'];
+     
+     if($user->userExists($userForm, $passForm)) {
+         //echo " usuario validado";
+         $userSession->setCurrentUser($userForm);
+         $user->setUser($userForm);
+         
+         include_once('views/principal.php');
+         
+     }else{
+         $errorLogin =  " usuario y/o pasword incorrecto";
+         /// ONLY FOR TESTING, NEED TO ((REMOVE))
+         include_once('views/dashboard/index.php');
+          }
 }else{
-    echo "Login";
+    include_once 'views/login/index.php';
 }
 
 $app = new App();
