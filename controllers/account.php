@@ -4,15 +4,15 @@ class Account extends Controller{
     
     function __construct(){
         parent::__construct(); 
-        $this->view->mensaje="";
+        $this->view->message="";
         $this->view->empleados = [];
-
+        $this->view->jobs = [];
     }
     
     function render() {
+        $jobs = $this->model->getJobs();
+        $this->view->jobs = $jobs;
         $this->view->render('account/index');
-
-        
     }
     
     function createNewAccount(){
@@ -25,7 +25,8 @@ class Account extends Controller{
         $question2 = $_POST['question2'];
         $answer2 = $_POST['answer2'];
         
-        $mensaje ="";
+        $mensaje ="Creando cuenta...";
+        echo $mensaje;
         
         if($this->model->insert(['userID'=>$userID,
                                  'name'=> $name,
@@ -37,7 +38,7 @@ class Account extends Controller{
                                  'answer2'=> $answer2,
                                  
                                  ])) {
-            $mensaje=  "Nuevo alumno creado";
+            $mensaje=  "Nuevo empleado creado";
         }else{
             $mensaje=  "La matricula ya existe ";
 
@@ -48,7 +49,7 @@ class Account extends Controller{
     
     public function getJobs()
     {
-        $this->model->getJobs();
+        return $this->model->getJobs();
     }
 
 }

@@ -25,7 +25,13 @@
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
 		<h3>Crear una Cuenta</h3><hr />
+		<?php 	
 		
+		$jobs = $this->jobs; 
+		echo $jobs;
+		
+		
+		?>
 		<form action= "<?php echo constant('URL')?>Account/createNewAccount" method="POST">
 			<div class="form-group">				
 				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
@@ -48,7 +54,7 @@
 					
 					<option selected>Selecciona...</option>
 					<?php 			/// todo: clear this section
-									include '../../php/conn.php';
+									/*include '../../php/conn.php';
 										$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 										// Check connection
 										if (!$conn) {
@@ -67,7 +73,10 @@
 												echo '</option>';
 											}
 										}
-									}
+									}*/
+									
+									
+								
 								
 				 ?>
   				</select>

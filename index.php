@@ -14,6 +14,7 @@ require_once 'controllers/ayuda.php';
 require_once 'controllers/userSession.php';
 // models
 require_once 'models/user.php';
+require_once 'models/job.php';
 
 $userSession = new UserSession();
 $user = new User();
@@ -22,7 +23,7 @@ $app = new App();
 if(isset($_SESSION['userID'])){
     echo "hay session";
     $user->setUser($userSession->getCurrentUser());
-    include_once('views/home/principal.php');
+    include_once('libs/app.php');
 
 }elseif (isset($_POST['userID']) && isset($_POST['password'])){
    // echo "Validacion de login";
@@ -34,17 +35,17 @@ if(isset($_SESSION['userID'])){
          $userSession->setCurrentUser($userForm);
          $user->setUser($userForm);
          
-         include_once('views/principal.php');
+         include_once('libs/app.php');
          
      }else{
          $errorLogin =  " usuario y/o pasword incorrecto";
          /// ONLY FOR TESTING, NEED TO ((REMOVE))
          
-         include_once 'views/login/index.php';
+         include_once('libs/app.php');
          
           }
 }else{
-        include_once 'views/login/index.php';
+    include_once('libs/app.php');
 }
 
 

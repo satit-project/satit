@@ -29,3 +29,6 @@ SELECT * FROM satit.preguntas_seguridad;
 
 use satit;
 SELECT * FROM empleados;
+
+use satit;
+SELECT * FROM puestos;

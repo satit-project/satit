@@ -1,5 +1,5 @@
 <?php
-
+include_once('job.php');
 class AccountModel extends Model{
     
     
@@ -29,12 +29,20 @@ class AccountModel extends Model{
     
     public function getJobs()
     {
-        $query = $this->db->connect()->prepare("SELECT * FROM puestos");
+        $tiems = [];
         try{
-            $query->execute();
-            return true;
+            $query = $this->db->connect()->query("SELECT * FROM puestos");
+            while($row = $query->fetch())
+            {
+                $item = new Job();
+                $item->jobID= $row['id'];
+                $item->job = $row['puesto'];
+                
+                array_push($items, $item);
+            }
+            return $tiems;
         }catch(PDOException $e){
-            return false;
+            return [];
         }
     }
 }
