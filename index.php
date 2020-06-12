@@ -6,17 +6,18 @@ require_once 'libs/controller.php';
 require_once 'libs/model.php';
 require_once 'libs/app.php';
 require_once 'libs/view.php';
+// config file
+require_once 'config/config.php';
 // controllers
 require_once 'controllers/Errores.php';
 require_once 'controllers/ayuda.php';
 require_once 'controllers/userSession.php';
-//models
+// models
 require_once 'models/user.php';
-require_once 'config/config.php';
 
 $userSession = new UserSession();
 $user = new User();
-
+$app = new App();
 
 if(isset($_SESSION['userID'])){
     echo "hay session";
@@ -38,13 +39,15 @@ if(isset($_SESSION['userID'])){
      }else{
          $errorLogin =  " usuario y/o pasword incorrecto";
          /// ONLY FOR TESTING, NEED TO ((REMOVE))
-         include_once('views/dashboard/index.php');
+         
+         include_once 'views/login/index.php';
+         
           }
 }else{
-    include_once 'views/login/index.php';
+        include_once 'views/login/index.php';
 }
 
-$app = new App();
+
 
 
 ?>

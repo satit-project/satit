@@ -26,7 +26,7 @@
 		
 		<h3>Crear una Cuenta</h3><hr />
 		
-		<form action= "../../Controller/AccountController.php?option=up" method="POST">
+		<form action= "<?php echo constant('URL')?>Account/createNewAccount" method="POST">
 			<div class="form-group">				
 				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
 		  </div>

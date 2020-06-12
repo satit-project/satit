@@ -8,7 +8,7 @@ class Main extends Controller{
     }
     
     function render() {
-        $this->view->render('main/index');
+        $this->view->render('login/index');
 
         
     }
