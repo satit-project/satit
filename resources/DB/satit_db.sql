@@ -48,10 +48,10 @@ create table empleados(
 
 create table cursos(
 	id int primary key auto_increment not null,
-    fecha date,
     titulo varchar(45) not null,
     descripcion varchar (255) not null,
-    horario varchar(20)
+    horario varchar(20),
+    fecha date
 
     /*todo many to many cursos - empleado*/
 

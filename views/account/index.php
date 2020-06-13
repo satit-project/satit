@@ -12,7 +12,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-  
+  <?php require_once 'views/header.php'; ?>
+
   <div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -25,14 +26,8 @@
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
 		<h3>Crear una Cuenta</h3><hr />
-		<?php 	
-		
-		$jobs = $this->jobs; 
-		echo $jobs;
-		
-		
-		?>
-		<form action= "<?php echo constant('URL')?>Account/createNewAccount" method="POST">
+
+		<form action= "<?php echo constant('URL')?>account/createNewAccount" method="POST">
 			<div class="form-group">				
 				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
 		  </div>
@@ -41,43 +36,27 @@
 		  </div>
 		  
 		  <div class="form-group">				
-				<input type="text" class="form-control" name="employeeID" placeholder="Ingrese Numero de Empleado" required>
+				<input type="text" class="form-control" name="userID" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
 
 			  
 			  <div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<label class="input-group-text" for="puesto">Puesto</label>
+					<label class="input-group-text" for="job">Puesto</label>
 				</div>
-				<select class="custom-select" id="puesto" name="jobID">
+				<select class="custom-select" id="job" name="job">
 					
 					<option selected>Selecciona...</option>
-					<?php 			/// todo: clear this section
-									/*include '../../php/conn.php';
-										$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-										// Check connection
-										if (!$conn) {
-											die("Connection failed: " . mysqli_connect_error());
-										}
-									else{
-										$query = "SELECT * FROM puestos";
-										if( $result = $conn->query($query)){
-										
-											while( $row = $result->fetch_assoc())
-											{
-												$puesto = $row["puesto"];
-												
-												echo '<option value='.$row['id'].'>';
-												echo  $puesto;
-												echo '</option>';
-											}
-										}
-									}*/
-									
-									
-								
-								
+					<?php 		
+						include_once('models/job');	
+						foreach( $this->jobs as $row)
+								{
+									$job = $row;
+									echo '<option value='.$job->jobID.'>';
+									echo  $job->job;
+									echo '</option>';
+								}
 				 ?>
   				</select>
 			</div>
@@ -91,7 +70,7 @@
 			</div>
 			<div>
 				<h4>Preguntas de Seguridad</h4>
-				<select name="Seg_pregunta_1">
+				<select name="question1">
 					<option value="0">Seleccione una pregunta de seguridad 1</option>
 					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
 					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
@@ -101,11 +80,11 @@
 					<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
 				</select>
 				<div class="form-group">				
-					<input type="text" class="form-control" name="R_pregunta_1" placeholder="Respuesta pregunta 1" required>			
+					<input type="text" class="form-control" name="answer1" placeholder="Respuesta pregunta 1" required>			
 		  		</div>
 			</div>
 			<div>
-				<select name="Seg_pregunta_2">
+				<select name="question2">
 					<option value="0">Seleccione una pregunta de seguridad 2</option>
 					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
 					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
@@ -115,7 +94,7 @@
 					<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
 				</select>
 				<div class="form-group">				
-					<input type="text" class="form-control" name="R_pregunta_2" placeholder="Respuesta pregunta 2" required>			
+					<input type="text" class="form-control" name="answer2" placeholder="Respuesta pregunta 2" required>			
 		  		</div>
 			</div>
 			

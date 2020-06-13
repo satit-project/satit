@@ -32,3 +32,5 @@ SELECT * FROM empleados;
 
 use satit;
 SELECT * FROM puestos;
+use satit;
+SELECT * FROM cursos;

@@ -30,9 +30,9 @@ class User extends Model{
         $query->execute(['userID'=>$userID]);
         
         foreach( $query as $currentUser ) {
-            $this->id = $currentUser['userID'];
+            $this->id = $currentUser['id'];
             $this->name = $currentUser['nombre'];
-            $this->job = $currentUser['job'];
+            $this->job = $currentUser['puesto_id'];
         }
     }
     
