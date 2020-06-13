@@ -23,7 +23,7 @@ $app = new App();
 if(isset($_SESSION['userID'])){
     echo "hay session";
     $user->setUser($userSession->getCurrentUser());
-    include_once('views/dashboard/index.php');
+    include_once('libs/app.php');
 
 }elseif (isset($_POST['userID']) && isset($_POST['password'])){
    // echo "Validacion de login";
@@ -34,7 +34,8 @@ if(isset($_SESSION['userID'])){
          //echo " usuario validado";
          $userSession->setCurrentUser($userForm);
          $user->setUser($userForm);
-        header('location: dashboard');
+         
+         include_once('libs/app.php');
          
      }else{
          $errorLogin =  " usuario y/o pasword incorrecto";

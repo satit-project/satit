@@ -59,7 +59,7 @@
           <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><?php include_once ("optionHome.php");?></div>
           <div class="tab-pane fade" id="list-course" role="tabpanel" aria-labelledby="list-course-list"><?php include_once ("optionCourse.php");?></div>
           <div class="tab-pane fade" id="list-job" role="tabpanel" aria-labelledby="list-job-list"><?php include_once ("optionJob.php");?></div>
-          <div class="tab-pane fade" id="list-user" role="tabpanel" aria-labelledby="list-user-list"><?php echo constant('URL').'account';?></div>
+          <div class="tab-pane fade" id="list-user" role="tabpanel" aria-labelledby="list-user-list"><?php include_once ("optionAccount.php");?></div>
           <div class="tab-pane fade" id="list-nomina" role="tabpanel" aria-labelledby="list-nomina-list">Cargar nomina</div>
           <div class="tab-pane fade" id="list-encuesta" role="tabpanel" aria-labelledby="list-encuesta-list">Resultados de la encuesta satisfaccion del dia de hoy</div>
           <div class="tab-pane fade" id="list-vacaciones" role="tabpanel" aria-labelledby="list-vacaciones-list">Consulta de Vacaciones</div>

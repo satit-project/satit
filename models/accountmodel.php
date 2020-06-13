@@ -29,18 +29,18 @@ class AccountModel extends Model{
     
     public function getJobs()
     {
-        $items = [];
+        $tiems = [];
         try{
             $query = $this->db->connect()->query("SELECT * FROM puestos");
             while($row = $query->fetch())
             {
                 $item = new Job();
-                $item->jobID = $row['id'];
-                $item->job  = $row['puesto'];
+                $item->jobID= $row['id'];
+                $item->job = $row['puesto'];
                 
                 array_push($items, $item);
             }
-            return $items;
+            return $tiems;
         }catch(PDOException $e){
             return [];
         }

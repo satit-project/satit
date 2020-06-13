@@ -1,4 +1,5 @@
 <?php
+
 class Account extends Controller{
     
     function __construct(){
@@ -16,7 +17,6 @@ class Account extends Controller{
     
     function createNewAccount(){
         $userID = $_POST['userID'];
-        $password = md5($_POST['password']);
         $name = $_POST['name'];
         $sourname = $_POST['sourname'];
         $job = $_POST['job'];
@@ -25,11 +25,12 @@ class Account extends Controller{
         $question2 = $_POST['question2'];
         $answer2 = $_POST['answer2'];
         
+        $mensaje ="Creando cuenta...";
+        echo $mensaje;
         
         if($this->model->insert(['userID'=>$userID,
                                  'name'=> $name,
                                  'sourname'=> $sourname,
-                                 'password'=> $password,
                                  'job'=> $job,
                                  'question1'=> $question1,
                                  'answer1'=> $answer1,
@@ -37,17 +38,19 @@ class Account extends Controller{
                                  'answer2'=> $answer2,
                                  
                                  ])) {
-            echo "Nuevo empleado creado";
-           
+            $mensaje=  "Nuevo empleado creado";
         }else{
-            echo "error al crear Nuevo empleado ";
+            $mensaje=  "La matricula ya existe ";
 
         }
-
+        $this->view->mensaje = $mensaje;
         $this->render();
     }
     
-
+    public function getJobs()
+    {
+        return $this->model->getJobs();
+    }
 
 }
 
