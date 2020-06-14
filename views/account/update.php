@@ -17,25 +17,25 @@
   <div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Crear Cuenta</h1>
-				<p>Creador de cuentas.</p>		
+				<h1>Actualizar Cuenta</h1>
+				<p>Actualización de cuentas.</p>		
 			</div>
 	</div>
 	
 	<div class="row">	
 		<div class="col-sm-12 col-md-6 col-lg-6">
-		
-		<h3>Crear una Cuenta</h3>
+		<? echo $this->message;?>
+		<h3>Actualizar una Cuenta</h3>
 
-			<form action= "<?php echo constant('URL')?>account/createNewAccount" method="POST">
+			<form action= "<?php echo constant('URL')?>account/updateEmployee" method="POST">
 				<div class="form-group">				
-					<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
+					<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" value="<?php echo $this->employee->get('name'); ?>"required>			
 				</div>
 				<div class="form-group">				
-					<input type="text" class="form-control" name="sourname" placeholder="Ingrese sus Apellidos" required>			
+					<input type="text" class="form-control" name="sourname" placeholder="Ingrese sus Apellidos" value="<?php echo $this->employee->get('sourname'); ?>"required>			
 				</div>
 				<div class="form-group">				
-					<input type="text" class="form-control" name="userID" placeholder="Ingrese Numero de Empleado" required>
+					<input type="text" class="form-control" name="userID" placeholder="Ingrese Numero de Empleado" value="<?php echo $this->employee->get('userID'); ?>" disabled required>
 				</div>
 
 
@@ -68,7 +68,7 @@
 				</div>
 				<div>
 					<h4>Preguntas de Seguridad</h4>
-					<select name="question1">
+					<select name="question1" require>
 						<option value="0">Seleccione una pregunta de seguridad 1</option>
 						<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
 						<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
@@ -97,7 +97,7 @@
 				</div>
 				
 			
-				<button type="submit" class="btn btn-success btn-block">Crear cuenta</button>
+				<button type="submit" class="btn btn-success btn-block">Actualiza cuenta</button>
 			</form>
 		</div>
 
@@ -124,7 +124,7 @@
 							
 
 							<?php 
-								$i=1;
+								$i=0;
 								foreach ($this->employees as $row) {
 									$employee = $row;
 									echo "<tr>";
@@ -134,7 +134,7 @@
 									echo '<td>'.$employee->get('sourname').'</td>';
 									echo '<td>'.$employee->get('job').'</td>';
 									echo '<td><a class="btn btn-primary" href="'.constant('URL').'account/viewEmployee/'.$employee->get('userID').'"</a>Actualizar</td>';
-									echo '<td><a class="btn btn-danger" href="'.constant('URL').'account/deleteEmployee"</a>Baja</td>';
+									echo '<td><a class="btn btn-danger" href="'.constant('URL').'account/delete"</a>Baja</td>';
 									$i++;
 								}	
 							?>

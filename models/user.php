@@ -1,9 +1,14 @@
 <?php
 class User extends Model{
         private $userID="";
-        private $password="";
         private $name="";
+        private $sourname="";
+        private $password="";
         private $job="";
+        private $question1="";
+        private $answer1="";
+        private $question2="";
+        private $answer2="";
         
     function __construct(){
         parent::__construct();
@@ -14,7 +19,7 @@ class User extends Model{
     public function userExists($userID, $pass ){
         $md5pass = md5($pass);
         
-        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :userID and password = :pass');
+        $query = $this->db->connect()->prepare('SELECT nombre FROM empleados WHERE id = :userID and password = :pass');
         $query->execute(['userID'=> $userID, 'pass'=> $md5pass]);
         
         if($query->rowCount()){
@@ -26,7 +31,7 @@ class User extends Model{
     
     
     public function setUser($userID){
-        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :userID');
+        $query = $this->db->connect()->prepare('SELECT id, nombre, puesto_id FROM empleados WHERE id = :userID');
         $query->execute(['userID'=>$userID]);
         
         foreach( $query as $currentUser ) {
@@ -38,6 +43,17 @@ class User extends Model{
     
     public function getName(){
         return $this->name;
+    }
+    
+    public function get($name)
+    {
+        return $this->$name;
+    }
+    
+    
+    public function set($k, $value)
+    {
+        $this->$k = $value;
     }
 }
 

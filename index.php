@@ -6,6 +6,7 @@ require_once 'libs/controller.php';
 require_once 'libs/model.php';
 require_once 'libs/app.php';
 require_once 'libs/view.php';
+require_once 'libs/logout.php';
 // config file
 require_once 'config/config.php';
 // controllers
@@ -35,11 +36,9 @@ if(isset($_SESSION['userID'])){
          $userSession->setCurrentUser($userForm);
          $user->setUser($userForm);
         header('location: dashboard');
-         
+         include_once('dashboard');
      }else{
-         $errorLogin =  " usuario y/o pasword incorrecto";
-         /// ONLY FOR TESTING, NEED TO ((REMOVE))
-         
+         $errorLogin =  " usuario y/o pasword incorrecto";         
          include_once('libs/app.php');
          
           }

@@ -22,6 +22,9 @@
         <li class="nav-item">
             <a class="nav-link" href="<?php echo constant('URL');?>course">Curso</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo constant('URL');?>logout">Salir</a>
+        </li>
     </ul>
 </body>
 </html>
