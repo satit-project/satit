@@ -26,8 +26,8 @@
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
 		<h3>Crear una Cuenta</h3><hr />
-		
-		<form action= "../../Controller/AccountController.php?option=up" method="POST">
+
+		<form action= "<?php echo constant('URL')?>account/createNewAccount" method="POST">
 			<div class="form-group">				
 				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
 		  </div>
@@ -36,79 +36,64 @@
 		  </div>
 		  
 		  <div class="form-group">				
-				<input type="text" class="form-control" name="employeeID" placeholder="Ingrese Numero de Empleado" required>
+				<input type="text" class="form-control" name="userID" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
 
-			<form action= "<?php echo constant('URL')?>account/createNewAccount" method="POST">
-				<div class="form-group">				
-					<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
+			  
+			  <div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label class="input-group-text" for="job">Puesto</label>
 				</div>
-				<div class="form-group">				
-					<input type="text" class="form-control" name="sourname" placeholder="Ingrese sus Apellidos" required>			
-				</div>
-				<div class="form-group">				
-					<input type="text" class="form-control" name="userID" placeholder="Ingrese Numero de Empleado" required>
-				</div>
+				<select class="custom-select" id="job" name="job">
+					
+					<option selected>Selecciona...</option>
+					<?php 		
+						include_once('models/job');	
+						foreach( $this->jobs as $row)
+								{
+									$job = $row;
+									echo '<option value='.$job->jobID.'>';
+									echo  $job->job;
+									echo '</option>';
+								}
+				 ?>
+  				</select>
+			</div>
 
 
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<label class="input-group-text" for="job">Puesto</label>
-					</div>
-					<select class="custom-select" id="job" name="job">
-						
-						<option selected>Selecciona...</option>
-						<?php 		
-							include_once('models/job');	
-							foreach( $this->jobs as $row)
-									{
-										$job = $row;
-										echo '<option value='.$job->jobID.'>';
-										echo  $job->job;
-										echo '</option>';
-									}
-					?>
-					</select>
-				</div>
-
+			<div class="form-group">				
+				<input type="password" class="form-control" name="password_verifica" placeholder="Ingrese contraseña Nuevamente" required>
+			</div>
+			<div>
+				<h4>Preguntas de Seguridad</h4>
+				<select name="question1">
+					<option value="0">Seleccione una pregunta de seguridad 1</option>
+					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
+					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
+					<option value="Cual era tu apodo de la infancia?">Cual era tu apodo de la infancia?</option>
+					<option value="Cual es el nombre de la cuidad en la que se conocieron tus padres?">Cual es el nombre de la cuidad en la que se conocieron tus padres?</option> 
+					<option value="Cual es el nombre de tu primer auto?">Cual es el nombre de tu primer auto?</option> 
+					<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
+				</select>
 				<div class="form-group">				
-					<input type="password" class="form-control" name="password" placeholder="Ingrese Contraseña" required>
-				</div>
-
+					<input type="text" class="form-control" name="answer1" placeholder="Respuesta pregunta 1" required>			
+		  		</div>
+			</div>
+			<div>
+				<select name="question2">
+					<option value="0">Seleccione una pregunta de seguridad 2</option>
+					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
+					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
+					<option value="Cual era tu apodo de la infancia?">Cual era tu apodo de la infancia?</option>
+					<option value="Cual es el nombre de la cuidad en la que se conocieron tus padres?">Cual es el nombre de la cuidad en la que se conocieron tus padres?</option> 
+					<option value="Cual es el nombre de tu primer auto?">Cual es el nombre de tu primer auto?</option> 
+					<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
+				</select>
 				<div class="form-group">				
-					<input type="password" class="form-control" name="password_verifica" placeholder="Ingrese contraseña Nuevamente" required>
-				</div>
-				<div>
-					<h4>Preguntas de Seguridad</h4>
-					<select name="question1">
-						<option value="0">Seleccione una pregunta de seguridad 1</option>
-						<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
-						<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
-						<option value="Cual era tu apodo de la infancia?">Cual era tu apodo de la infancia?</option>
-						<option value="Cual es el nombre de la cuidad en la que se conocieron tus padres?">Cual es el nombre de la cuidad en la que se conocieron tus padres?</option> 
-						<option value="Cual es el nombre de tu primer auto?">Cual es el nombre de tu primer auto?</option> 
-						<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
-					</select>
-					<div class="form-group">				
-						<input type="text" class="form-control" name="answer1" placeholder="Respuesta pregunta 1" required>			
-					</div>
-				</div>
-				<div>
-					<select name="question2">
-						<option value="0">Seleccione una pregunta de seguridad 2</option>
-						<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option> 
-						<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option> 
-						<option value="Cual era tu apodo de la infancia?">Cual era tu apodo de la infancia?</option>
-						<option value="Cual es el nombre de la cuidad en la que se conocieron tus padres?">Cual es el nombre de la cuidad en la que se conocieron tus padres?</option> 
-						<option value="Cual es el nombre de tu primer auto?">Cual es el nombre de tu primer auto?</option> 
-						<option value="Como de llama la primera escuela a la que asististe?">Como de llama la primera escuela a la que asististe?</option> 
-					</select>
-					<div class="form-group">				
-						<input type="text" class="form-control" name="answer2" placeholder="Respuesta pregunta 2" required>			
-					</div>
-				</div>
-				
+					<input type="text" class="form-control" name="answer2" placeholder="Respuesta pregunta 2" required>			
+		  		</div>
+			</div>
 			
 				<button type="submit" class="btn btn-success btn-block">Crear cuenta</button>
 			</form>

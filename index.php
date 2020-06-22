@@ -36,7 +36,7 @@ if(isset($_SESSION['userID'])){
          $userSession->setCurrentUser($userForm);
          $user->setUser($userForm);
         header('location: dashboard');
-         include_once('dashboard');
+         
      }else{
          $errorLogin =  " usuario y/o pasword incorrecto";         
          include_once('libs/app.php');
