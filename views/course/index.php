@@ -48,41 +48,41 @@
 		
 		</div>		
 		<div class="col-sm-12 col-md-6 col-lg-6">
-			<div class="container-fluid" >
-        		<div class="row">
+		<div class="container-fluid" >
+        <div class="row">
 
-         		    <table class="table">
-           			   <thead class="thead-dark">
-							<tr>
-							<th scope="col">#</th>
-							<th scope="col">Titulo</th>
-							<th scope="col">Descripcion</th>
-							<th scope="col">Fecha</th>
-							<th scope="col">Horario</th>
-							<th scope="col">Acciones</th>
-							</tr>
-              			</thead>
-						<tbody>
-							
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Titulo</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Horario</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+            
 
-							<?php 
+			  <?php 
 
-							foreach ($this->courses as $row) {
-								$course = $row;
-								echo "<tr>";
-								echo '<td>'.$course->id.  '</td>';
-								echo '<td>'.$course->title.'</td>';
-								echo '<td>'.$course->description.'</td>';
-								echo '<td>'.$course->hour.'</td>';
-								echo '<td>'.$course->date.'</td>';
+			  foreach ($this->courses as $row) {
+			  	$course = $row;
+			  	echo "<tr>";
+				echo '<td>'.$course->id.  '</td>';
+				echo '<td>'.$course->title.'</td>';
+				echo '<td>'.$course->description.'</td>';
+				echo '<td>'.$course->hour.'</td>';
+				echo '<td>'.$course->date.'</td>';
 
-							}	
-								?>
+			  }	
+				 ?>
 	
-            		  </tbody>
-            		</table>
-        		</div>
-    		</div>
+              </tbody>
+            </table>
+        </div>
+    </div>
 		</div>
 	</div>
 
