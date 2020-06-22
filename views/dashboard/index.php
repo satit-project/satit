@@ -39,9 +39,39 @@
       <a class="list-group-item">Link 3</a>
     </ul>
   </div>
-  <main class="bmd-layout-content">
-    <div class="container">
-      <p>Main content</p>
+</nav>
+<!---- NAV ---->
+
+
+<!---- TABS ---->
+    <div class="row" >
+      <div class="col-2">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active " id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Inicio</a>
+          <a class="list-group-item list-group-item-action" id="list-nomina-list" data-toggle="list" href="#list-nomina" role="tab" aria-controls="nomina">Nomina</a>
+          <a class="list-group-item list-group-item-action" id="list-prenomina-list" data-toggle="list" href="#list-prenomina" role="tab" aria-controls="prenomina">Prenomina</a>
+          <a class="list-group-item list-group-item-action" id="list-vacaciones-list" data-toggle="list" href="#list-vacaciones" role="tab" aria-controls="vacaciones">Vacaciones</a>
+          <a class="list-group-item list-group-item-action" id="list-course-list" data-toggle="list" href="#list-course" role="tab" aria-controls="course">Curso</a>
+          <a class="list-group-item list-group-item-action" id="list-user-list" data-toggle="list" href="<?php echo "views/account/";?>" role="tab" aria-controls="user">Cuentas</a>
+          <a class="list-group-item list-group-item-action" id="list-job-list" data-toggle="list" href="#list-job" role="tab" aria-controls="profile">Puesto</a>
+          <a class="list-group-item list-group-item-action" id="list-encuesta-list" data-toggle="list" href="#list-encuesta" role="tab" aria-controls="encuesta">Encuesta</a>
+          <a class="list-group-item list-group-item-action" id="list-atencion-list" data-toggle="list" href="#list-atencion" role="tab" aria-controls="encuesta">Atencion</a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"><?php include_once ("optionHome.php");?></div>
+          <div class="tab-pane fade" id="list-course" role="tabpanel" aria-labelledby="list-course-list"><?php include_once ("optionCourse.php");?></div>
+          <div class="tab-pane fade" id="list-job" role="tabpanel" aria-labelledby="list-job-list"><?php include_once ("optionJob.php");?></div>
+          <div class="tab-pane fade" id="list-user" role="tabpanel" aria-labelledby="list-user-list"><?php echo "views/account/";?></div>
+          <div class="tab-pane fade" id="list-nomina" role="tabpanel" aria-labelledby="list-nomina-list">Cargar nomina</div>
+          <div class="tab-pane fade" id="list-encuesta" role="tabpanel" aria-labelledby="list-encuesta-list">Resultados de la encuesta satisfaccion del dia de hoy</div>
+          <div class="tab-pane fade" id="list-vacaciones" role="tabpanel" aria-labelledby="list-vacaciones-list">Consulta de Vacaciones</div>
+          <div class="tab-pane fade" id="list-prenomina" role="tabpanel" aria-labelledby="list-vacaciones-list">Prenomina</div>
+          <div class="tab-pane fade" id="list-atencion" role="tabpanel" aria-labelledby="list-vacaciones-list">Atencion</div>
+        </div>
+      </div>
+    </div>
     </div>
   </main>
 </div>

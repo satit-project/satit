@@ -1,5 +1,5 @@
 <?php
-class User extends Model{
+class user extends Model{
         private $userID="";
         private $name="";
         private $sourname="";

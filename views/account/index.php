@@ -25,7 +25,20 @@
 	<div class="row">	
 		<div class="col-sm-12 col-md-6 col-lg-6">
 		
-		<h3>Crear una Cuenta</h3>
+		<h3>Crear una Cuenta</h3><hr />
+		
+		<form action= "../../Controller/AccountController.php?option=up" method="POST">
+			<div class="form-group">				
+				<input type="text" class="form-control" name="name" placeholder="Ingrese su Nombre" required>			
+		  </div>
+			<div class="form-group">				
+				<input type="text" class="form-control" name="sourname" placeholder="Ingrese sus Apellidos" required>			
+		  </div>
+		  
+		  <div class="form-group">				
+				<input type="text" class="form-control" name="employeeID" placeholder="Ingrese Numero de Empleado" required>
+			</div>
+
 
 			<form action= "<?php echo constant('URL')?>account/createNewAccount" method="POST">
 				<div class="form-group">				

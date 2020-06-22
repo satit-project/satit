@@ -13,13 +13,13 @@ require_once 'config/config.php';
 require_once 'controllers/Errores.php';
 require_once 'controllers/ayuda.php';
 require_once 'controllers/userSession.php';
-// models
+//models
 require_once 'models/user.php';
 require_once 'models/job.php';
 
 $userSession = new UserSession();
 $user = new User();
-$app = new App();
+
 
 if(isset($_SESSION['userID'])){
     echo "hay session";
@@ -46,7 +46,7 @@ if(isset($_SESSION['userID'])){
     include_once('libs/app.php');
 }
 
-
+$app = new App();
 
 
 ?>
