@@ -1,0 +1,14 @@
+{
+    "name": "emmanuel/satit",
+    "description": "Satit project for employees request management",
+    "type": "project",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.13"
+    },
+    "authors": [
+        {
+            "name": "emmanuelnunoe",
+            "email": "emmanuel.nuno.estrella@uabc.edu.mx"
+        }
+    ]
+}
