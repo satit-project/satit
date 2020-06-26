@@ -16,15 +16,15 @@ class Account extends Controller{
     }
     
     function createNewAccount(){
-        $userID = $_POST['userID'];
+        $userID = $_POST['employeeID'];
         $name = $_POST['name'];
         $sourname = $_POST['sourname'];
-        $job = $_POST['job'];
-        $question1 = $_POST['question1'];
-        $answer1 = $_POST['answer1'];
-        $question2 = $_POST['question2'];
-        $answer2 = $_POST['answer2'];
-        
+        $job = $_POST['jobID'];
+        $password = $_POST['password'];
+        $question1 = $_POST['Seg_pregunta_1'];
+        $answer1 = $_POST['R_pregunta_1'];
+        $question2 = $_POST['Seg_pregunta_1'];
+        $answer2 = $_POST['R_pregunta_2'];
         $mensaje ="Creando cuenta...";
         echo $mensaje;
         
@@ -32,6 +32,7 @@ class Account extends Controller{
                                  'name'=> $name,
                                  'sourname'=> $sourname,
                                  'job'=> $job,
+                                 'password'=> $password,
                                  'question1'=> $question1,
                                  'answer1'=> $answer1,
                                  'question2'=> $question2,
