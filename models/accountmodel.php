@@ -29,7 +29,7 @@ class AccountModel extends Model{
     
     public function getJobs()
     {
-        $tiems = [];
+        $items = [];
         try{
             $query = $this->db->connect()->query("SELECT * FROM puestos");
             while($row = $query->fetch())
@@ -40,7 +40,7 @@ class AccountModel extends Model{
                 
                 array_push($items, $item);
             }
-            return $tiems;
+            return $items;
         }catch(PDOException $e){
             return [];
         }
