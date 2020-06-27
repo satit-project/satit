@@ -35,7 +35,7 @@
 		  </div>
 
 		  <div class="form-group">
-				<input type="text" class="form-control" name="userID" placeholder="Ingrese Numero de Empleado" required>
+				<input type="text" class="form-control" name="employeeID" placeholder="Ingrese Numero de Empleado" required>
 			</div>
 
 
@@ -59,6 +59,8 @@
 				 ?>
   				</select>
 			</div>
+
+
       <div class="form-group">
 				<input type="password" class="form-control" name="password" placeholder="Ingrese contraseña" required>
 			</div>
@@ -67,8 +69,9 @@
 				<input type="password" class="form-control" name="password_verifica" placeholder="Ingrese contraseña Nuevamente" required>
 			</div>
 			<div>
+
 				<h4>Preguntas de Seguridad</h4>
-				<select name="question_1">
+				<select class="custom-select" name="question_1">
 					<option value="0">Seleccione una pregunta de seguridad 1</option>
 					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option>
 					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option>
@@ -82,7 +85,7 @@
 		  		</div>
 			</div>
 			<div>
-				<select name="question_2">
+				<select class="custom-select" name="question_2">
 					<option value="0">Seleccione una pregunta de seguridad 2</option>
 					<option value="Cual era el nombre de tu primera mascota?">Cual era el nombre de tu primera mascota?</option>
 					<option value="Cual es el nombre de la cuidad en que naciste?">Cual es el nombre de la cuidad en que naciste?</option>
@@ -128,7 +131,7 @@
 									$employee = $row;
 									echo "<tr>";
 									echo '<td>'.$i.'</td>';
-									echo '<td>'.$employee->get('userID').  '</td>';
+									echo '<td>'.$employee->get('employeeID').  '</td>';
 									echo '<td>'.$employee->get('name').'</td>';
 									echo '<td>'.$employee->get('sourname').'</td>';
 									echo '<td>'.$employee->get('job').'</td>';

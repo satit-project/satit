@@ -16,7 +16,7 @@ class Account extends Controller{
     }
 
     function createNewAccount(){
-        $userID = $_POST['employeeID'];
+        $employeeID = $_POST['employeeID'];
         $name = $_POST['name'];
         $sourname = $_POST['sourname'];
         $job = $_POST['job'];
@@ -27,7 +27,7 @@ class Account extends Controller{
         $answer_2 = $_POST['answer_2'];
 
         $mensaje ="Creando cuenta...";
-        if($this->model->insert(['userID'=>$userID,
+        if($this->model->insert(['employeeID'=>$employeeID,
                                  'name'=> $name,
                                  'sourname'=> $sourname,
                                  'password'=> $password,
@@ -35,7 +35,7 @@ class Account extends Controller{
                                  'question_1'=> $question_1,
                                  'answer_1'=> $answer_1,
                                  'question_2'=> $question_2,
-                                 'answer_2'=> $answer_2,
+                                 'answer_2'=> $answer_2
 
                                  ])) {
             $mensaje=  "Nuevo empleado creado";
