@@ -29,20 +29,20 @@ if(isset($_SESSION['userID'])){
    // echo "Validacion de login";
      $userForm = $_POST['userID'];
      $passForm = $_POST['password'];
-     
+
      if($user->userExists($userForm, $passForm)) {
          //echo " usuario validado";
          $userSession->setCurrentUser($userForm);
          $user->setUser($userForm);
-         
+
          include_once('libs/app.php');
-         
+
      }else{
          $errorLogin =  " usuario y/o pasword incorrecto";
          /// ONLY FOR TESTING, NEED TO ((REMOVE))
-         
+
          include_once('libs/app.php');
-         
+
           }
 }else{
     include_once('libs/app.php');

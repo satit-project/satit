@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Panel de control</title>
+    <title>Prenomina</title>
   </head>
   <body>
     <?php require_once('views/header.php');?>
