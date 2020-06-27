@@ -4,11 +4,9 @@
   <head>
     <title>Cuentas</title>
 
-	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
   </head>
   <body>
   <?php  echo require_once ('views/header.php'); ?>
@@ -108,7 +106,7 @@
 			<div class="container-fluid" >
         		<div class="row">
 
-         		    <table class="table">
+         		    <table id="tbemployees" class="table">
 
            			   <thead class="thead-dark">
 							<tr>
@@ -150,6 +148,11 @@
 
 	</div>
 </div>
-
 	</body>
+  <script>
+
+  $(document).ready(function() {
+      $('#tbemployees').DataTable();
+  } );
+  </script>
 </html>
