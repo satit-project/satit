@@ -16,7 +16,7 @@ class Account extends Controller{
     }
 
     function createNewAccount(){
-        $userID = $_POST['userID'];
+        $userID = $_POST['employeeID'];
         $name = $_POST['name'];
         $sourname = $_POST['sourname'];
         $job = $_POST['job'];
