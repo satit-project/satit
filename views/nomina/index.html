@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Nomina</title>
+  </head>
+  <body>
+    <?php require_once('views/header.php');?>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+      function opsi(data){
+        var allRows = data.split(/\r?\n|\r/)
+        var table = "<table class='table'>";
+        for(var singleRow = 0 ; singleRow< allRows.length; singleRow++){
+            if(singleRow === 0 ){
+              table +="<thead>";
+              table +="<tr>";
+            }else{
+              table +="<tr>"
+            }
+            var rowCells = allRows[singleRow].split(',');
+            for(var rowSingleCell = 0; rowSingleCell < rowCells.length; rowSingleCell++){
+                if(singleRow === 0 ){
+                  table +="<th scope='row'>";
+                  table +=rowCells[rowSingleCell];
+                  table += "</th>";
+                }else {
+                    table += "<td>";
+                    table += rowCells[rowSingleCell];
+                    table += "</td>";
+              }
+            }
+            if(singleRow === 0 ){
+              table += "</tr>"
+              table += "</thead>";
+              table += "<tbody>";
+            }else{
+              table += "</tr>";
+            }
+          }
+          table += "</tbody>";
+          table += "</table>";
+          $("body").append(table);
+      }
+
+      jQuery(document).ready(function($){
+        $.ajax({
+            url: "NominaEjemplo.csv",
+            dataType: "text",
+
+        }).done(opsi);
+    });
+
+
+    </script>
+
+  </body>
+</html>

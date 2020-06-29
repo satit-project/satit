@@ -9,13 +9,13 @@
 
   </head>
   <body>
-  <?php  echo require_once ('views/header.php'); ?>
+  <?php  require_once ('views/header.php'); ?>
   <?php echo $this->message;?>
   <div class="container">
 		<div class="row">
 			<div class="col-sm-12">
 				<h1>Crear Cuenta</h1>
-				<p>Creador de cuentas.</p>
+				<p>Creador de cuentas</p>
 			</div>
 	</div>
 
@@ -133,7 +133,7 @@
 									echo '<td>'.$employee->get('name').'</td>';
 									echo '<td>'.$employee->get('sourname').'</td>';
 									echo '<td>'.$employee->get('job').'</td>';
-									echo '<td><a class="btn btn-primary" href="'.constant('URL').'account/viewEmployee/'.$employee->get('userID').'"</a>Actualizar</td>';
+									echo '<td><a class="btn btn-primary" href="'.constant('URL').'account/viewEmployee/'.$employee->get('employeeID').'"</a>Actualizar</td>';
 									echo '<td><a class="btn btn-danger" href="'.constant('URL').'account/deleteEmployee"</a>Baja</td>';
 									$i++;
 								}

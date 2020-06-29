@@ -1,21 +1,21 @@
 <?php
 class User extends Model{
-        private $userID="";
+        private $employeeID="";
         private $password="";
         private $name="";
         private $job="";
 
     function __construct(){
         parent::__construct();
-         $this->userID="";
+         $this->employeeID="";
          $this->password="";
     }
 
-    public function userExists($userID, $pass ){
+    public function userExists($employeeID, $pass ){
         $md5pass = md5($pass);
 
-        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :userID and password = :pass');
-        $query->execute(['userID'=> $userID, 'pass'=> $md5pass]);
+        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :employeeID and password = :pass');
+        $query->execute(['employeeID'=> $employeeID, 'pass'=> $md5pass]);
 
         if($query->rowCount()){
             return true;
@@ -26,13 +26,13 @@ class User extends Model{
 
 
     public function setUser($userID){
-        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :userID');
-        $query->execute(['userID'=>$userID]);
+        $query = $this->db->connect()->prepare('SELECT * FROM empleados WHERE id = :employeeID');
+        $query->execute(['employeeID'=>$userID]);
 
         foreach( $query as $currentUser ) {
-            $this->id = $currentUser['userID'];
+            $this->id = $currentUser['id'];
             $this->name = $currentUser['nombre'];
-            $this->job = $currentUser['job'];
+            $this->job = $currentUser['puesto_id'];
         }
     }
 
