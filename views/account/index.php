@@ -106,9 +106,9 @@
 			<div class="container-fluid" >
         		<div class="row">
 
-         		    <table id="tbemployees" class="table">
+       <table id="tbemployees" class="table">
 
-           			   <thead class="thead-dark">
+         <thead class="thead-dark">
 							<tr>
 								<th scope="col">#</th>
 								<th scope="col">ID</th>
@@ -118,7 +118,7 @@
 								<th scope="col">Actualizar</th>
 								<th scope="col">Baja</th>
 							</tr>
-              			</thead>
+          </thead>
 
 						<tbody>
 
