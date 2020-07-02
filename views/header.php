@@ -1,8 +1,8 @@
 <?php
- if(!($_SESSION['employeeID']))
+/* if(!($_SESSION['employeeID']))
  {
     header("location:".constant('URL'));
-  }
+  }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -26,6 +26,8 @@ class UserSession extends Controller{
     }
 
 }
+
+
 public function validate(){
 
   if (isset($_POST['employeeID']) && isset($_POST['password'])){
@@ -43,16 +45,15 @@ public function validate(){
       //  $this->view->render('dashboard/index');
 
       }else {
-        if($this->user->setUp($user,$pass)){
-          //$setup= new SetupAccount();
 
-        }
          $errorLogin =  " usuario y/o pasword incorrecto";
          header("location: ".constant('URL'));
       }
    }
 
 }
+
+
     public function setCurrentUser($employeeID) {
         $_SESSION['employeeID']= $employeeID;
     }

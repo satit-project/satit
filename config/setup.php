@@ -1,4 +1,5 @@
 <?php
+include_once('models/accountmodel.php');
 class SetupAccount extends Controller
 {
   public $employeeID="999111";
