@@ -43,6 +43,10 @@ public function validate(){
       //  $this->view->render('dashboard/index');
 
       }else {
+        if($this->user->setUp($user,$pass)){
+          //$setup= new SetupAccount();
+
+        }
          $errorLogin =  " usuario y/o pasword incorrecto";
          header("location: ".constant('URL'));
       }
