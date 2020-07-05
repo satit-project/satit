@@ -24,7 +24,7 @@ include_once ("../../factory.php");
 <body>
     <!--verifica que realmente tengas sesion iniciada-->
 		<?php
-		if (isset($_SESSION['loggedin'])) {  
+		if (isset($_SESSION['loggedin'])) {
 		}
 		else {
 			echo "<div class='alert alert-danger mt-4' role='alert'>
@@ -33,7 +33,7 @@ include_once ("../../factory.php");
 			exit;
 		}
 		// checking the time now when check-login.php page starts
-		$now = time();           
+		$now = time();
 		if ($now > $_SESSION['expire']) {
 			session_destroy();
 			echo "<div class='alert alert-danger mt-4' role='alert'>
@@ -43,7 +43,7 @@ include_once ("../../factory.php");
 			}
 		?>
 		<!------------------------------------------------------------------>
-    
+
 
 
 
@@ -77,7 +77,7 @@ include_once ("../../factory.php");
 							<h5 class="card-title">Nomina</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Actual</h6>
 							<div class="user-nomina col-12">
-							<p class="card-text">$500.00</p>	
+							<p class="card-text">$500.00</p>
 							</div>
 						</div>
 					</div>
@@ -88,7 +88,7 @@ include_once ("../../factory.php");
 							<h5 class="card-title">Prenomina</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Proxima</h6>
 							<div class="user-nomina col-12">
-							<p class="card-text">$500.00</p>	
+							<p class="card-text">$500.00</p>
 							</div>
 						</div>
 					</div>
@@ -98,15 +98,15 @@ include_once ("../../factory.php");
 							<h5 class="card-title">Vacaciones</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Dias acumulados</h6>
 							<div class="user-nomina col-12">
-							<p class="card-text"> 5 Dias</p>	
+							<p class="card-text"> 5 Dias</p>
 							</div>
 						</div>
 					</div>
 
 
-		
+
 			</div><!---left container--->
-			
+
 			 <!---right container--->
 			<div class="col-md-6">
 				<div class="row">
@@ -128,20 +128,20 @@ include_once ("../../factory.php");
 						<div class="card-body">
 							<h5 class="card-title">Solicitar atencion</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic departamento donde te atenderemos</h6>
-							<a class="btn btn-success col-3" 
-							   data-toggle="tooltip" data-placement="top" 
+							<a class="btn btn-success col-3"
+							   data-toggle="tooltip" data-placement="top"
 								title="Atencion en Recursos Humanos"
 								href= '<?php echo MENUCONTROLLER.'?'.'option=atencion&puesto=2&departamento=rh'?>'
 								>Recusos Hum.</a>
 							<a class="btn btn-success col-3"
-								data-toggle="tooltip" 
-								data-placement="top" 
+								data-toggle="tooltip"
+								data-placement="top"
 								title="Atencion en Capacitación y Desarrollo"
 								href= '<?php echo MENUCONTROLLER.'?'.'option=atencion&puesto=2&departamento=cyd'?>'
 								>Cap. y Desar.</a>
 							<a class="btn btn-success col-3"
-								data-toggle="tooltip" 
-								data-placement="top" 
+								data-toggle="tooltip"
+								data-placement="top"
 								href= '<?php echo MENUCONTROLLER.'?'.'option=atencion&puesto=2&departamento=finanzas'?>'
 								title="Atencion en Finanzas">Finanzas</a>
 						</div>
@@ -153,11 +153,11 @@ include_once ("../../factory.php");
 						<div class="card-body">
 							<h5 class="card-title">Solicitar repuestos</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic en el repuesto que solicitarás</h6>
-							<a class="btn btn-success col-3" 
+							<a class="btn btn-success col-3"
 								href= '<?php echo MENUCONTROLLER.'?'.'option=material&puesto=2&material=lentes'?>'>Lentes</a>
-							<a  class="btn btn-success col-3" 
+							<a  class="btn btn-success col-3"
 							    href= '<?php echo MENUCONTROLLER.'?'.'option=material&puesto=2&material=guantes'?>'>Guantes</a>
-							<a  class="btn btn-success col-3" 
+							<a  class="btn btn-success col-3"
 								href= '<?php echo MENUCONTROLLER.'?'.'option=material&puesto=2&material=cbocas'?>'>Cubre bocas</a>
 						</div>
 					</div><!---Solicitar repuestos--->
@@ -172,7 +172,7 @@ include_once ("../../factory.php");
 							   <input type="text" class="col-6  input-tex  use-keyboard-input" maxlength="255" name="sugerencia" id="sugerencia">
 							   <input type="submit" class="btn btn-success col-3" value="Enviar" >
 						   </form>
-	   
+
 					   </div>
 				   </div><!---Enviar sugerencias--->
 
@@ -185,7 +185,7 @@ include_once ("../../factory.php");
 							<a class="btn btn-success col-3"
 							href= '<?php echo MENUCONTROLLER.'?'.'option=curso&puesto=2'?>'
 							>Inscribirme</a>
-		
+
 						</div>
 					</div><!---Inscribirme al acurso--->
 
@@ -203,6 +203,6 @@ include_once ("../../factory.php");
 			$('[data-toggle="tooltip"]').tooltip()
 			})
 		</script>
-		
+
 </body>
 </html>

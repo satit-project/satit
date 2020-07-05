@@ -1,9 +1,3 @@
-<?php
-/* if(!($_SESSION['employeeID']))
- {
-    header("location:".constant('URL'));
-  }*/
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,25 +27,5 @@
     <title>Document</title>
 </head>
 <body>
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" href="<?php echo constant('URL');?>dashboard">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo constant('URL');?>nomina">Nomina</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo constant('URL');?>prenomina">Prenomina</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo constant('URL');?>account">Cuentas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo constant('URL');?>course">Curso</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo constant('URL');?>userSession/closeSession">Salir</a>
-        </li>
-    </ul>
-</body>
+</body
 </html>

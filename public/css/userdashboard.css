@@ -1,0 +1,127 @@
+html
+{
+  background-color: rgb(240, 240, 240);
+}
+/*------------------Logo----------------*/
+.logo-container{
+    background-image: url(../img/logo.jpg);
+    background-repeat:no-repeat;
+    background-size: 10vw;
+    width: 10vw;
+    height: 12vw;
+    display: block;
+    margin-inline-start: 20%;
+
+  }
+
+/*------------------Menu Items template----------------*/
+.division,.user-info
+{
+  margin-top: 2%;
+  font-size: x-large;
+  font-family:Arial, Helvetica, sans-serif;
+  color: rgb(117, 117, 117);
+  box-sizing: border-box;
+  padding: 5%;
+
+}
+
+
+
+/*------------------containers----------------*/
+.contenedor
+{
+  width: 98%;
+  padding-inline-start: 1%;
+  margin: 5px;
+  height: 70vw;
+  padding: 2%;
+}
+
+.login .logo-container
+{
+  margin-left: 25%;
+}
+.logo-container
+{
+  margin-left:40%;
+}
+.login {
+  padding-top:5%;
+  padding-left: 5%;
+  margin-left:25%;
+  width: 50%;
+  box-shadow: 2px 2px 8px 3px  rgb(170, 170, 170);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+
+}
+.contenido{
+  background-color: rgb(240, 240, 240);
+  padding-left: 10%;
+
+}
+
+/*------------------Buttons----------------*/
+.main-button
+{
+  border: none;
+  width: 30%;
+  height: 100%;
+  background-color: rgb(101, 197, 77);
+  margin-right: 2%;
+  color: white;
+  font-size: x-large;
+  box-sizing: border-box;
+}
+
+/*------------------user info----------------*/
+
+#user-name, .user-nomina{
+  color: black;
+  text-align: center;
+  padding: 1%;
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+
+}
+
+#user-code{
+  font-size: x-large;
+  padding: 0%;
+}
+
+#user-job{
+  font-size: large;
+  margin-bottom: 5%;
+}
+
+#user-code, #user-job{
+  margin: 2%;
+
+}
+
+.card-nborder {
+  border: none;
+  box-shadow: none;
+}
+
+.user-nomina h6
+{
+  margin:0;
+  padding:0;
+  inset-inline-start: 0px;
+}
+
+.card
+{
+  margin: 1.5%;
+}
+
+.card-login
+{
+ margin-top: 7%;
+ padding-bottom: 7%;
+ width: 35vw;
+ margin-left:35%;
+}
