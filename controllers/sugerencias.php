@@ -1,6 +1,6 @@
 <?php
 
-class Repuestos extends Controller {
+class Sugerencias extends Controller {
 
     function __construct(){
         parent::__construct();
@@ -8,6 +8,10 @@ class Repuestos extends Controller {
 
     function render() {
         $this->view->render('repuestos/index');
+    }
+
+    function enviar(){
+      echo "enviando sugerencias...";
     }
 
 }

@@ -15,11 +15,11 @@ require_once 'models/user.php';
 require_once 'models/job.php';
 // config file
 require_once 'config/config.php';
-//require_once 'config/setup.php';
+require_once 'config/setup.php';
 
 ///////////////////////////////////
 // SETUP -DELETE AFTER RUNNING
-//$setup = new SetupAccount();
+$setup = new SetupAccount();
 //////////////////////////////////
 
 $app = new App();

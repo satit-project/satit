@@ -10,6 +10,15 @@ class CartaTrabajo extends Controller {
         $this->view->render('cartaTrabajo/index');
     }
 
+    public function generarCartaDeTrabajo() {
+
+      $employeeID = $_SESSION['employeeID'];
+      $this->model->insert(['employeeID' => $employeeID]);
+    //  header("location:".constant('URL')."userdashboard");
+    }
+
+
+
 }
 
 ?>

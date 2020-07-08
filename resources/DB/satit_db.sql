@@ -38,7 +38,7 @@ create table empleados(
     INDEX(puesto_id),
     FOREIGN KEY (puesto_id)
     REFERENCES puestos(id)
-    ON DELETE CASCADE 
+    ON DELETE CASCADE
     /*Check*/
 
      /*todo one to many epuesto - empleados */
@@ -61,12 +61,12 @@ CREATE TABLE cursos_empleados(
 	id int primary key auto_increment not null,
     id_curso int not null, /* Llave foranea*/
     FOREIGN KEY (id_curso)
-    REFERENCES cursos(id) 
+    REFERENCES cursos(id)
     ON DELETE CASCADE,
     empleado_id varchar(64) not null,/* Llave foranea*/
     INDEX(empleado_id),
     FOREIGN KEY (empleado_id)
-    REFERENCES empleados(id) 
+    REFERENCES empleados(id)
     ON DELETE CASCADE,
     asistencia int
     /*Check*/
@@ -81,7 +81,7 @@ create table encuesta_de_satisfaccion(
     bueno int,
     regular int,
     malo int
-    
+
 );
 
 
@@ -93,8 +93,8 @@ create table nomina(
 	empleado_id varchar(64) NOT NULL,
     INDEX(empleado_id),
     fecha date not null,
-    
-    FOREIGN KEY (empleado_id) 
+
+    FOREIGN KEY (empleado_id)
     REFERENCES empleados(id)
     ON DELETE CASCADE
     /*todo one to many empleado - nomina*/
@@ -105,7 +105,7 @@ create table nomina(
 create table repuestos(
 	id int primary key auto_increment not null,
     repuesto varchar(45)
-    
+
      /*todo one to many solicitud_repuestos - repuestros*/
 
 );
@@ -118,14 +118,14 @@ create table solicitud_repuestos(
     fecha date,
     estatus int,
     INDEX(empleado_id),
-    FOREIGN KEY (empleado_id) 
+    FOREIGN KEY (empleado_id)
     REFERENCES empleados(id)
     ON DELETE CASCADE,
     INDEX(repuesto_id),
-    FOREIGN KEY (repuesto_id) 
+    FOREIGN KEY (repuesto_id)
     REFERENCES repuestos(id)
     ON DELETE CASCADE
-  
+
     /*todo one to many empleado - solicitud_repuestos */
 
 );
@@ -133,9 +133,10 @@ create table solicitud_repuestos(
 create table carta_de_trabajo(
 	id int primary key auto_increment not null,
     fecha date DEFAULT NOW(),
+		estatus int DEFAULT 0,
     empleado_id varchar(64) not null,/* Llave foranea*/
     INDEX(empleado_id),
-    FOREIGN KEY (empleado_id) 
+    FOREIGN KEY (empleado_id)
     REFERENCES empleados(id)
     ON DELETE CASCADE
 
@@ -164,10 +165,10 @@ create table cita(
     FOREIGN KEY (departamento_id)
     REFERENCES departamento(id)
     ON DELETE CASCADE,
-    
+
     empleado_id varchar(64)not null,/* Llave foranea*/
     INDEX(empleado_id),
-    FOREIGN KEY (empleado_id) 
+    FOREIGN KEY (empleado_id)
     REFERENCES empleados(id)
     ON DELETE CASCADE
      /*todo one to many empleado - cita */
@@ -179,10 +180,10 @@ create table cita(
 create table sugerencias(
 	id int primary key auto_increment not null,
     descripcion date,
-        
+
     empleado_id varchar(64) not null,/* Llave foranea*/
     INDEX(empleado_id),
-    FOREIGN KEY (empleado_id) 
+    FOREIGN KEY (empleado_id)
     REFERENCES empleados(id)
     ON DELETE CASCADE
     /*todo one to many empleado - sugerencias */
@@ -232,6 +233,3 @@ create table preguntas_seguridad(
     INDEX(empleado_id),
     FOREIGN KEY (empleado_id) REFERENCES empleados(id)
 );
-
-
-

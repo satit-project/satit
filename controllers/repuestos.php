@@ -10,6 +10,17 @@ class Repuestos extends Controller {
         $this->view->render('repuestos/index');
     }
 
+    public function lentes(){
+      echo "solicitando lentes...";
+    }
+
+    public function guantes(){
+      echo "solicitando guantes...";
+    }
+
+    public function cubrebocas(){
+      echo "solicitando cubrebocas...";
+    }
 }
 
 ?>

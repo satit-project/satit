@@ -131,7 +131,7 @@
 					   <div class="card-body">
 						   <h5 class="card-title">Sugerencias</h5>
 						   <h6 class="card-subtitle mb-2 text-muted">Envianos tus sugerencias</h6>
-						   <form method="post" action="MENUCONTROLLER/Sugerencias" >
+						   <form method="post" action="sugerencias/enviar" >
 							   <input type="text" class="col-6  input-tex  use-keyboard-input" maxlength="255" name="sugerencia" id="sugerencia">
 							   <input type="submit" class="btn btn-success col-3" value="Enviar" >
 						   </form>
@@ -173,8 +173,8 @@
             <br>Administrador<br>1208750
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <button type="button" class="btn btn-secon  dary" data-dismiss="modal">Close</button>
+            <a type="button" class="btn btn-primary" href="cartatrabajo/generarCartaDeTrabajo">Aceptar</a>
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <a type="button" class="btn btn-primary" href="atencion/recursosHumanos">Aceptar</a>
           </div>
         </div>
       </div>
@@ -217,7 +217,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <a type="button" class="btn btn-primary" href="atencion/capacitacionyDesarollo">Aceptar</a>
           </div>
         </div>
       </div>
@@ -238,7 +238,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <a type="button" class="btn btn-primary" href="atencion/finanzas">Aceptar</a>
           </div>
         </div>
       </div>
@@ -260,7 +260,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <a type="button" class="btn btn-primary" href="repuestos/lentes">Aceptar</a>
           </div>
         </div>
       </div>
@@ -282,7 +282,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <a type="button" class="btn btn-primary" href="repuestos/guantes">Aceptar</a>
           </div>
         </div>
       </div>
@@ -304,7 +304,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Aceptar</button>
+                <a type="button" class="btn btn-primary" href="repuestos/cubrebocas">Aceptar</a>
               </div>
             </div>
           </div>
