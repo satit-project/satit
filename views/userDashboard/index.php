@@ -197,7 +197,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="atencion/recursosHumanos">Aceptar</a>
+            <a type="button" class="btn btn-primary" href="atencion/newAppointment/1">Aceptar</a>
           </div>
         </div>
       </div>
@@ -219,7 +219,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="atencion/capacitacionyDesarollo">Aceptar</a>
+            <a type="button" class="btn btn-primary" href="atencion/newAppointment/2">Aceptar</a>
           </div>
         </div>
       </div>
@@ -240,7 +240,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="atencion/finanzas">Aceptar</a>
+            <a type="button" class="btn btn-primary" href="atencion/newAppointment/3" name="department" value=1>Aceptar</a>
           </div>
         </div>
       </div>

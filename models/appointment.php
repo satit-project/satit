@@ -6,9 +6,9 @@ class Appointment
 {
   public $employeeID;
   public $department;
-  public $status
+  public $status;
 
-  function __construct(argument)
+  public function __construct()
   {
     $this->employeeID="";
     $this->department="";

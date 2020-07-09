@@ -1,4 +1,5 @@
 <?php
+include_once('appointment.php');
 class AtencionModel extends Model{
 
     public function __construct(){
@@ -8,19 +9,19 @@ class AtencionModel extends Model{
 
 
     public function insert($datos) {
-        $query = $this->db->connect()->prepare('INSERT INTO cita(employeeID, departamento)
-        VALUES(:employeeID, :departamento)');
+        $query = $this->db->connect()->prepare('INSERT INTO cita(employeeID, departamento_id)
+        VALUES(:employeeID, :departamento_id)');
         try {
-            $registredP = $this->isRegisteredProcedure($datos['employeeID']);
+            $registredP = $this->isRegisteredProcedure($datos['employeeID'], $datos['departamento_id']);
             echo $registredP."</br>";
           if(!$registredP) {
 
-               $query->execute(['employeeID' => $datos['employeeID'],'departamento'=> $datos['department']]);
-                    echo "SE GENERO Atencion en". $datos['department']."<br>";
+               $query->execute(['employeeID' => $datos['employeeID'],'departamento_id'=> $datos['departamento_id']]);
+                    echo "SE GENERO Atencion en". $datos['departamento_id']."<br>";
           }
 
         } catch (PDOException $e) {
-          echo "NO SE GENERO ATENCION EN ".$datos['department']."<br>";
+          echo "NO SE GENERO ATENCION EN ".$datos['departamento_id']."<br>";
 
         }
     }
@@ -28,11 +29,12 @@ class AtencionModel extends Model{
     public function getAppointments() {
       $items = [];
       try {
-        $query = $this->db->connect()->query("SELECT * FROM carta_de_trabajo");
+        $query = $this->db->connect()->query("SELECT * FROM cita");
         while ($row = $query->fetch()) {
-          $item = new WorkLetter();
-          $item->department = $row['department'];
+          $item = new Appointment();
+          $item->department = $row['departamento_id'];
           $item->employeeID     = $row['employeeID'];
+          $item->status = $row['estatus'];
           array_push($items, $item);
         }
           return $items;
@@ -43,7 +45,7 @@ class AtencionModel extends Model{
 
     }
 
-    public function isRegisteredProcedure($employeeID) {
+    public function isRegisteredProcedure($employeeID, $departmentID) {
         $array = $this->getAppointments();
         // search for a registered WorkLetter on hold
         if(sizeof($array) == 0 )
@@ -54,7 +56,7 @@ class AtencionModel extends Model{
           $row = 0;
           $count = 0;
           while ($row < count($array)) {
-               if($array[$row]->{'employeeID'} == $employeeID && $array[$row]->{'status'} == 0 ){
+               if($array[$row]->{'employeeID'} == $employeeID && $array[$row]->{'status'} == 0 && $array[$row]->{'department'} == $departmentID ){
                     echo "found!<br>";
                     $count++;
                }
@@ -68,7 +70,7 @@ class AtencionModel extends Model{
             }
           }
         else {
-          echo "Is registred letter";
+          echo "Is registred procedure";
           return true;
         }
 

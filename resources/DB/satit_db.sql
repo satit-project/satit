@@ -17,6 +17,8 @@ DROP TABLE IF EXISTS vacaciones;
 DROP TABLE IF EXISTS empleados;
 DROP TABLE IF EXISTS puestos;
 DROP TABLE IF EXISTS preguntas_seguridad;
+DROP TABLE IF EXISTS master;
+
 
 
 create table puestos (
@@ -43,6 +45,24 @@ create table empleados(
 
      /*todo one to many epuesto - empleados */
 );
+
+
+
+create table master(
+	  id varchar(64) primary key not null,
+	  nombre varchar(45) not null,
+    apellidos varchar(45),
+    password varchar(128) not null,
+    puesto_id int not null,
+    INDEX(puesto_id),
+    FOREIGN KEY (puesto_id)
+    REFERENCES puestos(id)
+    ON DELETE CASCADE
+    /*Check*/
+
+     /*todo one to many epuesto - empleados */
+);
+
 
 
 
@@ -90,7 +110,7 @@ create table nomina(
     horas int not null,
     pago int not null,
     bono int DEFAULT 0,
-	empleado_id varchar(64) NOT NULL,
+	  empleado_id varchar(64) NOT NULL,
     INDEX(empleado_id),
     fecha date not null,
 
@@ -158,8 +178,8 @@ create table departamento(
 
 create table cita(
 	id int primary key auto_increment not null,
-    fecha date,a
-		estatus boolean,
+    fecha date DEFAULT NOW(),
+		estatus boolean DEFAULT 0,
     departamento_id int not null,/* Llave foranea*/
     INDEX(departamento_id),
     FOREIGN KEY (departamento_id)

@@ -1,5 +1,12 @@
 SELECT
  `id`,
+ `puesto`,
+ `active`
+ FROM `satit`.`puestos` LIMIT 1000;
+
+
+SELECT
+ `id`,
  `nombre`,
  `apellidos`,
  `password`,
@@ -27,3 +34,12 @@ SELECT
     `id`,
     `departamento`
     FROM `satit`.`departamento` LIMIT 1000;
+
+    SELECT
+     `id`,
+     `fecha`,
+     `estatus`,
+     `departamento_id`,
+     `employeeID`,
+     `comments`
+     FROM `satit`.`cita` LIMIT 1000;

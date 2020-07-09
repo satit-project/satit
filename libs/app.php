@@ -11,7 +11,6 @@ class App{
         $url = explode('/',$url);
         $this->userSession= new UserSession(); ///check
 
-
         // cuando se ingresa sin definir controlador
         if(empty($url[0])){
             $archivoController = 'controllers/main.php';
