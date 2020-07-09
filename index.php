@@ -19,7 +19,7 @@ require_once 'config/setup.php';
 
 ///////////////////////////////////
 // SETUP -DELETE AFTER RUNNING
-$setup = new SetupAccount();
+//$setup = new SetupAccount();
 //////////////////////////////////
 
 $app = new App();

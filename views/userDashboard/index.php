@@ -15,6 +15,8 @@
 <body>
 <navbar class="navbar navbar-dark bg-dark">
 </br>
+  <p style="color:white">usuario: <?php echo $_SESSION['employeeID']?></p>
+
 </navbar>
 <!---principal container--->
 <div class="container-fluid row">

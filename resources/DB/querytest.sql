@@ -21,3 +21,9 @@ SELECT
    `estatus`,
    `empleado_id`
    FROM `satit`.`carta_de_trabajo` LIMIT 1000;
+
+
+   SELECT
+    `id`,
+    `departamento`
+    FROM `satit`.`departamento` LIMIT 1000;

@@ -29,7 +29,8 @@ public function validate(){
    // echo "Validacion de login";
      $userForm = $_POST['userID'];
      $passForm = $_POST['password'];
-
+     $userData = $user->userExists($userForm, $passForm);
+     
      if($user->userExists($userForm, $passForm)) {
          //echo " usuario validado";
          $userSession->setCurrentUser($userForm);

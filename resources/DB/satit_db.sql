@@ -131,7 +131,7 @@ create table solicitud_repuestos(
 );
 
 create table carta_de_trabajo(
-	id int primary key auto_increment not null,
+	  id int primary key auto_increment not null,
     fecha date DEFAULT NOW(),
 		estatus int DEFAULT 0,
     empleado_id varchar(64) not null,/* Llave foranea*/
@@ -151,7 +151,6 @@ create table departamento(
 	id int primary key auto_increment not null,
     departamento varchar(45)
 
-
    /*todo one to many departamento - cita */
 
 );
@@ -159,18 +158,20 @@ create table departamento(
 
 create table cita(
 	id int primary key auto_increment not null,
-    fecha date,
+    fecha date,a
+		estatus boolean,
     departamento_id int not null,/* Llave foranea*/
     INDEX(departamento_id),
     FOREIGN KEY (departamento_id)
     REFERENCES departamento(id)
     ON DELETE CASCADE,
 
-    empleado_id varchar(64)not null,/* Llave foranea*/
-    INDEX(empleado_id),
-    FOREIGN KEY (empleado_id)
+    employeeID varchar(64)not null,/* Llave foranea*/
+    INDEX(employeeID),
+    FOREIGN KEY (employeeID)
     REFERENCES empleados(id)
-    ON DELETE CASCADE
+    ON DELETE CASCADE,
+		comments varchar(150)
      /*todo one to many empleado - cita */
 
 );

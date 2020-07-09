@@ -17,9 +17,15 @@ class Atencion extends Controller {
     }
 
     public function capacitacionyDesarollo() {
-      echo "cap y des  is working";
-      $this->redirectHome();
+      echo "cap y des is working";
+      $employeeID = $_SESSION['employeeID'];
+      if($this->model->insert(['employeeID' => $employeeID])){
+          $this->view->message = "Se solicito correctamente Atencion en Capacitacion y Desarrollo";
+      }else{
+            $this->view->message = 'Error al solicitar carta de trabajo';
+      }
 
+      $this->redirectHome();
     }
 
     public function finanzas() {
