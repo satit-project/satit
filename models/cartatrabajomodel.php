@@ -18,11 +18,11 @@ class CartaTrabajoModel extends Model{
           if(!$registredP) {
 
                $query->execute(['empleado_id' => $datos['employeeID'],'estatus'=> 0]);
-                    echo "SE GENERO CARTA DE TRABAJO</br>";
+               return true;
           }
 
         } catch (PDOException $e) {
-          echo "NO SE GENERO CARTA DE TRABAJO";
+              return false;
 
         }
     }

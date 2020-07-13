@@ -9,7 +9,7 @@ class SetupModel extends Model{
 
     public function insert($datos){
         // insertar datos en la BD
-        $query = $this->db->connect()->prepare('INSERT INTO master(id, nombre, apellidos, password, puesto_id )
+        $query = $this->db->connect()->prepare('INSERT INTO empleados(id, nombre, apellidos, password, puesto_id )
         VALUES(:employeeID,:name, :sourname, :password, :job)');
         $queryQuestions = $this->db->connect()->prepare('INSERT INTO preguntas_seguridad(pregunta_1, respuesta_1, pregunta_2, respuesta_2, empleado_id)
         VALUES(:question_1, :answer_1, :question_2, :answer_2, :employeeID)');

@@ -8,7 +8,7 @@ class AtencionModel extends Model{
     }
 
 
-    public function insert($datos) {
+    public  function insert($datos) {
         $query = $this->db->connect()->prepare('INSERT INTO cita(employeeID, departamento_id)
         VALUES(:employeeID, :departamento_id)');
         try {
@@ -17,19 +17,18 @@ class AtencionModel extends Model{
           if(!$registredP) {
 
                $query->execute(['employeeID' => $datos['employeeID'],'departamento_id'=> $datos['departamento_id']]);
-                    echo "SE GENERO Atencion en". $datos['departamento_id']."<br>";
+                return true; 
           }
 
         } catch (PDOException $e) {
-          echo "NO SE GENERO ATENCION EN ".$datos['departamento_id']."<br>";
-
+                return false;
         }
     }
 
     public function getAppointments() {
       $items = [];
       try {
-        $query = $this->db->connect()->query("SELECT * FROM cita");
+        $query = $this->db->connect()->query("SELECT * FROM cita ");
         while ($row = $query->fetch()) {
           $item = new Appointment();
           $item->department = $row['departamento_id'];
@@ -57,7 +56,7 @@ class AtencionModel extends Model{
           $count = 0;
           while ($row < count($array)) {
                if($array[$row]->{'employeeID'} == $employeeID && $array[$row]->{'status'} == 0 && $array[$row]->{'department'} == $departmentID ){
-                    echo "found!<br>";
+                    echo "ya tiene una cita activa en este departamento!<br>";
                     $count++;
                }
               $row++;

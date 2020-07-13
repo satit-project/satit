@@ -18,10 +18,19 @@
   <p style="color:white">usuario: <?php echo $_SESSION['employeeID']?></p>
 
 </navbar>
+
+<!-- Display status message -->
+<?php if(!empty($_REQUEST['message']) && !empty($_REQUEST['statusType'])){ ?>
+<div class="col-xs-12">
+    <div class="alert <?php echo $_REQUEST['statusType']; ?>"><?php echo $_REQUEST['message']; ?></div>
+</div>
+<?php } ?>
+
+
 <!---principal container--->
 <div class="container-fluid row">
 
-		 <!---left container--->
+     <!---left container--->
      <div class="col-md-6">
 			    <!--logo---->
 					<div class="logo-container">
@@ -333,10 +342,6 @@
             </div>
           </div>
         </div>
-
-
-
-
 
 </body>
 </html>

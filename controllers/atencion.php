@@ -5,6 +5,8 @@ class Atencion extends Controller {
     function __construct(){
         parent::__construct();
         $param = [];
+        $this->message="";
+        $this->statusType="";
     }
 
     function render() {
@@ -14,23 +16,23 @@ class Atencion extends Controller {
 
 
     public function newAppointment($departmentID) {
-      echo "cap y des is working";
       $employeeID = $_SESSION['employeeID'];
       $department = $departmentID[0];
-      echo $department;
-      if($this->model->insert(['employeeID' => $employeeID, 'departamento_id'=> $department])){
-          $this->view->message = "Se solicito correctamente Atencion en Capacitacion y Desarrollo";
+      $result = $this->model->insert(['employeeID' => $employeeID, 'departamento_id'=> $department]);
+      if( $result == 1){
+          $this->message = "La solicitud se envio correctamente.";
+          $this->statusType = "alert-success";
       }else{
-            $this->view->message = 'Error al solicitar carta de trabajo';
+            $this->message = 'Ya tiene una solicitud registrada, le atenderemos pronto.';
+            $this->statusType = 'alert-warning';
       }
-
-    //  $this->redirectHome();
+      $this->redirectHome();
     }
 
 
     public function redirectHome()
     {
-      header('location:'.constant('URL')."userdashboard");
+      header('location:'.constant('URL')."userdashboard?message=".$this->message."&statusType=".$this->statusType);
 
     }
 }

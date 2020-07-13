@@ -38,8 +38,11 @@ class Setup extends Controller
                   'question_2'=> "",
                   'answer_2'=> ""]);
           echo "setup create succesfully <br>";
+          header("location:".constant('URL'));
     } catch (Exception $e) {
       echo "error";
+      header("location".constant('URL'));
+
     }
 
 
