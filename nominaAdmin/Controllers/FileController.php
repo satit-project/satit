@@ -22,9 +22,10 @@
                             $id = $line[0];
                             $horas = $line[1];
                             $pago = $line[2];
-                            $fecha = $line[3];
+                            $bono = $line[3];
                             $empleado_id = $line[4];
-                            $file = new File($id, $horas, $pago, $fecha, $empleado_id);
+                            $fecha = $line[5];
+                            $file = new File($id, $horas, $pago, $bono, $empleado_id, $fecha);
                             File::upload($file);
                             //$this->show(); se dirige al view indicado
                         }

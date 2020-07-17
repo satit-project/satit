@@ -4,10 +4,11 @@
         private $id;
         private $horas;
         private $pago;
+        private $bono;
         private $empleado_id;
         private $fecha;
 
-        function __construct($id, $horas, $pago, $fecha, $empleado_id)
+        function __construct($id, $horas, $pago, $bono, $empleado_id, $fecha)
         {
             $this->setId($id);
             $this->setHoras($horas);
@@ -44,6 +45,15 @@
             $this->pago = $pago;
         }
 
+        public function getBono()
+        {
+            return $this->bono;
+        }
+        public function setBono($bono)
+        {
+            $this->bono = $bono;
+        }
+
         public function getEmpleadoId()
         {
             return $this->empleado_id;
@@ -65,12 +75,13 @@
         public static function upload($file)
         {
             $db=Database::getConnect();
-            $import=$db->prepare("INSERT into prenomina(id, horas, pago, fecha, empleado_id) values(:id, :horas, :pago, :fecha, :empleaod_id)");
+            $import=$db->prepare("INSERT into nomina(id, horas, pago, bono, empleado_id, fecha) values(:id, :horas, :pago, :bono, :empleado_id, :fecha)");
             $import->bindValue('id', $file->getId());
             $import->bindValue('horas', $file->getHoras());
             $import->bindValue('pago', $file->getPago());
-            $import->bindValue('fecha', $file->getFecha());
+            $import->bindValue('bono', $file->getBono());
             $import->bindValue('empleado_id', $file->getEmpleadoId());
+            $import->bindValue('fecha', $file->getFecha());
             $import->execute();
         }
     }
