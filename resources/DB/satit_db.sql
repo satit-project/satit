@@ -196,15 +196,15 @@ create table cita(
 
 
 
-create table sugerencias(
+create table comments(
 	id int primary key auto_increment not null,
-    descripcion date,
-
-    empleado_id varchar(64) not null,/* Llave foranea*/
-    INDEX(empleado_id),
-    FOREIGN KEY (empleado_id)
+    commentDate date DEFAULT NOW(),
+    employeeID varchar(64) not null,/* Llave foranea*/
+    INDEX(employeeID),
+    FOREIGN KEY (employeeID)
     REFERENCES empleados(id)
-    ON DELETE CASCADE
+    ON DELETE CASCADE,
+    comment VARCHAR(255) NOT NULL
     /*todo one to many empleado - sugerencias */
 
 

@@ -51,7 +51,7 @@
 
 
 					<!---nomina---->
-					<div class="card col-4 card-nborder">
+					<div class="card col-6 card-nborder">
 						<div class="card-body">
 							<h5 class="card-title">Nomina</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Actual</h6>
@@ -62,7 +62,7 @@
 					</div>
 
 
-					<div class="card col-4 card-nborder">
+					<div class="card col-6 card-nborder">
 						<div class="card-body">
 							<h5 class="card-title">Prenomina</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Proxima</h6>
@@ -72,7 +72,7 @@
 						</div>
 					</div>
 
-					<div class="card col-4 card-nborder">
+					<div class="card col-6 card-nborder">
 						<div class="card-body">
 							<h5 class="card-title">Vacaciones</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Dias acumulados</h6>
@@ -81,18 +81,6 @@
 							</div>
 						</div>
 					</div>
-          <script>
-  $( function() {
-    $( "#dialog-message" ).dialog({
-      modal: true,
-      buttons: {
-        Ok: function() {
-          $( this ).dialog( "close" );
-        }
-      }
-    });
-  } );
-  </script>
 
   
 			</div><!---left container--->
@@ -102,7 +90,7 @@
 				<div class="row">
 
  					<!---Solicitar carta--->
-					<div class="card col-12">
+					<div class="card col-6">
 						<div class="card-body">
 							<h5 class="card-title">Solicitar carta de trabajo</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Apareceran los datos de esta pantalla</h6>
@@ -151,10 +139,10 @@
 					<!---Enviar sugerencias--->
 				   <div class="card col-12">
 					   <div class="card-body">
-						   <h5 class="card-title">Sugerencias</h5>
-						   <h6 class="card-subtitle mb-2 text-muted">Envianos tus sugerencias</h6>
-						   <form method="post" action="sugerencias/enviar" >
-							   <input type="text" class="col-6  input-tex  use-keyboard-input" maxlength="255" name="sugerencia" id="sugerencia">
+						   <h5 class="card-title">Comentarios</h5>
+						   <h6 class="card-subtitle mb-2 text-muted">Envianos tus comentarios</h6>
+						   <form method="post" action="comment/sendComment" >
+							   <input type="text" class="col-6  input-tex  use-keyboard-input" maxlength="255" name="commentForm" id="commentForm">
 							   <input type="submit" class="btn btn-success col-3" value="Enviar" >
 						   </form>
 
