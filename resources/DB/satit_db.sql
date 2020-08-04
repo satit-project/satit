@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS cursos_empleados;
 DROP TABLE IF EXISTS cursos;
 DROP TABLE IF EXISTS encuesta_de_satisfaccion;
 DROP TABLE IF EXISTS nomina;
-DROP TABLE IF EXISTS solicitud_repuestos;
+DROP TABLE IF EXISTS material_request;
 DROP TABLE IF EXISTS repuestos;
 DROP TABLE IF EXISTS carta_de_trabajo;
 DROP TABLE IF EXISTS cita;
@@ -131,20 +131,18 @@ create table repuestos(
 );
 
 
-create table solicitud_repuestos(
+create table material_request(
     id int primary key auto_increment not null,
-    empleado_id varchar(64)not null,/* Llave foranea*/
-    repuesto_id int not null,
-    fecha date,
-    estatus int,
-    INDEX(empleado_id),
-    FOREIGN KEY (empleado_id)
-    REFERENCES empleados(id)
-    ON DELETE CASCADE,
-    INDEX(repuesto_id),
-    FOREIGN KEY (repuesto_id)
+    employeeID varchar(64)not null,/* Llave foranea*/
+    materialID int not null,
+    dateRequest date,
+    status boolean DEFAULT 0,
+    INDEX(employeeID),
+    FOREIGN KEY (employeeID)
+    REFERENCES empleados(id),
+    INDEX(materialID),
+    FOREIGN KEY (materialID)
     REFERENCES repuestos(id)
-    ON DELETE CASCADE
 
     /*todo one to many empleado - solicitud_repuestos */
 

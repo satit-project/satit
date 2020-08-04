@@ -21,6 +21,7 @@
 
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="<?php echo constant('URL');?>public/plugins/jquery/jquery.js" ></script>
+    <script src="<?php echo constant('URL');?>public/js/modals.js" ></script>
     <script src="<?php echo constant('URL');?>public/plugins/jquery/jQueryDatatables.min.js" ></script>
     <script src="<?php echo constant('URL');?>public/plugins/js/bootstrap-material-design.js" ></script>
     <script src="<?php echo constant('URL');?>public/plugins/js/datatablesMaterial.min.js" ></script>

@@ -81,9 +81,20 @@
 							</div>
 						</div>
 					</div>
+          <script>
+  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );
+  </script>
 
-
-
+  
 			</div><!---left container--->
 
 			 <!---right container--->
@@ -271,7 +282,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="repuestos/lentes">Aceptar</a>
+            <a type="button" class="btn btn-primary" href="material/materialRequest/1">Aceptar</a>
           </div>
         </div>
       </div>
@@ -293,7 +304,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="repuestos/guantes">Aceptar</a>
+            <a type="button" class="btn btn-primary" href="material/materialRequest/1">Aceptar</a>
           </div>
         </div>
       </div>
@@ -315,7 +326,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a type="button" class="btn btn-primary" href="repuestos/cubrebocas">Aceptar</a>
+                <a type="button" class="btn btn-primary" href="material/materialRequest/3">Aceptar</a>
               </div>
             </div>
           </div>
