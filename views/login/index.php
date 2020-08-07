@@ -19,7 +19,8 @@
         <header>
         </header>
             <!-- LOGIN -->
-            <div class="container-fluid contenido">
+            <div class="container-fluid contenido ">
+    
                 <div class="login card-login">
                     <div class="logo-container">
                         <img class="img-logo">

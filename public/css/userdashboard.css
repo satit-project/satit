@@ -4,7 +4,7 @@ html
 }
 /*------------------Logo----------------*/
 .logo-container{
-    background-image: url(../img/logo.jpg);
+    background-image: url('../img/logo.jpg');
     background-repeat:no-repeat;
     background-size: 10vw;
     width: 10vw;
@@ -36,6 +36,7 @@ html
   margin: 5px;
   height: 70vw;
   padding: 2%;
+  border-radius: 8px;
 }
 
 .login .logo-container
@@ -85,7 +86,9 @@ html
   background-color: rgb(241, 241, 241);
 
 }
-
+.user-nomina {
+  font-size: xx-large;
+}
 #user-code{
   font-size: x-large;
   padding: 0%;
