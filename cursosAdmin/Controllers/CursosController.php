@@ -23,7 +23,7 @@
             {
                 $estatus="on";
             }
-            $cursos = new Cursos(NULL, $_POST['nombre'], $_POST['descripcion'], $_POST['horario'], $_POST['fecha'], $estatus);
+            $cursos = new Cursos(NULL, $_POST['fecha'], $_POST['nombre'], $_POST['descripcion'], $_POST['horario']);
             Cursos::save($cursos);
             $this->show();
         }
@@ -40,7 +40,7 @@
         }
         function update()
         {
-            $cursos = new Cursos($_POST['id'], $_POST['nombre'], $_POST['descripcion'], $_POST['horario'], $_POST['fecha'], $_POST['estatus']);
+            $cursos = new Cursos($_POST['id'], $_POST['fecha'], $_POST['nombre'], $_POST['descripcion'], $_POST['horario'], $_POST['fecha']);
             Cursos::update($cursos);
             $this->show();
         }
