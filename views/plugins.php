@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/plugins/css/bootstrap-material-design.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/plugins/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="<?php echo constant('URL');?>public/plugins/css/dataTablesbootstrap.min.css">
+    <link href="<?php echo constant('URL');?>public/css/userdashboard.css" rel="stylesheet" type="text/css">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>

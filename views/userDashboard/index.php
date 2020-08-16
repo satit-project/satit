@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link href="<?php echo constant('URL');?>public/css/userdashboard.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../css/keyboard.css">
 	<script src="../js/keyboard.js"></script>
 </head>
@@ -15,7 +13,7 @@
 <body>
 <navbar class="navbar navbar-dark bg-dark">
 </br>
-  <p style="color:white">usuario: <?php echo $_SESSION['employeeID']?></p>
+  <p style="color:white">Bienvenido: <?php echo $_SESSION['name'];?></p>
 
 </navbar>
 
@@ -30,28 +28,7 @@
 <!---principal container--->
 <div class="container-fluid row">
 
-     <!---left container--->
-     <div class="col-md-6">
-			    <!--logo---->
-					<div class="logo-container">
-					</div>
-
-					<!---user info---->
-					<div class="card col-12 text-white bg-dark mb-3">
-						<div class="card-body">
-							<h5  id="user-name" class="card-title">Emmanuel Nuño Estrella</h5>
-							<h6 id="user-code" class="card-subtitle mb-2 text-muted">
-							    1208750
-							</h>
-							<h6 id="user-job" class="card-subtitle mb-2 text-muted">
-							    Administrador
-							</h6>
-						</div>
-					</div>
-
-
-					<!---nomina---->
-					<div class="card col-6 card-nborder">
+<div class="card col-3 card-nborder">
 						<div class="card-body">
 							<h5 class="card-title">Nomina</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Actual</h6>
@@ -62,7 +39,7 @@
 					</div>
 
 
-					<div class="card col-6 card-nborder">
+					<div class="card col-3 card-nborder">
 						<div class="card-body">
 							<h5 class="card-title">Prenomina</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Proxima</h6>
@@ -72,7 +49,7 @@
 						</div>
 					</div>
 
-					<div class="card col-6 card-nborder">
+					<div class="card col-3 card-nborder">
 						<div class="card-body">
 							<h5 class="card-title">Vacaciones</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Dias acumulados</h6>
@@ -82,15 +59,27 @@
 						</div>
 					</div>
 
-  
-			</div><!---left container--->
 
-			 <!---right container--->
-			<div class="col-md-6">
-				<div class="row">
+     <!---left container--->
+     <div class="col-md-6">
+			    <!--logo---->
+	
+					<!---user info---->
+					<div class="card col-12 text-white bg-dark mb-3">
+						<div class="card-body">
+							<h5  id="user-name" class="card-title"><?php echo $_SESSION["name"];?></h5>
+							<h6 id="user-code" class="card-subtitle mb-2 text-muted">
+							    <?php echo $_SESSION['job'] ?>
+							</h>
+							<h6 id="user-job" class="card-subtitle mb-2 text-muted">
+              <?php echo $_SESSION['employeeID'] ?>
+							</h6>
+						</div>
+					</div>
 
- 					<!---Solicitar carta--->
-					<div class="card col-6">
+
+          			<!---Solicitar carta--->
+					<div class="card col-12">
 						<div class="card-body">
 							<h5 class="card-title">Solicitar carta de trabajo</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Apareceran los datos de esta pantalla</h6>
@@ -100,9 +89,8 @@
 						</div>
 					</div><!---Solicitar carta--->
 
-
  					<!---Solicitar atencion--->
-					<div class="card col-12">
+           <div class="card col-12">
 						<div class="card-body">
 							<h5 class="card-title">Solicitar atencion</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic departamento donde te atenderemos</h6>
@@ -118,6 +106,17 @@
 						</div>
 
 					</div><!---Solicitar atencion--->
+
+  
+			</div><!---left container--->
+
+			 <!---right container--->
+			<div class="col-md-6">
+				<div class="row">
+
+ 		
+
+
 
  					<!---Solicitar repuestos--->
 					<div class="card col-12">

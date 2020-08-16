@@ -1,11 +1,12 @@
 <?php
 
 class UserSession extends Controller{
+    public $user;
 
     function __construct(){
         parent::__construct();
-        session_start();
         $this->user = new User();
+        session_start();
     }
 
     public function render() {
@@ -15,7 +16,7 @@ class UserSession extends Controller{
    public  function restore(){
       if(isset($_SESSION['userID'])){
           echo "hay session";
-          $this->user->setUser($userSession->getCurrentUser());
+          $this->user->setUser($this->getCurrentUser());
           echo "else restore";
 
         //  header("location: ".constant('URL').'dashboard');
@@ -36,11 +37,10 @@ public function validate(){
      $passForm = $_POST['password'];
      echo "validating...";
      if($this->user->userExists($userForm, $passForm)) {
-         //echo " usuario validado";
+         //usuario valido, se registra;
          $this->setCurrentUser($userForm);
-         $this->user->setUser($userForm);
          echo "bienvenido". $userForm;
-         header("location: ".constant('URL').'dashboard');
+         header("location: ".constant('URL').'userdashboard');
 
       //  $this->view->render('dashboard/index');
 
@@ -54,12 +54,17 @@ public function validate(){
 }
 
 
-    public function setCurrentUser($employeeID) {
-        $_SESSION['employeeID']= $employeeID;
+    public function setCurrentUser($userInfo) {
+        $userData = $this->user->setUser($userInfo);
+        $_SESSION["employeeID"] = $this->user->get("employeeID");
+        $_SESSION["name"] = $this->user->get("name");
+        $_SESSION["job"] = $this->user->get("job");
+
     }
 
-    public function getCurrentUser(){
-        return $_SESSION['employeeID'];
+
+    public function getUserInfo(){
+        return $this->user->getAllData();
     }
 
     public function closeSession(){

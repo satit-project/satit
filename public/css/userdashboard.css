@@ -78,6 +78,11 @@ html
 
 /*------------------user info----------------*/
 
+
+#user-name{
+  border: 4px red;
+  border-bottom-style: solid;
+}
 #user-name, .user-nomina{
   color: black;
   text-align: center;
@@ -127,4 +132,10 @@ html
  padding-bottom: 7%;
  width: 35vw;
  margin-left:35%;
+}
+
+
+.card{
+  border-radius: 8px;
+  border: red;
 }

@@ -43,3 +43,8 @@ SELECT
      `employeeID`,
      `comments`
      FROM `satit`.`cita` LIMIT 1000;
+
+use satit;
+SELECT empleados.id as 'employeeID', empleados.nombre, empleados.puesto_id,
+       puestos.id, puestos.puesto
+  FROM empleados INNER JOIN puestos ON empleados.puesto_id = puestos.id WHERE empleados.id = '999111';

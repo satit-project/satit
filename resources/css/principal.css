@@ -131,3 +131,7 @@ html
  width: 35vw;
  margin-left:35%;
 }
+
+.card-text{
+  border-radius: 3px;
+}
