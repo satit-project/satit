@@ -19,7 +19,7 @@
             <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $cursos->getFecha()?>">
         </div>
         <div class="check-box">
-			<label>Activo <input type="checkbox" name="estatus" <?php echo $cursos->getEstatus() ?>></label>
+			
 		</div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>

@@ -18,7 +18,7 @@
             <input type="date" class="form-control" id="fecha" name="fecha">
         </div>
         <div class="check-box">
-            <label>Activo <input type="checkbox" name="estatus" checked>  </label>      
+           
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
