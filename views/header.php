@@ -30,6 +30,7 @@
     <script src="<?php echo constant('URL');?>public/plugins/jquery/jQueryDatatables.min.js" ></script>
     <script src="<?php echo constant('URL');?>public/plugins/js/bootstrap-material-design.js" ></script>
     <script src="<?php echo constant('URL');?>public/plugins/js/datatablesMaterial.min.js" ></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -53,5 +54,8 @@
             <a class="nav-link" href="<?php echo constant('URL');?>userSession/closeSession">Salir</a>
         </li>
     </ul>
+
+
+
 </body>
 </html>
