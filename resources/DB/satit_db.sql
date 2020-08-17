@@ -149,9 +149,9 @@ create table material_request(
 );
 
 create table carta_de_trabajo(
-	  id int primary key auto_increment not null,
+	id int primary key auto_increment not null,
     fecha date DEFAULT NOW(),
-		estatus int DEFAULT 0,
+	estatus int DEFAULT 0,
     empleado_id varchar(64) not null,/* Llave foranea*/
     INDEX(empleado_id),
     FOREIGN KEY (empleado_id)
