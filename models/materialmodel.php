@@ -15,7 +15,7 @@ class MaterialModel extends Model{
         $isRegisteredProcedure = $this->isRegisteredProcedure($data['employeeID'], $data['materialID']);
         if(!$isRegisteredProcedure){
 
-            $query = $this->db->connect()->prepare('INSERT INTO material_request(:employeeID, :materialID)
+            $query = $this->db->connect()->prepare('INSERT INTO material_request(employeeID, materialID)
             VALUES(:employeeID,:materialID)');
             try{
                 $query->execute([
@@ -24,7 +24,6 @@ class MaterialModel extends Model{
                     ]);
                 return true;
             }catch(PDOException $e){
-                echo "<br>" . $e->getMessage();
                 return false;
             }
         }else{

@@ -41,7 +41,7 @@ class material extends Controller {
       }
       
       
-      //$this->redirectHome();
+      $this->redirectHome();
     }
 
 

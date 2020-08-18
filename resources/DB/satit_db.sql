@@ -110,7 +110,7 @@ create table nomina(
     horas int not null,
     pago int not null,
     bono int DEFAULT 0,
-	  empleado_id varchar(64) NOT NULL,
+	empleado_id varchar(64) NOT NULL,
     INDEX(empleado_id),
     fecha date not null,
 
@@ -135,8 +135,8 @@ create table material_request(
     id int primary key auto_increment not null,
     employeeID varchar(64)not null,/* Llave foranea*/
     materialID int not null,
-    dateRequest date,
-    status boolean DEFAULT 0,
+    dayRequested date DEFAULT NOW(),
+    requestStatus boolean DEFAULT 0,
     INDEX(employeeID),
     FOREIGN KEY (employeeID)
     REFERENCES empleados(id),
