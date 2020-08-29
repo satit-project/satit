@@ -98,7 +98,7 @@
         public static function delete($id)
         {
             $db=Database::getConnect();
-            $delete=$db->prepare('DELETE FROM cita WHERE id=:id');
+            $delete=$db->prepare('UPDATE cita SET estatus=1 WHERE id=:id');
             $delete->bindValue('id', $id);
             $delete->execute();
         }

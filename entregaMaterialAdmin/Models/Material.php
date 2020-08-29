@@ -87,7 +87,7 @@
         public static function delete($id)
         {
             $db=Database::getConnect();
-            $delete=$db->prepare('DELETE FROM material_request WHERE id=:id');
+            $delete=$db->prepare('UPDATE material_request SET status = 1 WHERE id=:id');
             $delete->bindValue('id', $id);
             $delete->execute();
         }
