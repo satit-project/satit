@@ -9,17 +9,16 @@
 
   </head>
   <body>
-  <?php  require_once ('views/header.php'); ?>
+  <?php  require_once ('sidenav.php'); ?>
   <?php echo $this->message;?>
   <div class="container">
-		<div class="row">
+		<div class="row" style="text-align:center;">
 			<div class="col-sm-12">
 				<h1>Crear Cuenta</h1>
-				<p>Creador de cuentas</p>
 			</div>
 	</div>
 
-	<div class="row">
+	<div class="row" id="main">
 		<div class="col-sm-12 col-md-6 col-lg-6">
 
 		<h3>Crear una Cuenta</h3>

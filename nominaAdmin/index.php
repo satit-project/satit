@@ -7,10 +7,9 @@
         <link rel="stylesheet" href= "<?php echo constant('URL');?>/public/css/sidenav.css">
  
     </head>  
-    <body>      
-
+    <body>    
+        <h1 style="font-size: 30px; text-align:center;">Nomina</h1>  
         <?php
-    
             include_once 'dbConfig.php';
             if(!empty($_GET['status']))
             {
@@ -40,10 +39,14 @@
             <?php }
         ?>
 
-        <div class="row">
+        <div>
+            <?php require_once('sidenav.php'); ?>
+        </div>
+
+        <div class="row" id="main">
             <div class="col-md-12 head">
-                <div class="float-right">
-                    <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i>Importar datos</a>
+                <div class="float-left">
+                    <a href="javascript:void(0);" class="btn btn-success" style="font-size:14px;" onclick="formToggle('importFrm');"><i class="plus"></i>Importar datos</a>
                 </div>
             </div>
             <div class="col-md-12" id="importFrm" style="display: none;">
@@ -53,7 +56,7 @@
                 </form>
             </div>
             <table class="table table-striped table-bordered">
-                <thead class="thead-dark">
+                <thead class="thead">
                     <tr>
                         <th class="text-center">#ID Registro</th>
                         <th class="text-center">Horas</th>
