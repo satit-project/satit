@@ -8,7 +8,7 @@
     else
     {
         $controller = 'cursos';
-        $action = 'index';
+        $action = 'show';
     }
     require_once('Views/Layouts/layout.php');
 ?>
