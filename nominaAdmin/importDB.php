@@ -1,5 +1,5 @@
 <?php
-    include_once 'dbConfig.php';
+    include_once 'DBConnection.php';
     if(isset($_POST['importSubmit']))
     {
         $csvMimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain');
@@ -31,4 +31,4 @@
 
     header("Location: index.php".$qstring);
 
-    ?>
+    ?> 

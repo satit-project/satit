@@ -1,5 +1,5 @@
 <?php
-    include_once 'dbConfig.php';
+    include_once 'DBConnection.php';
     if(isset($_POST['importSubmit']))
     {
         $csvMimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel', 'text/plain');
@@ -16,7 +16,7 @@
                     $pago = $line[2];
                     $fecha = $line[3];
                     $empleado_id = $line[4];
-                    $db->query("INSERT into prenomina(id, horas, pago, fecha, empleado_id) values('$id','$horas', '$pago', '$fecha', '$empleado_id')");
+                    $db->query("INSERT into nomina(id, horas, pago, fecha, empleado_id) values('$id','$horas', '$pago', '$fecha', '$empleado_id')");
                 }
                 fclose($csvFile);
                 $qstring = '?status=succ';
@@ -30,4 +30,4 @@
 
     header("Location: index.php".$qstring);
 
-    ?>
+    ?> 

@@ -58,7 +58,7 @@
     #main {
         transition: margin-left .5s;
         padding: 16px;
-        margin-left: 70px;
+        margin-left: 470px;
         font-size: 14px;
     }
     /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -94,12 +94,12 @@
                 if (mini) {
                     console.log("opening sidebar");
                     document.getElementById("mySidebar").style.width = "250px";
-                    document.getElementById("main").style.marginLeft = "70px";
+                    document.getElementById("main").style.marginLeft = "470px";
                     this.mini = false;
                 } else {
                     console.log("closing sidebar");
                     document.getElementById("mySidebar").style.width = "85px";
-                    document.getElementById("main").style.marginLeft = "70px";
+                    document.getElementById("main").style.marginLeft = "470px";
                     this.mini = true;
                 }
             }
