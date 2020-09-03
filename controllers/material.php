@@ -28,19 +28,12 @@ class material extends Controller {
         echo $this->message;
 
       }
-      if($result == -1)
-      {
+      else{
         $this->message = 'Ya tiene una solicitud registrada, le atenderemos pronto.';
         $this->statusType = 'alert-warning';
         echo $this->message;
 
       }
-      else{
-        echo "<br>Hubo un error al registrar tu solicitud, vuelve a intentarlo";
-
-      }
-      
-      
       $this->redirectHome();
     }
 

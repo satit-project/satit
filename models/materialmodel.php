@@ -9,31 +9,26 @@ class MaterialModel extends Model{
 
     public function insert($data){
         // inseert into database
-       
-        $result;
-        // TODO : verify if this procedures is alrready register
-        $isRegisteredProcedure = $this->isRegisteredProcedure($data['employeeID'], $data['materialID']);
-        if(!$isRegisteredProcedure){
 
             $query = $this->db->connect()->prepare('INSERT INTO material_request(employeeID, materialID)
             VALUES(:employeeID,:materialID)');
             try{
-                $query->execute([
-                    'employeeID'=>$data['employeeID'],
-                    'materialID'=>$data['materialID']
-                    ]);
-                return true;
+                $isRegisteredProcedure = $this->isRegisteredProcedure($data['employeeID'], $data['materialID']);
+                echo $isRegisteredProcedure."<br>";
+                if(!$isRegisteredProcedure){
+                    $query->execute([
+                        'employeeID'=>$data['employeeID'],
+                        'materialID'=>$data['materialID']
+                        ]);
+                    return true;
+                }
             }catch(PDOException $e){
                 return false;
             }
-        }else{
-            return -1;
         }
 
 
-    }
-
-    public function getMaterialRequests()
+    public function getRequests()
     {
         $items = [];
         try{
@@ -43,18 +38,19 @@ class MaterialModel extends Model{
                 $item = new Material();
                 $item->employeeID= $row['employeeID'];
                 $item->materialID= $row['materialID'];
-
                 array_push($items, $item);
             }
             return $items;
         }catch(PDOException $e){
+            echo "error en conexion";
             return [];
         }
+
     }
 
 
     public function isRegisteredProcedure($employeeID,$materialID) {
-        $array = $this->getMaterialRequests();
+        $array = $this->getRequests();
         // search for a registered procedures
         if(sizeof($array) == 0 )
         {
