@@ -45,6 +45,18 @@
                 <div class="float-left">
                     <a href="javascript:void(0);" style="font-size: 12px;" class="btn btn-success" onclick="formToggle('importFrm');"><i class="plus"></i>Importar datos</a><br><br>
                 </div>
+                <form class="form-inline float-right" method="post">
+                    <div class="form-group row">
+                        <div class="col-xs-4">
+                            <input class="form-control" style="font-size: 12px;" id="id" name="buscar" type="text" placeholder="Busqueda por ID">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xs-4">
+                            <button type="submit" name="busca" style="font-size: 14px;" class="btn btn-primary"><span class="glyphicon glyphicon-search"> </span> Buscar </button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-md-12" id="importFrm" style="display: none;">
                 <form action="importDB.php" method="post" enctype="multipart/form-data">
@@ -65,8 +77,22 @@
                     </thead>
                     <tbody>
                     <?php
-                    // Get member rows
-                    $result = $db->query("SELECT * FROM nomina");
+                    if(isset($_POST["busca"]))
+                    {
+                        $str = $_POST["buscar"];
+                        if($str == '')
+                        {
+                            $result = $db->query("SELECT * FROM nomina");
+                        }
+                        else
+                        {
+                            $result = $db->query("SELECT * FROM nomina WHERE empleado_id = '$str'");
+                        }
+                    }
+                    else
+                    {
+                        $result = $db->query("SELECT * FROM nomina");
+                    }
                     if($result->num_rows > 0){
                         while($row = $result->fetch_assoc()){
                     ?>
