@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../css/keyboard.css">
-	<script src="../js/keyboard.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo(URL)?>resources/css/keyboard.css">
+
+
 </head>
 
     <title>Principal</title>
 </head>
   <?php require_once('views/plugins.php') ?>
 <body>
-<navbar class="navbar navbar-dark bg-dark">
+<navbar class="navbar navbar-dark bg-dark" id="topNav">
 </br>
-  <p style="color:white">Bienvenido: <?php echo $_SESSION['name'];?></p>
+  <p  style="color:white">Bienvenido: <?php echo $_SESSION['name'];?></p>
 
 </navbar>
 
@@ -70,6 +71,7 @@
 							<h5  id="user-name" class="card-title"><?php echo $_SESSION["name"];?></h5>
 							<h6 id="user-code" class="card-subtitle mb-2 text-muted">
 							    <?php echo $_SESSION['job'] ?>
+                  
 							</h>
 							<h6 id="user-job" class="card-subtitle mb-2 text-muted">
               <?php echo $_SESSION['employeeID'] ?>
@@ -77,8 +79,7 @@
 						</div>
 					</div>
 
-
-          			<!---Solicitar carta--->
+          <!---Solicitar carta--->
 					<div class="card col-12">
 						<div class="card-body">
 							<h5 class="card-title">Solicitar carta de trabajo</h5>
@@ -95,13 +96,7 @@
 							<h5 class="card-title">Solicitar atencion</h5>
 							<h6 class="card-subtitle mb-2 text-muted">Haz clic departamento donde te atenderemos</h6>
               <button type="button" class="btn btn-primary btn col-3" data-toggle="modal" data-target="#recursosHumanos">
-                Rec.Hum
-              </button>
-              <button type="button" class="btn btn-primary btn col-3" data-toggle="modal" data-target="#capacitacionydesarollo">
-                Cap. Y Des.
-              </button>
-              <button type="button" class="btn btn-primary btn col-3" data-toggle="modal" data-target="#finanzas">
-                Finanzas.
+                Atencion
               </button>
 						</div>
 
@@ -114,26 +109,6 @@
 			<div class="col-md-6">
 				<div class="row">
 
- 		
-
-
-
- 					<!---Solicitar repuestos--->
-					<div class="card col-12">
-						<div class="card-body">
-							<h5 class="card-title">Solicitar repuestos</h5>
-							<h6 class="card-subtitle mb-2 text-muted">Haz clic en el repuesto que solicitarás</h6>
-              <button type="button" class="btn btn-primary btn col-3" data-toggle="modal" data-target="#lentes">
-                LENTES
-              </button>
-              <button type="button" class="btn btn-primary btn col-3" data-toggle="modal" data-target="#guantes">
-                GUANTES
-              </button>
-              <button type="button" class="btn btn-primary btn col-3" data-toggle="modal" data-target="#cubrebocas">
-                CUBRE BOCAS
-              </button>
-						</div>
-					</div><!--Solicitar repuestos-->
 
 					<!---Enviar sugerencias--->
 				   <div class="card col-12">
@@ -254,70 +229,6 @@
     </div>
 
 
-    <!-- Modal LENTES-->
-    <div class="modal fade" id="lentes" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Lentes</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Deseas solicitar lentes?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="material/materialRequest/1">Aceptar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Modal GUANTES-->
-    <div class="modal fade" id="guantes" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">GUANTES</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Deseas solicitar guantes?
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-primary" href="material/materialRequest/1">Aceptar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-        <!-- Modal CUBRE BOCAS-->
-        <div class="modal fade" id="cubrebocas" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">CUBRE BOCAS</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Deseas solicitar Cubre bocas?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a type="button" class="btn btn-primary" href="material/materialRequest/3">Aceptar</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
         <!-- Modal CURSO-->
@@ -340,6 +251,7 @@
             </div>
           </div>
         </div>
-
+        <script src="<?php echo(URL)?>resources/js/keyboard.js"></script>
+       <script src="<?php echo(URL)?>/public/js/userDashboard.js"></script>
 </body>
 </html>

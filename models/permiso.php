@@ -1,6 +1,6 @@
 <?php 
 
-class MaterialModel extends Model{
+class Permiso extends Model{
     
     public function __construct(){
         parent::__construct();
@@ -10,14 +10,15 @@ class MaterialModel extends Model{
     public function insert($data){
         // inseert into database
 
-            $query = $this->db->connect()->prepare('INSERT INTO material_request(employeeID)
-            VALUES(:employeeID)');
+            $query = $this->db->connect()->prepare('INSERT INTO permisos(employeeID, fecha, hora)
+            VALUES(:employeeID,:fecha, hora)');
             try{
-                $isRegisteredProcedure = $this->isRegisteredProcedure($data['employeeID']);
+                $isRegisteredProcedure = $this->isRegisteredProcedure($data['employeeID'], $data['fecha']);
                 echo $isRegisteredProcedure."<br>";
                 if(!$isRegisteredProcedure){
                     $query->execute([
-                        'employeeID'=>$data['employeeID']
+                        'employeeID'=>$data['employeeID'],
+                        'fecha'=>$data['fecha']
                         ]);
                     return true;
                 }
@@ -31,11 +32,12 @@ class MaterialModel extends Model{
     {
         $items = [];
         try{
-            $query = $this->db->connect()->query("SELECT * FROM material_request");
+            $query = $this->db->connect()->query("SELECT * FROM permisos");
             while($row = $query->fetch())
             {
                 $item = new Material();
                 $item->employeeID= $row['employeeID'];
+                $item->materialID= $row['materialID'];
                 array_push($items, $item);
             }
             return $items;
@@ -46,8 +48,8 @@ class MaterialModel extends Model{
 
     }
 
-    //TODO: CONFIGURACION DEL STATUS//
-    public function isRegisteredProcedure($employeeID) {
+
+    public function isRegisteredProcedure($employeeID,$fecha) {
         $array = $this->getRequests();
         // search for a registered procedures
         if(sizeof($array) == 0 )
@@ -58,7 +60,7 @@ class MaterialModel extends Model{
           $row = 0;
           $count = 0;
           while ($row < count($array)) {
-               if($array[$row]->{'employeeID'} == $employeeID){
+               if($array[$row]->{'employeeID'} == $employeeID && $array[$row]->{'fecha'} == $fecha ){
                     echo "found!<br>";
                     $count++;
                }
@@ -81,5 +83,4 @@ class MaterialModel extends Model{
 
 
 }
-
 ?>

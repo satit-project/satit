@@ -12,7 +12,7 @@
         <div class="col mb-4">
           <div class="rounded card h-80">
             <!--Card image-->
-            <div class="view overlay">
+            <div class="view overlay" >
             <a href="NominaAdmin">
                 <img style="width:290px; height:220px; padding-left:40px; padding-right:40px;" class="card-img-top" src="/satit/resources/img/nomina.png"
                 alt="Card image cap">

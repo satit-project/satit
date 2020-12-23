@@ -11,9 +11,6 @@ class CommentModel extends Model{
         // inseert into database
        
         $result;
-        // TODO : verify if this procedures is alrready register
-        $isRegisteredProcedure = $this->isRegisteredProcedure($data['employeeID'], $data['comment']);
-        if(!$isRegisteredProcedure){
 
             $query = $this->db->connect()->prepare('INSERT INTO comments(employeeID, comment)
             VALUES(:employeeID,:comment)');
@@ -27,9 +24,7 @@ class CommentModel extends Model{
                 echo "<br>" . $e->getMessage();
                 return false;
             }
-        }else{
-            return -1;
-        }
+
 
 
     }

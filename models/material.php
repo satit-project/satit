@@ -1,7 +1,7 @@
 <?php
 class Material{
 
-    public $materialID="";
+    public $status="";
     public $employeeID="";
 
 

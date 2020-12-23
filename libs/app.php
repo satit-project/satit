@@ -20,7 +20,8 @@ class App{
             $controller->render();
            return false;
         }
-
+                                             //$url[0] = material 
+                                            //$archivoController = controllers/material.php
         $archivoController = 'controllers/'. $url[0] .'.php';
 
         // valida si existe el controlador

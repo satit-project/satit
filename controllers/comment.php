@@ -23,25 +23,19 @@ class comment extends Controller {
      
       $result = $this->model->insert(['employeeID' => $employeeID, 'comment'=> $comment]);
       if( $result == 1){
-          $this->message = "La solicitud se envio correctamente.";
+          $this->message = "Gracias por sus comentarios, son de gran ayuda para nosotros.";
           $this->statusType = "alert-success";
         echo $this->message;
 
       }
-      if($result == -1)
-      {
-        $this->message = 'Ya tiene una solicitud registrada, le atenderemos pronto.';
-        $this->statusType = 'alert-warning';
-        echo $this->message;
 
-      }
       else{
         echo "<br>Hubo un error al registrar tu solicitud, vuelve a intentarlo";
 
       }
       
       
-      //$this->redirectHome();
+      $this->redirectHome();
     }
 
 

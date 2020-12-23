@@ -10,8 +10,9 @@ class Setup extends Controller
 
   public function __construct()
   {
-    echo "setup construct working";
+    echo "setup construct is working ...";
     parent::__construct();
+
 
   }
 
