@@ -1,36 +1,30 @@
-html
-{
+html {
   background-color: rgb(240, 240, 240);
 }
 /*------------------Logo----------------*/
-.logo-container{
-    background-image: url('../img/logo.jpg');
-    background-repeat:no-repeat;
-    background-size: 10vw;
-    width: 10vw;
-    height: 12vw;
-    display: block;
-    margin-inline-start: 20%;
-
-  }
+.logo-container {
+  background-image: url("../img/logo.jpg");
+  background-repeat: no-repeat;
+  background-size: 10vw;
+  width: 10vw;
+  height: 12vw;
+  display: block;
+  margin-inline-start: 20%;
+}
 
 /*------------------Menu Items template----------------*/
-.division,.user-info
-{
+.division,
+.user-info {
   margin-top: 2%;
   font-size: x-large;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: rgb(117, 117, 117);
   box-sizing: border-box;
   padding: 5%;
-
 }
 
-
-
 /*------------------containers----------------*/
-.contenedor
-{
+.contenedor {
   width: 98%;
   padding-inline-start: 1%;
   margin: 5px;
@@ -39,33 +33,28 @@ html
   border-radius: 8px;
 }
 
-.login .logo-container
-{
+.login .logo-container {
   margin-left: 25%;
 }
-.logo-container
-{
-  margin-left:40%;
+.logo-container {
+  margin-left: 40%;
 }
 .login {
-  padding-top:5%;
+  padding-top: 5%;
   padding-left: 5%;
-  margin-left:25%;
+  margin-left: 25%;
   width: 50%;
-  box-shadow: 2px 2px 8px 3px  rgb(170, 170, 170);
+  box-shadow: 2px 2px 8px 3px rgb(170, 170, 170);
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-
 }
-.contenido{
+.contenido {
   background-color: rgb(240, 240, 240);
   padding-left: 10%;
-
 }
 
 /*------------------Buttons----------------*/
-.main-button
-{
+.main-button {
   border: none;
   width: 30%;
   height: 100%;
@@ -78,35 +67,34 @@ html
 
 /*------------------user info----------------*/
 
-
-#user-name{
+#user-name {
   border: 4px red;
   border-bottom-style: solid;
 }
-#user-name, .user-nomina{
+#user-name,
+.user-nomina {
   color: black;
   text-align: center;
   padding: 1%;
   width: 100%;
   background-color: rgb(241, 241, 241);
-
 }
 .user-nomina {
   font-size: xx-large;
 }
-#user-code{
+#user-code {
   font-size: x-large;
   padding: 0%;
 }
 
-#user-job{
+#user-job {
   font-size: large;
   margin-bottom: 5%;
 }
 
-#user-code, #user-job{
+#user-code,
+#user-job {
   margin: 2%;
-
 }
 
 .card-nborder {
@@ -114,28 +102,28 @@ html
   box-shadow: none;
 }
 
-.user-nomina h6
-{
-  margin:0;
-  padding:0;
+.user-nomina h6 {
+  margin: 0;
+  padding: 0;
   inset-inline-start: 0px;
 }
 
-.card
-{
+.card {
   margin: 1.5%;
 }
 
-.card-login
-{
- margin-top: 7%;
- padding-bottom: 7%;
- width: 35vw;
- margin-left:35%;
+.card-login {
+  margin-top: 7%;
+  padding-bottom: 7%;
+  width: 35vw;
+  margin-left: 35%;
 }
 
-
-.card{
+.card {
   border-radius: 8px;
   border: red;
+}
+
+#main {
+  display: flex;
 }

@@ -5,7 +5,7 @@
     <title>Nomina</title>
   </head>
   <body>
-    <div class="card col-12 ">
+    <div class="card col-6 ">
 		<div class="card-body">
 			<h5 class="card-title">Solicitar Material</h5>
 			<h6 class="card-subtitle mb-2 text-muted ">Haz clic para solicitar tu material</h6>
@@ -23,7 +23,6 @@
         print_r($data);
     ?>
 			</div>
-      
     </div>
         
   <!-- Modal Material-->

@@ -27,7 +27,7 @@
 
 
 <!---principal container--->
-<div class="container-fluid row">
+<div class="container-fluid row" id="main">
 
 <div class="card col-3 card-nborder">
 						<div class="card-body">
@@ -88,7 +88,27 @@
                 Solicitar
               </button>
 						</div>
-					</div><!---Solicitar carta--->
+          </div><!---Solicitar carta--->
+          
+          <div class="card col-12 ">
+		<div class="card-body">
+			<h5 class="card-title">Solicitar Material</h5>
+			<h6 class="card-subtitle mb-2 text-muted ">Haz clic para solicitar tu material</h6>
+              <button type="button button-display " 
+                     class="btn btn-primary btn col-3 materialButton" 
+               data-toggle="modal" 
+               data-target="#material"  
+               id="materialButton"
+               display ="none"
+              >
+              Material</button>
+    <?php  
+        $data = $this->getData();
+        $this->printData();
+        print_r($data);
+    ?>
+			</div>
+    </div>
 
  					<!---Solicitar atencion--->
            <div class="card col-12">
