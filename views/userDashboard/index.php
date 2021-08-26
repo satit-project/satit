@@ -27,7 +27,7 @@
 
 
 <!---principal container--->
-<div class="container-fluid row" id="main">
+<div class="container-fluid row main" id="main">
 
 <div class="card col-3 card-nborder">
 						<div class="card-body">
@@ -273,5 +273,7 @@
         </div>
         <script src="<?php echo(URL)?>resources/js/keyboard.js"></script>
        <script src="<?php echo(URL)?>/public/js/userDashboard.js"></script>
+       <script src="<?php echo(URL)?>public/js/material.js"></script>
+
 </body>
 </html>

@@ -47,7 +47,7 @@
     </div>
   <!-- fin modal material-->
   <!-- Javascript-->
-  <script src="public/js/material.js"></script>
+  <!-- <script src="public/js/material.js"></script> -->
 
   </body>
   </body>

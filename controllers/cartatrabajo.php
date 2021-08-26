@@ -28,6 +28,14 @@ class CartaTrabajo extends Controller {
       $this->redirectHome();
     }
 
+  
+    public function listaCartas(){
+
+      echo("Lista de cartas funciona");
+      $result = $this->model->getLetters();
+      var_dump($result);
+      return json_encode($result);
+    }
 
 
     public function redirectHome()

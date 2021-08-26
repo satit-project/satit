@@ -10,7 +10,6 @@ class UserDashboard extends Controller {
     function render() {
 
         $this->view->render('userDashboard/index');
-        $this->view->render('material/index');
     }
 
 

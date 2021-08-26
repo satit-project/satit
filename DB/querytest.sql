@@ -61,9 +61,12 @@ USE satit;
 ALTER TABLE material_request drop FK_material_repuestos;
 
 /*Agregando constraint a la tabla*/
-USE satit;
  alter table material_request
  add constraint FK_material_repuestos
   foreign key (materialID)
   references repuestos(id);
 
+
+USE satit;
+
+SELECT  * FROM  satit.carta_de_trabajo;
