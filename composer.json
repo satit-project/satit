@@ -1,1 +1,8 @@
-'{}'
+{
+  "description": "web app to manage employees payroll",
+  "name": "satit/satit",
+  "require": {
+    "php": "^7.4"
+  },
+  "license": "MIT"
+}
