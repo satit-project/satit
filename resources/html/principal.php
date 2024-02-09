@@ -33,23 +33,18 @@ session_start();
 			exit;
 			}
 		?>
-		<!------------------------------------------------------------------>
     
 
-        <!-----------------Contenedor principal----------------->
         <div class="contenedor">
             <div class="contenido-derecha">
-			    <!-----------------Logo----------------->
 				<div class="logo-container"></div>
 
-					<!-----------------Informacion de empleado----------------->
 					<div class="user-info">
 						<h2 id="user-name">Emmanuel Nuño Estrella</h2>
 						<h2 id="user-code">1208750</h2>
 						<h2 id="user-job">operador</h2>
 					</div>
 
-					<!-----------------Renglones izquierda----------------->
 					<section id="seccion-izquierda">    
 						<script>
 							// Section.js class scope
@@ -65,7 +60,6 @@ session_start();
 
 			</div>
 
-            <!-----------------Renglones derecha----------------->
             <aside class="contenido-izquierda">
 			
 				<div id="seccion-derecha">    

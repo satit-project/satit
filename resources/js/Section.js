@@ -38,7 +38,7 @@ class section {
                     var button = document.createElement("button");
                     button.setAttribute("id","button"+this.buttonsTitle[i]);
                     button.setAttribute("class","main-button");
-                    button.setAttribute("onclick","imprime()")
+                    button.setAttribute("onclick","imprime")
                     button.innerHTML = this.buttonsTitle[i
                     
                     ];

@@ -54,10 +54,10 @@
 			$pass = $_POST['password'];
 		
 			// The password_hash() function convert the password in a hash before send it to the database
-			$passHash = password_hash($pass, PASSWORD_DEFAULT);
+			$pass_hash = password_hash($pass, PASSWORD_DEFAULT);
 			
 			// Query to send Name, Email and Password hash to the database
-			$query = "INSERT INTO login_satit (nombre, numero_empleado, correo_electronico, password) VALUES ('$name', '$numero_empleado','$correo', '$passHash')";
+			$query = "INSERT INTO login_satit (nombre, numero_empleado, correo, pass_hash) VALUES ('$name', '$numero_empleado','$correo', '$pass_hash')";
 
 			if (mysqli_query($conn, $query)) {
 				echo "<div class='alert alert-success mt-4' role='alert'><h3>Cuenta creada.</h3>

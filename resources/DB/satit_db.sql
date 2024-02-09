@@ -1,4 +1,4 @@
-
+use u734165210_satit;
 drop table IF EXISTS empleados;
 
 create table IF NOT EXISTS empleados(
@@ -117,6 +117,15 @@ create table IF NOT EXISTS encuesta_de_satisfaccion(
     INDEX(id_empleado),
     FOREIGN KEY (id_empleado) REFERENCES empleados(id)
     
+);
+
+create table IF NOT EXISTS login_satit(
+	id int primary key AUTO_INCREMENT  NOT NULL,
+	numero_empleado int not null,
+	pass_hash varchar(255),
+    nombre varchar(45),
+    correo varchar(45),
+    fecha date
 );
 
 

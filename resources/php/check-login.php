@@ -33,13 +33,13 @@ session_start();
 			$password = $_POST['password'];
 			
 			// Query sent to database
-			$result = mysqli_query($conn, "SELECT numero_empleado, password, nombre FROM login_satit WHERE numero_empleado = '$numero_empleado'");
+			$result = mysqli_query($conn, "SELECT numero_empleado, pass_hash, nombre FROM login_satit WHERE numero_empleado = '$numero_empleado'");
 			
 			// Variable $row hold the result of the query
 			$row = mysqli_fetch_assoc($result);
 			
 			// Variable $hash hold the password hash on database
-			$hash = $row['password'];
+			$hash = $row['pass_hash'];
 			
 			/* 
 			password_Verify() function verify if the password entered by the user
