@@ -5,12 +5,12 @@ function creaRenglones(labels)
 
     for(i =0 ; i < labels.length; i++)
     {
-        console.log("se crea renglon " + i)
         var division = document.createElement("div")
         var label = document.createElement("label")
         var divSemana = document.createElement("div")
 
         division.setAttribute("id","division"+i)
+        divSemana.setAttribute("id","cantidadSemana"+i)
         division.setAttribute("class","division")
         divSemana.setAttribute("class","renglones renglon-semana")
         label.setAttribute("for","renglones")
