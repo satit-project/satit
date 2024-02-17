@@ -20,27 +20,6 @@ session_start();
 		
     </head>
     <body>
-	<!--verifica que realmente tengas sesion iniciada-->
-	<?php
-    if (isset($_SESSION['loggedin'])) {  
-    }
-    else {
-        echo "<div class='alert alert-danger mt-4' role='alert'>
-        <a class='titulo-sin-acceso'>Es necesario iniciar sesion en la pagina de Satit para acceder a esta pagina.</a>
-        <p><a href='../../index.html' class='boton-para-login'>Iniciar sesion aqui!!</a></p></div>";
-        exit;
-    }
-    // checking the time now when check-login.php page starts
-    $now = time();           
-    if ($now > $_SESSION['expire']) {
-        session_destroy();
-        echo "<div class='alert alert-danger mt-4' role='alert'>
-        <a class='titulo-sin-acceso'>Su sesion a expirado!!</a>
-        <p><a href='../../index.html'class='boton-para-login'>Iniciar sesion aqui!!</a></p></div>";
-        exit;
-        }
-    ?>
-	<!------------------------------------------------------------------>
         <div class="container">
 
             <!-- Menu Principal-->
