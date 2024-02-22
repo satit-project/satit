@@ -9,7 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link href="../css/general.css" rel="stylesheet" type="text/css">
     <link href="../css/template.css" rel="stylesheet" type="text/css">
-	<link href="../css/nomina.css" rel="stylesheet" type="text/css">
     <script src="../js/creaRenglones.js"></script>
     <script src="../js/nomina.js"></script>
 	<!-- formato de los botones de la pantalla cuando no se ha iniciado sesion-->

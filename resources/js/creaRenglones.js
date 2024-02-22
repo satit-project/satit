@@ -10,7 +10,7 @@ function creaRenglones(labels, idBase)
         var divSemana = document.createElement("div")
 
         division.setAttribute("id","division"+i)
-        divSemana.setAttribute("id", idBase+i)
+        divSemana.setAttribute("id", idBase[i]+i)
         division.setAttribute("class","division")
         divSemana.setAttribute("class","renglones renglon-semana")
         label.setAttribute("for","renglones")
@@ -27,11 +27,12 @@ function creaRenglones(labels, idBase)
 
 
 function agregarContenidoDemoPrenomina(text, idBase) {
-    var primerRenglon = document.getElementById(idBase+"0");
-    primerRenglon.innerHTML = text[0];
 
-    var segundoRenglon= document.getElementById(idBase+"1");
-    segundoRenglon.innerHTML = text[1];
+
+    for (i = 0; i < idBase.length; i++) {
+        var renglon = document.getElementById(idBase[i]+ i);
+        renglon.innerHTML = text[i];
+    }
 }
 
 

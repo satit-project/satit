@@ -34,7 +34,9 @@ session_start();
             <script>
                 // Nombres de labels que seran asignados
                 var labels = ["Nombre","Fecha de Ingreso","Puesto"]
-            creaRenglones(labels);
+                var textContent = ["Emmanuel Nuno","06/12/2001","Software Engineer"]
+                 creaRenglones(labels,labels);
+                 agregarContenidoDemoPrenomina(textContent, labels)
             </script>
         </div>
 
