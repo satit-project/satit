@@ -13,12 +13,12 @@
 {
     text-decoration: none;
     color: white;
-    width: 20vw;
+    width: 10vw;
     height: 100%;
     text-align: center;
     display: inline-block;
     border-radius: 10px;
-    font-size: 3vw;
+    font-size: 2vw;
     background:  rgb(32, 32, 32);
     transition: background 1s;
 }
@@ -37,7 +37,7 @@
 .btn-continuar
 {
     margin-bottom: 0px;
-    margin-block-end: 30%;
+    margin-block-end: 5%;
     border: 3px #ddd;
     border-radius: 0px;
     
@@ -48,7 +48,7 @@
 
 .btn-cancelar
 {
-    margin-left: 20%;;
+    margin-left: 20%;
     background-color: white;
     color: black;
     border: 3px rgb(24, 24, 24);
@@ -63,9 +63,9 @@
 /* ------------ BOTON SALIR Y CONTINUAR ---------- */
 
 .btn-continuar, .btn-salir {
-    margin-top: 5%;
+    margin-top: 1%;
     padding-top: 2%;
-    width: 30%;
+    width: 20%;
     height: 5vw;
 
 }
@@ -159,9 +159,9 @@
     margin-inline-start: 44%;
     border-radius:  100%;
     border: 7px solid #ECECEC;
-    width: 15vw;
-    height:15vw;
-    background-size: 15vw
+    width: 10vw;
+    height:10vw;
+    background-size: 10vw
 
 
 }
@@ -173,7 +173,7 @@ h2
 
     display: block; 
     margin-inline-start:44%;
-    font-size: 4vw;
+    font-size: 2vw;
     border-radius: 5px;
     color: rgb(138, 138, 138);
 
