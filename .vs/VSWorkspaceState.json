@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\resources",
+    "\\resources\\css",
     "\\resources\\html",
-    "\\resources\\php"
+    "\\resources\\js"
   ],
-  "SelectedNode": "\\resources\\php\\conn.php",
+  "SelectedNode": "\\resources\\css\\nomina.css",
   "PreviewInSolutionExplorer": false
 }

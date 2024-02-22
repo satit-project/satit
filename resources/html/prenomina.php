@@ -38,7 +38,9 @@ session_start();
         <section id="seccion-renglones">
             <script>
             var labels = ["Pago","Horas"]
-            creaRenglones(labels);
+            var text = ["$1,800.00","8"]
+            creaRenglones(labels,labels);
+            agregarContenidoDemoPrenomina(text,labels);
             </script>
         </section>
 

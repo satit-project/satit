@@ -89,21 +89,19 @@
 }
 /* ------------ RENGLONES ---------- */
 
-.renglones
-{
+.renglones {
     display: inline-block;
     background-color: #ECECEC;
     margin-left: 10%;
     padding: 10px;
-    
+    color: gray;
+    font-size: 3rem;
 }
 
-.renglon-semana
-{
-
+.renglon-semana {
     width: 30%;
     margin-left: 10%;
-  
+
 }
 
 .renglon-semana, .renglon-nomina

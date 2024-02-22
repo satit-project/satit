@@ -1,5 +1,5 @@
 
-function creaRenglones(labels)
+function creaRenglones(labels, idBase)
 {
     var seccion = document.getElementById("seccion-renglones")
 
@@ -10,7 +10,7 @@ function creaRenglones(labels)
         var divSemana = document.createElement("div")
 
         division.setAttribute("id","division"+i)
-        divSemana.setAttribute("id","cantidadSemana"+i)
+        divSemana.setAttribute("id", idBase+i)
         division.setAttribute("class","division")
         divSemana.setAttribute("class","renglones renglon-semana")
         label.setAttribute("for","renglones")
@@ -23,3 +23,15 @@ function creaRenglones(labels)
     }
 
 }
+
+
+
+function agregarContenidoDemoPrenomina(text, idBase) {
+    var primerRenglon = document.getElementById(idBase+"0");
+    primerRenglon.innerHTML = text[0];
+
+    var segundoRenglon= document.getElementById(idBase+"1");
+    segundoRenglon.innerHTML = text[1];
+}
+
+

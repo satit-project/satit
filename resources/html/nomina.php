@@ -38,8 +38,9 @@ session_start();
             <!-- Seccion para mostrar la nomina-->
                 <script>
                     var labels = ["Semana","Pago"]
-                    creaRenglones(labels);
-                    addText();
+                    var text = ["# 12 ", " 1,500.00",]
+                    creaRenglones(labels,labels);
+                    agregarContenidoDemoPrenomina(text,labels);
                 </script>
 
         </section>
