@@ -37,7 +37,9 @@ session_start();
         <section id="seccion-renglones">
             <script>
                   var labeles =["Periodo","Dias"]
-                 creaRenglones(labeles);
+                  var vacacionesContent =["# 2","10"]
+                 creaRenglones(labeles,labeles);
+                 agregarContenidoDemoPrenomina(vacacionesContent,labeles);
             </script>
         </section>
 
