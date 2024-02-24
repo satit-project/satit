@@ -25,8 +25,13 @@ session_start();
 
         <!-- Logo de usuario y Nombre -->
         <section>
-            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-            <h2>1208750</h2>
+            <div class="user-logo-container">
+                <img class="user-logo"></img>
+            </div>
+    
+            <div class="numero-empleado-container">
+                <h2>0001233</h2>
+            </div>
         </section>
 
         
@@ -46,6 +51,7 @@ session_start();
 
         <!--Boton continuar-->
         <div >
+            <a href="../php/logout.php"class="btn btn-salir">Salir</a>
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
         </div>
 
@@ -53,6 +59,6 @@ session_start();
 </body>
 <!-- Barra inferior-->
 <footer class="footer">
-    <a href="../php/logout.php"class="btn btn-salir">Salir</a>
+
 </footer>
 </html>
