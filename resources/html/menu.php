@@ -49,7 +49,7 @@ session_start();
                     </div>
                     
 					<div class="row-menu" >
-						<a href="../php/logout.php" class="boton_return regresar">Salir</a>
+						<a href="../php/logout.php" class="boton_return regresar salir"></a>
 					</div>
 				
                 </div>

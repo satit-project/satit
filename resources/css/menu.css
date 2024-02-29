@@ -119,6 +119,13 @@ body {
 .regresar{
 	background-image:url(../img/menu/regresar.png);
 }
+.salir {
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/menu/salir.png);
+}
+}
 
 
 @media screen and ( max-width: 600px)
