@@ -40,12 +40,19 @@ session_start();
             <script>
                 // Nombres de labels que seran asignados
                 var labels = 
-                ["¿Que tramite realizo?",
-                "Seleccione una opcion",
-                "volveria usar el sistema",
-                "le gustaria dejar sugerencias?",
-                "Recomendaria el sistema"];
-            crearEncuesta(labels);
+                    ["¿Que tramite realizo?",
+                    "Seleccione una opcion",
+                    "volveria usar el sistema",
+                    "le gustaria dejar sugerencias?",
+                    "Recomendaria el sistema"];
+                var content = 
+                    ["Consulta",
+                    "Seleccione una opcion",
+                    "Si",
+                    "No?",
+                    "si"];
+                crearEncuesta(labels);
+                agregarContenidoEncuesta(content,labels)
             </script>
         </div>
 

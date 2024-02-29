@@ -41,7 +41,7 @@ session_start();
                 <div class="menu">
                     <div class="row-menu" >
                         <a href="#" class="botones boton-menu constancia">Constancia</a>
-                        <a href="cita.php" class="botones boton-menu citas">Cita</a>
+                        <a href="#" class="botones boton-menu citas">Cita</a>
                         <a href="#" class="botones boton-menu sugerencias">Sugerencias</a>
                         <a class="botones boton-menu cursos">Cursos</a>
                         <a href="#" class="botones boton-menu repuestos">Repuestos</a>
