@@ -45,15 +45,14 @@ session_start();
         </div>
 
         <!--Boton continuar-->
-        <div >
-            <a href="menu.php"class="btn btn-cancelar">Cancelar</a>
+        <section >
+            <a href="../php/logout.php"class="btn btn-salir">Salir</a>
             <a href="menu.php"class="btn btn-continuar">Continuar</a>
-        </div>
+        </section>
 
     </div>    
 </body>
 <!-- Barra inferior-->
 <footer class="footer">
-    <a href="../php/logout.php"class="btn btn-salir">Salir</a>
 </footer>
 </html>
