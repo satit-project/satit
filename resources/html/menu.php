@@ -43,7 +43,7 @@ session_start();
                         <a href="#" class="botones boton-menu constancia">Constancia</a>
                         <a href="#" class="botones boton-menu citas">Cita</a>
                         <a href="#" class="botones boton-menu sugerencias">Sugerencias</a>
-                        <a class="botones boton-menu cursos">Cursos</a>
+                        <a href="#" class="botones boton-menu cursos">Cursos</a>
                         <a href="#" class="botones boton-menu repuestos">Repuestos</a>
                         <a href="#seccion1" class=" botones boton-menu regresar">Regresar</a>
                     </div>
