@@ -24,10 +24,14 @@ session_start();
 
         <!-- Logo de usuario y Nombre -->
         <section>
-            <img src="../img/nomina/profilepic_unisex.gif" class="user-logo">
-            <h2>1208750</h2>
+            <div class="user-logo-container">
+                <img class="user-logo"></img>
+            </div>
+    
+            <div class="numero-empleado-container">
+                <h2>0001233</h2>
+            </div>
         </section>
-
         
         <!-- Seccion para mostrar datos de la carta de trabajo-->
         <div id="seccion-renglones">
