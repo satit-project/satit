@@ -57,8 +57,8 @@ session_start();
 					echo 'Usuario: '.$_SESSION['name'].' ';
 					?>
 				</li>
-				<li><a href="#">sin definir</a></li>
-				<li><a href="#">sin definir</a></li>
+				<!-- <li><a href="#">sin definir</a></li>
+				<li><a href="#">sin definir</a></li> -->
 				<li><a href="../php/logout.php">SALIR</a></li>
 			</ul>
 		</nav><!-- / nav -->
